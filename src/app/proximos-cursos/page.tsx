@@ -1,68 +1,44 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, Award, Star } from "lucide-react";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 const upcomingEvents = [
     {
         id: "quiroterapia",
         title: "Formación integral en Quiroterapia",
         dates: [
-            "Jueves 20 de Octubre 2025",
-            "Sábado 9 de Noviembre 2025",
-            "Viernes 14 de Noviembre 2025"
+            "Jueves 19 de Marzo",
+            "Sábado 18 de Abril"
         ],
         duration: "20 meses",
         frequency: "Clases 1 día a la semana",
         schedule: "9:00 am a 3:00 pm",
-        imagePath: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2000&auto=format&fit=crop",
+        imagePath: "/QUIROTERAPIAA.jpg",
         courseLink: "/oferta-academica/quiroterapia-integral"
     },
     {
         id: "manipulaciones",
         title: "Curso de Manipulaciones vertebrales avanzadas",
         dates: [
-            "Viernes 7 de Noviembre del 2025"
+            "Sábado 28 de Marzo"
         ],
         duration: "8 meses",
         frequency: "Clases 1 día a la semana",
-        schedule: "9:30 am a 2:30 pm todos los viernes",
-        imagePath: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2000&auto=format&fit=crop",
-        courseLink: "/oferta-academica/manipulaciones-vertebrales"
-    },
-    {
-        id: "gonstead",
-        title: "Curso-Taller Quiropráctica Técnica Gonstead",
-        dates: [
-            "Lunes 10 de Noviembre del 2025"
-        ],
-        duration: "8 meses",
-        frequency: "Cada 15 días",
         schedule: "9:30 am a 2:30 pm",
-        imagePath: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop",
-        courseLink: "#"
-    },
-    {
-        id: "radiologia",
-        title: "Curso-Taller Radiología diagnóstica y marcaciones",
-        dates: [
-            "Sábado 6 de Septiembre 2025"
-        ],
-        duration: "10 sesiones",
-        frequency: "Trabajando cada 15 días",
-        schedule: "3:30 pm a 8:00 pm",
-        imagePath: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop",
-        courseLink: "#"
+        imagePath: "/MANIPULACION VERT.jpg",
+        courseLink: "/oferta-academica/manipulaciones-vertebrales"
     },
     {
         id: "spa",
         title: "Diplomado SPA",
         dates: [
-            "Sin fecha disponible"
+            "Miércoles 15 de Abril"
         ],
         duration: "9 meses",
-        frequency: "Un día a la semana",
+        frequency: "Clases 1 día a la semana",
         schedule: "10:00 am a 2:30 pm",
-        imagePath: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2000&auto=format&fit=crop",
+        imagePath: "/MASAJE.png",
         courseLink: "/oferta-academica/terapeuta-spa"
     }
 ];
@@ -71,18 +47,32 @@ export default function ProximosCursosPage() {
     return (
         <div className="flex flex-col min-h-screen bg-bg-light">
             {/* Header section similar to the original website but modernized */}
-            <div className="bg-primary pt-20 pb-24 shadow-md relative z-10 overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/4 translate-y-1/4"></div>
+            {/* Banner Superior Standard */}
+            <div className="relative w-full h-[250px] min-h-[250px] md:h-[350px] md:min-h-[350px] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0 bg-black">
+                    <Image
+                        src="/Sala CEAS.JPG"
+                        alt="Background"
+                        fill
+                        className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
                 </div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in-up">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight drop-shadow-md">
-                        Próximos cursos
-                    </h1>
-                    <div className="h-1 w-24 bg-secondary mx-auto mt-6 rounded-full mb-4"></div>
-                    <p className="text-xl text-white/90 font-medium tracking-wide">
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center justify-center animate-fade-in-up mt-8 md:mt-0">
+                    <ScrollFloat
+                        animationDuration={1}
+                        ease='back.inOut(2)'
+                        scrollStart='top bottom+=20%'
+                        scrollEnd='bottom bottom-=20%'
+                        stagger={0.03}
+                        as="h1"
+                        textClassName="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg mb-4"
+                    >
+                        Próximos Cursos
+                    </ScrollFloat>
+                    <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm mb-4"></div>
+                    <p className="text-lg md:text-2xl text-white/90 font-medium tracking-wide drop-shadow-sm">
                         Reserva tu lugar y transforma tu futuro profesional
                     </p>
                 </div>
@@ -178,7 +168,7 @@ export default function ProximosCursosPage() {
                     </h2>
                     <div className="inline-block bg-teal-50 border-2 border-teal-100 rounded-2xl p-6 md:p-8 mb-10 shadow-sm">
                         <p className="text-xl md:text-2xl text-teal-800 font-medium italic">
-                            50% de descuento en inscripción <br className="hidden md:block" />
+                            25% de beca en colegiatrua <br className="hidden md:block" />
                             <span className="text-lg md:text-xl font-normal text-teal-700">en cursos mayores a 8 meses de duración</span>
                         </p>
                     </div>
@@ -198,21 +188,21 @@ export default function ProximosCursosPage() {
             <section className="py-12 bg-bg-light">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                        {/* Using unsplash placeholders to mimic the thumbnail gallery */}
+                        {/* Using local images for the thumbnail gallery */}
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=400&auto=format&fit=crop" alt="Gallery 1" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/HABILITACION.JPG" alt="Habilitación gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=400&auto=format&fit=crop" alt="Gallery 2" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/QUIROTERAPIA.jpg" alt="Quiroterapia gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=400&auto=format&fit=crop" alt="Gallery 3" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/SPA.png" alt="SPA gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=400&auto=format&fit=crop" alt="Gallery 4" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/MASAJE.png" alt="Masaje gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=400&auto=format&fit=crop" alt="Gallery 5" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/MANIPULACION VERT.jpg" alt="Manipulación gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                     </div>
                 </div>

@@ -75,11 +75,20 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                 Acerca del curso
                             </h2>
                             <div className="prose prose-lg max-w-none text-text-light">
-                                {descriptionParagraphs.map((paragraph, idx) => (
-                                    <p key={idx} className="mb-6 leading-relaxed text-lg text-gray-600">
-                                        {paragraph}
-                                    </p>
-                                ))}
+                                {descriptionParagraphs.map((paragraph, idx) => {
+                                    // Parse simple **bold** markdown
+                                    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                                    return (
+                                        <p key={idx} className="mb-6 leading-relaxed text-lg text-gray-600">
+                                            {parts.map((part, i) => {
+                                                if (part.startsWith('**') && part.endsWith('**')) {
+                                                    return <strong key={i} className="font-bold text-gray-900">{part.slice(2, -2)}</strong>;
+                                                }
+                                                return part;
+                                            })}
+                                        </p>
+                                    );
+                                })}
                             </div>
                         </div>
 

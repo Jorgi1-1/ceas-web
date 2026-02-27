@@ -12,118 +12,11 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
-        id: "bano-oxigeno",
-        title: "Baño de oxígeno",
-        date: "25.11.2024",
-        excerpt: "El baño de oxígeno puede corregir la condición hipóxica, lo cual es beneficioso para múltiples patologías.",
-        imagePath: null,
-        slug: "bano-de-oxigeno",
-        content: (
-            <>
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Hiperoxia.</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia es el aumento significativo de la disponibilidad de oxígeno en el plasma sanguíneo. Favorece el metabolismo celular y permite que el oxígeno llegue al cerebro, cartílagos, huesos y tejidos que, por diversas alteraciones circulatorias, no lo reciben adecuadamente.</p>
-
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Efectos fisiológicos.</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El baño de oxigenación produce una fuerte hiperoxia que puede generar diferentes beneficios para el organismo.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Reparación de fibras neuronales periféricas</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El oxígeno favorece la plasticidad del sistema nervioso.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Angiogénesis</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia estimula y favorece la formación de pequeños vasos sanguíneos, por lo que mejora la perfusión.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Estimulación de la síntesis del colágeno</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia induce la hidroxilación de la prolina y la proliferación de los fibroblastos. Así, favorece la síntesis de colágeno, fundamental para el proceso de cicatrización de heridas y la reparación de tejidos.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Actividad bactericida</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia genera especies reactivas de oxígeno que aumentan la actividad de los antibióticos. Además, es activa contra el bio film bacteriano.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Regulación del estrés oxidativo y la respuesta inflamatoria</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia actúa sobre reguladores y mediadores de la respuesta inflamatoria y disminuye el estrés oxidativo. Esto tiene como resultado un efecto antiinflamatorio y disminuye el daño celular.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Aumenta el flujo sanguíneo cerebral y la neuroprotección</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">Mejora la perfusión gracias a la formación de nuevos vasos y la oxigenación cerebral, disminuye el edema y la inflamación del sistema nervioso central.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Osteogénesis</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La hiperoxia estimula la diferenciación de las células formadoras del hueso, favorece la osteogénesis y reparación ósea.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Disminución del daño por isquemia-reperfusión</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">Mejora la microcirculación tisular, disminuye la producción de especies reactivas de oxígeno e incrementa su degradación a través de la estimulación de la expresión de las enzimas antioxidantes.</p>
-
-                <h4 className="text-xl font-bold text-[#759CB6] mt-8 mb-3">Efecto analgésico</h4>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El oxígeno adicional que aporta el baño de oxígeno puede tener efecto analgésico en patologías con componentes nociceptivos y neuropáticos, mediante la reparación en el tejido, recuperación de la funcionalidad y disminución de la inflamación.</p>
-
-                <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-[#759CB6] my-8">
-                    <p className="text-gray-700 font-medium mb-3">Patologías que transcurren con dolor:</p>
-                    <p className="text-gray-600 leading-relaxed text-lg italic">Traumatismos, fibromialgia, enfermedades reumatológicas, heridas agudas y crónicas, dolor lumbar y articular, migrañas, enfermedades vasculares periféricas.</p>
-                </div>
-
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">En heridas agudas y crónicas, el Oxígeno acelera la cicatrización y reduce el dolor. Promueve la angiogénesis y la proliferación de fibroblastos, favoreciendo la regeneración tisular. Tiene efecto antiinflamatorio al disminuir la liberación de citocinas proinflamatorias y promover la producción de enzimas antioxidantes. Potencia la producción de factores de crecimiento, favoreciendo la regeneración y reparación de tejidos dañados, por lo cual contribuye a la recuperación funcional y a la mejora de la calidad de vida de los usuarios. Incrementa la actividad bactericida, alta sinergia con antibióticos y estimula la síntesis de colágeno.</p>
-
-                <ul className="list-disc pl-6 space-y-2 text-gray-600 text-lg mb-6">
-                    <li><span className="font-semibold text-gray-800">Heridas frecuentes:</span> pie diabético, úlceras, quemaduras, escaras, injertos, heridas post quirúrgicas, heridas crónicas, heridas traumáticas, infecciones necrotizantes agudas.</li>
-                    <li><span className="font-semibold text-gray-800">Rehabilitación:</span> Parkinson y Alzheimer, lesiones musculares, osteoarticulares, post quirúrgicas y traumatismos, fibromialgia, parálisis cerebral.</li>
-                </ul>
-
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Tratamiento para artrosis y artritis</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La terapia de oxigenación para el tratamiento de artritis o artrosis es muy eficiente en la reducción de dolores e inflamaciones articulares. Esto se debe a que la mayor llegada del oxígeno a los tejidos articulares y tendinosos produce una rápida desinflamación y reparación, por lo que favorece la recuperación y la movilidad. De igual forma, modula el sistema inmunológico.</p>
-
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Tratamiento para fibromialgia.</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El baño de oxígeno favorece la recuperación en todos los procesos que presentan inflamación y dolor, por lo que es muy efectivo en pacientes con Fibromialgia. Esto se debe a que la mayor disponibilidad del oxígeno en la sangre tiene un importante efecto desinflamatorio. Además, reduce la fatiga y mejora la calidad de vida.</p>
-            </>
-        )
-    },
-    {
-        id: "gonstead",
-        title: "Quiropráctica técnica de Gonstead",
-        date: "18.08.2022",
-        excerpt: "¿Que hace especial a esta técnica?",
-        imagePath: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
-        slug: "quiropractica-tecnica-de-gonstead",
-        content: (
-            <>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La quiropráctica ha recorrido un largo camino desde que Daniel D. Palmer hizo su primer ajuste en septiembre de 1895 en Davenport, Iowa. Al día de hoy, existen muchos métodos utilizados por los quiroprácticos para corregir desalineaciones de la columna, disfunciones articulares y complejos de subluxación. Muchas técnicas se identifican por el nombre de la persona que fue más determinante en su desarrollo. Curiosamente, uno de los métodos científicos más avanzados es una técnica llamada:</p>
-
-                <h3 className="text-2xl font-bold text-[#759CB6] mt-10 mb-5 border-b pb-2">El sistema de Gonstead</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">Los procedimientos de Gonstead son el resultado de una extensa investigación clínica realizada por Clarence S. Gonstead, fundador de la mundialmente famosa Clínica de quiropráctica Gonstead en Mount Horeb, Wisconsin, y sus asociados. Los cincuenta y cinco años de práctica continua del doctor Gonstead y más de cuatro millones de ajustes quiroprácticos dieron como resultado el método más completo de análisis biomecánico disponible para el uso de los doctores en quiropráctica de hoy. Entonces, ¿por qué no todos los quiroprácticos usan esta técnica? Porque el análisis lleva más tiempo y dominar el arte de realizar un ajuste específico requiere MUCHA práctica y dedicación.</p>
-
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">El &quot;Quiropráctico de Gonstead&quot;</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El quiropráctico de Gonstead va más allá de lo que muchos quiroprácticos consideran una evaluación de la columna al realizar un análisis exhaustivo de su columna utilizando cinco criterios para detectar la presencia del complejo de subluxación vertebral.</p>
-
-                <div className="space-y-6 my-8">
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 className="text-xl font-bold text-gray-800 mb-2 flex items-center"><span className="w-8 h-8 rounded-full bg-[#759CB6] text-white flex items-center justify-center mr-3 text-sm">1</span> Visualización</h4>
-                        <p className="text-gray-600 leading-relaxed text-lg ml-11">La visualización es una forma de cruzar todos los demás hallazgos. Su quiropráctico es un experto en buscar cambios sutiles en su postura y movimiento que podrían indicar algún problema.</p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 className="text-xl font-bold text-gray-800 mb-2 flex items-center"><span className="w-8 h-8 rounded-full bg-[#759CB6] text-white flex items-center justify-center mr-3 text-sm">2</span> Palpación estática</h4>
-                        <p className="text-gray-600 leading-relaxed text-lg ml-11">Este es simplemente el proceso de sentir (o palpar) su columna vertebral en una posición estacionaria (o estática). Su quiropráctico palpará la presencia de hinchazón (o edema), sensibilidad y cualquier textura anormal o tirantez en los músculos y otros tejidos de la espalda.</p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 className="text-xl font-bold text-gray-800 mb-2 flex items-center"><span className="w-8 h-8 rounded-full bg-[#759CB6] text-white flex items-center justify-center mr-3 text-sm">3</span> Palpación de movimiento</h4>
-                        <p className="text-gray-600 leading-relaxed text-lg ml-11">Este proceso consiste en sentir la columna vertebral mientras se mueve y se dobla en varios ángulos. Esto le permite al quiropráctico determinar con qué facilidad o dificultad se mueve cada segmento de la columna en diferentes direcciones.</p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                        <h4 className="text-xl font-bold text-gray-800 mb-2 flex items-center"><span className="w-8 h-8 rounded-full bg-[#759CB6] text-white flex items-center justify-center mr-3 text-sm">4</span> Análisis de rayos X</h4>
-                        <p className="text-gray-600 leading-relaxed text-lg ml-11">Las películas de rayos X le permiten a su médico visualizar la estructura completa de su columna vertebral. Esto es útil para evaluar la postura, la integridad de la articulación y el disco, las desalineaciones vertebrales y descartar cualquier patología o fractura reciente que pueda estar presente o contribuir a la condición del paciente. Estas radiografías de columna completa se toman de pie, en posición de soporte de peso, para corroborar completamente los hallazgos del examen.</p>
-                    </div>
-                </div>
-
-                <div className="bg-[#759CB6]/10 p-8 rounded-2xl mt-10 text-center">
-                    <p className="text-[#3a586e] font-medium text-xl leading-relaxed">Ahora que sabes esto, podrás ver que las cosas que valen la pena requieren una gran preparación. Acércate con un instructor capacitado y aprende esta valiosa técnica para el mejor trato a tus pacientes.</p>
-                </div>
-            </>
-        )
-    },
-    {
         id: "quiroterapia",
         title: "Quiroterapia",
         date: "26.04.2022",
         excerpt: "El término quiroterapia es un término compuesto por dos palabras, del griego \"Cheir (Quiro)\" que significa mano y del griego \"Therapeia\" que significa tratamiento, se basa en los medios que posibilitan la curación o el alivio de las enfermedades o los síntomas que provoca una dolencia.",
-        imagePath: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+        imagePath: "/ESPALDA.JPG",
         slug: "quiroterapia",
         content: (
             <>
@@ -188,7 +81,7 @@ export const blogPosts: BlogPost[] = [
         title: "Síndrome del piramidal",
         date: "24.03.2021",
         excerpt: "El síndrome del piramidal o piriforme (SP) es una afección dolorosa del sistema musculoesquelético, caracterizada por una combinación de síntomas que incluyen dolor de glúteos o cadera. En varios artículos, el SP se define como una neuritis periférica de las ramas del nervio ciático causada por una condición anormal del músculo piriforme (PM), como...",
-        imagePath: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
+        imagePath: "/FEMOROTIBIAL.jpg",
         slug: "sindrome-del-piramidal",
         content: (
             <>
@@ -218,7 +111,7 @@ export const blogPosts: BlogPost[] = [
         title: "Los 5 mitos más comunes sobre el tratamiento quiropráctico",
         date: "12.02.2021",
         excerpt: "Muchas personas siguen teniendo preguntas sobre el papel que desempeñan los quiroprácticos en el cuidado de la salud, y los beneficios que los tratamientos quiroprácticos tendrán en su salud. siempre tendrás la oportunidad de consultar un quiropráctico cerca de ti y platicar a cerca de tus necesidades específicas, hoy nos corresponde hablar de los...",
-        imagePath: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format&fit=crop",
+        imagePath: "/PIERNA.JPG",
         slug: "5-mitos-tratamiento-quiropractico",
         content: (
             <>

@@ -1,28 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Target, Eye, Award, CheckCircle2 } from "lucide-react";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export default function SobreNosotrosPage() {
     return (
         <div className="flex flex-col min-h-screen bg-white">
-            {/* Hero Image Section */}
-            <div className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center">
-                <div className="absolute inset-0 z-0">
+            {/* Banner Superior Standard */}
+            <div className="relative w-full h-[250px] min-h-[250px] md:h-[350px] md:min-h-[350px] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0 bg-black">
                     <Image
-                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2000&auto=format&fit=crop"
+                        src="/Sala CEAS.JPG"
                         alt="Sobre Nosotros Background"
                         fill
-                        className="object-cover"
+                        className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
                 </div>
-
-                <div className="relative z-10 text-center px-4">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight drop-shadow-md mb-4">
-                        Desarrollo humano y profesional
-                    </h1>
-                    <div className="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center justify-center animate-fade-in-up mt-8 md:mt-0">
+                    <ScrollFloat
+                        animationDuration={1}
+                        ease='back.inOut(2)'
+                        scrollStart='top bottom+=20%'
+                        scrollEnd='bottom bottom-=20%'
+                        stagger={0.03}
+                        as="h1"
+                        textClassName="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg mb-6"
+                    >
+                        Sobre Nosotros
+                    </ScrollFloat>
+                    <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm"></div>
                 </div>
             </div>
 

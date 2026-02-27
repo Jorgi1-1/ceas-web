@@ -30,35 +30,59 @@ Asegúrate de tener instalado en tu máquina:
 - **npm**, **yarn**, **pnpm** o **bun**
 
 ## 📦 Instalación y Uso
+# CEAS - Instituto Educativo (Web App)
 
-Sigue estos pasos para ejecutar el proyecto en tu entorno local:
+Este es el repositorio oficial de la **Página Web del Centro de Estudios Avanzados en Salud (CEAS)**. Construido bajo estándares premium de UI/UX, enfocándose en estandarización, tipografía moderna, animaciones interactivas (GSAP) y rendimiento extremo.
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd ceasWeb
-   ```
+## 🚀 Tecnologías Principales
 
-2. **Instala las dependencias:**
-   ```bash
-   npm install
-   # o
-   yarn install
-   # o
-   pnpm install
-   ```
+-   [Next.js 14+](https://nextjs.org/) (App Router, Server Components y Generación Estática)
+-   [React 18](https://react.dev/)
+-   [Tailwind CSS](https://tailwindcss.com/) (Sistema de diseño)
+-   [GSAP](https://gsap.com/) & [Framer Motion](https://www.framer.com/motion/) (Motores de Animación)
+-   [Lucide Icons](https://lucide.dev/) (Iconografía corporativa)
 
-3. **Inicia el servidor de desarrollo:**
-   ```bash
-   npm run dev
-   # o
-   yarn dev
-   # o
-   pnpm dev
-   ```
+## 📂 Arquitectura Destacada
 
-4. **Visualiza la aplicación:**
-   Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado. El proyecto se recargará automáticamente al hacer cambios en los archivos fuente.
+El diseño del sitio ha sido estructurado considerando las **Mejores Prácticas Senior**:
+-   **Sistema Tipográfico Dual**: Fuentes de alto contraste estético proporcionadas por Google Fonts: **Outfit** para encabezados modernos y **Inter** para cuerpo de texto legible.
+-   **Estandarización de Interfaz Automática (UI)**: Banners dinámicos e inmersivos estandarizados uniformemente con efecto focal _matte glass_, previniendo "saltos" molestos en dispositivos celulares.
+-   **Micro-interacciones Fluidas**: Implementación de animaciones como "ScrollFloat" en grandes títulos para crear un sentido de lujo al desplazar el contenido.
+-   **SEO-Optimizado**: Implementación semántica HTML5 estricta.
+
+## 🛠️ Instrucciones de Despliegue Local
+
+1. Instalar dependencias base y de animación (como GSAP):
+```bash
+npm install
+```
+
+2. Ejecutar el ambiente de desarrollo de Next.js
+```bash
+npm run dev
+```
+
+Deberás ver la aplicación local ejecutándose fluidamente en [http://localhost:3000](http://localhost:3000).
+
+---
+
+## ☁️ Instrucciones para Producción Gratuita en Vercel
+
+Este proyecto de Next.js está intrínsecamente estructurado para ser lanzado directamente mediante la infraestructura de Vercel con "Zero Config" en la mayoría de sus flujos.
+
+### Guía Rápida de Configuración Vercel
+
+1.  Asegúrate de haber subido y actualizado todos los últimos cambios a tu repositorio remoto de GitHub (Main branch).
+2.  Accede a tu cuenta en [Vercel](https://vercel.com/) y selecciona **Add New > Project**.
+3.  Conecta tu cuenta de Github o GitLab, elige el repositorio CEAS y haz clic en **Import**.
+4.  **Framework Preset**: Déjalo en `Next.js` por defecto (Vercel lo autodetectará con su motor mágico).
+5.  **Build Command:** Déjalo por defecto (Debería ser automáticamente `next build`).
+6.  **Output Directory:** Déjalo por defecto (Debería ser automáticamente `.next`).
+7.  Haz clic en **Deploy**.
+
+Vercel optimizará las imágnes (`next/image`), servirá fuentes auto-alojadas y te asignará la red CDN en minutos.
+
+> _Construido y rediseñado con enfoque hacia un look & feel "Top-Tier" moderno para el Sector Académico de Salud._
 
 ## 📂 Estructura Principal del Proyecto
 

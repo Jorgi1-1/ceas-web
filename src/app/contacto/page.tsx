@@ -7,7 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Mail, Clock, MapPin, Phone, Send, Building2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { courses } from "@/data/courses";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -55,16 +57,32 @@ export default function ContactoPage() {
 
     return (
         <div className="flex flex-col min-h-screen bg-bg-light">
-            {/* Banner Superior con Abstract Shapes */}
-            <div className="bg-primary py-16 md:py-24 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/4"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-2xl -translate-x-1/4 translate-y-1/4"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in-up">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight drop-shadow-md">
+            {/* Banner Superior Standard */}
+            <div className="relative w-full h-[250px] min-h-[250px] md:h-[350px] md:min-h-[350px] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0 bg-black">
+                    <Image
+                        src="/Sala CEAS.JPG"
+                        alt="Contacto Background"
+                        fill
+                        className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+                </div>
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center justify-center animate-fade-in-up mt-8 md:mt-0">
+                    <ScrollFloat
+                        animationDuration={1}
+                        ease='back.inOut(2)'
+                        scrollStart='top bottom+=20%'
+                        scrollEnd='bottom bottom-=20%'
+                        stagger={0.03}
+                        as="h1"
+                        textClassName="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg mb-4"
+                    >
                         Contacto
-                    </h1>
-                    <p className="mt-4 text-white/90 text-lg md:text-xl font-medium tracking-wide max-w-2xl mx-auto">
+                    </ScrollFloat>
+                    <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm mb-4"></div>
+                    <p className="text-lg md:text-2xl text-white/90 font-medium tracking-wide drop-shadow-sm">
                         Estamos listos para guiarte en tu desarrollo profesional
                     </p>
                 </div>
@@ -94,7 +112,7 @@ export default function ContactoPage() {
                                     <div className="pt-1">
                                         <h3 className="font-semibold text-lg mb-1">Visítanos</h3>
                                         <p className="text-white/80 leading-relaxed text-sm">
-                                            IFPCEAS Colegio de Estudios<br />Alternativos en Salud<br />
+                                            IFPCEAS Centro de Estudios<br />Avanzados en Salud<br />
                                             Calle 49 Poniente #721<br />
                                             Colonia Prados Agua Azul,<br />
                                             Puebla, Puebla.

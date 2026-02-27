@@ -25,27 +25,27 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            src="/SPA.png"
             alt="Fisioterapia y bienestar"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-1000 blur-[3px] scale-[1.02]"
             priority
           />
-          <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#004A7C]/40 mix-blend-multiply"></div>
         </div>
 
         {/* Hero Content Box */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
-          <div className="bg-white/95 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-2xl max-w-xl animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-dark mb-6 leading-tight">
-              Colegio de Estudios Alternativos en Salud
+          <div className="bg-white/90 backdrop-blur-md p-6 sm:p-10 md:p-14 rounded-2xl shadow-2xl max-w-xl animate-fade-in-up border border-white/20">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">
+              Centro de Estudios Avanzados en Salud
             </h1>
-            <div className="bg-secondary p-4 rounded-md inline-block mb-6 shadow-inner">
-              <p className="text-white text-xl md:text-2xl font-medium tracking-wide">
+            <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-lg inline-block mb-6">
+              <p className="text-primary text-xl md:text-2xl font-semibold tracking-wide">
                 Formamos profesionales con alta calidad humana
               </p>
             </div>
-            <p className="text-text-light mb-8 text-lg">
+            <p className="text-gray-600 mb-8 text-lg md:text-xl leading-relaxed">
               Descubre nuestros programas especializados y da el siguiente paso en tu carrera profesional.
             </p>
             <Link
@@ -92,12 +92,13 @@ export default function Home() {
       {/* Oferta Educativa Section */}
       <section className="py-24 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 tracking-tight">
+          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+            <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">CEAS Oferta</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
               OFERTA EDUCATIVA
             </h2>
-            <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-text-light font-medium mb-3">
+            <div className="h-1.5 w-24 bg-primary mx-auto mb-8 rounded-full"></div>
+            <p className="text-xl md:text-2xl text-gray-600 font-medium mb-4 leading-relaxed">
               Planes de estudio estratégicamente diseñados para tu éxito profesional
             </p>
             <p className="text-lg text-primary font-semibold uppercase tracking-wider">

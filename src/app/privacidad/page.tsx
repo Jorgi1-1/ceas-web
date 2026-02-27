@@ -1,30 +1,39 @@
 import Image from "next/image";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export default function PrivacidadPage() {
     return (
         <div className="flex flex-col min-h-screen bg-white">
-            {/* Banner Superior */}
-            <div className="bg-[#12a1bd] py-20 shadow-sm w-full">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-wide">
-                        Privacidad
-                    </h1>
+            {/* Banner Superior Standard */}
+            <div className="relative w-full h-[250px] min-h-[250px] md:h-[350px] md:min-h-[350px] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0 bg-black">
+                    <Image
+                        src="/Sala CEAS.JPG"
+                        alt="Privacidad Background"
+                        fill
+                        className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+                </div>
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center justify-center animate-fade-in-up mt-8 md:mt-0">
+                    <ScrollFloat
+                        animationDuration={1}
+                        ease='back.inOut(2)'
+                        scrollStart='top bottom+=20%'
+                        scrollEnd='bottom bottom-=20%'
+                        stagger={0.03}
+                        as="h1"
+                        textClassName="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-lg mb-6"
+                    >
+                        Aviso de Privacidad
+                    </ScrollFloat>
+                    <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm"></div>
                 </div>
             </div>
 
             {/* Main Content Centered */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow flex flex-col items-center">
-
-                {/* Hero Image */}
-                <div className="w-full max-w-2xl aspect-video relative mb-12 shadow-sm animate-fade-in-up">
-                    <Image
-                        src="https://images.unsplash.com/photo-1571260899304-425dea4cf865?q=80&w=1400&auto=format&fit=crop"
-                        alt="Aviso de Privacidad"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
 
                 <div className="w-full text-gray-600 text-sm leading-relaxed space-y-6 text-justify pb-16 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <h2 className="text-3xl text-[#1a5fb4] font-medium text-left mb-6">
@@ -32,7 +41,7 @@ export default function PrivacidadPage() {
                     </h2>
 
                     <p>
-                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Colegio de Estudios Alternativos en Salud, a través de su representante legal y colaboradores, con domicilio en Calle 49 Poniente # 721 Colonia Prados Agua Azul C.P. 72430 en la ciudad de Puebla, Puebla, es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
+                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Calle 49 Poniente # 721 Colonia Prados Agua Azul C.P. 72430 en la ciudad de Puebla, Puebla, es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
                     </p>
 
                     <p>
@@ -68,7 +77,7 @@ export default function PrivacidadPage() {
                     </p>
 
                     <p>
-                        A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual desea recibir información, ya que, en caso de no contar con esta especificación de su parte, el Colegio de Estudios Alternativos en Salud, establecerá libremente el canal que considere pertinente para enviarle información. Este aviso de privacidad podrá ser modificado por el Colegio de Estudios Alternativos en Salud, dichas modificaciones serán oportunamente informadas a través de correo electrónico, teléfono, página web o cualquier otro medio de comunicación que El Colegio de Estudios Alternativos en Salud determine para tal efecto.
+                        A través de estos canales usted podrá actualizar sus datos y especificar el medio por el cual desea recibir información, ya que, en caso de no contar con esta especificación de su parte, el Centro de Estudios Avanzados en Salud, establecerá libremente el canal que considere pertinente para enviarle información. Este aviso de privacidad podrá ser modificado por el Centro de Estudios Avanzados en Salud, dichas modificaciones serán oportunamente informadas a través de correo electrónico, teléfono, página web o cualquier otro medio de comunicación que El Centro de Estudios Avanzados en Salud determine para tal efecto.
                     </p>
                 </div>
             </div>

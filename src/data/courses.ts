@@ -25,10 +25,10 @@ export const courses: Course[] = [
         shortDescription: "Formación integral en quiroterapia.",
         duration: "20 meses",
         frequency: "Clases un día a la semana",
-        badge: "Avalado por la SEP",
+        badge: "",
         themeColor: "#00B4D8",
-        imagePath: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2000&auto=format&fit=crop",
-        description: "Este conjunto de métodos terapéuticos como: quiro-terapia, diversas técnicas de masaje, medios físicos, habilitación física y ejercicios terapéuticos, contribuye a tratar problemas musculares, articulares y del sistema nervioso relacionados a la columna vertebral.\n\nEl quiroterapeuta se encarga del diagnóstico, prevención y tratamiento del sistema músculo - esquelético y los efectos de los desórdenes de éstos sobre el sistema nervioso y el aparato locomotor.\n\nDirigido a cualquier persona interesada en formarse como profesional en terapia manual, para rehabilitación de personas con problemas musculares, lesiones deportivas, que hayan sufrido lesiones del sistema neuro músculo esquelético como contracturas, esguinces, parálisis faciales, dolores de espalda y problemas del sistema nervioso relacionados a la columna vertebral.\n\nCon duración de 1 año 8 meses (20 meses), asistiendo a clases un día a la semana. Durante este tiempo te capacitaremos con los elementos necesarios para que conozcas el funcionamiento del cuerpo humano, cómo se afecta y cómo puedes contribuir a su recuperación por medio de las diferentes técnicas terapéuticas como manipulaciones articulares y vertebrales, hidroterapia, masaje y actividad física entre otras.\n\nAl terminar recibes diploma en Habilitación Física Funcional avalado por la SEP y diploma en Formación integral en Quiro-terapia.",
+        imagePath: "/QUIROTERAPIAA.jpg",
+        description: "Alcanza la maestría en terapia manual. Nuestro programa avanzado de Quiroterapia Integral combina manipulaciones articulares, tratamientos de liberación miofascial y métodos de habilitación física; enfocándose en solucionar afecciones neuromusculoesqueléticas complejas.\n\nDurante **20 intensos meses (un día a la semana)**, adquirirás las competencias fundamentales en anatomía clínica, patología y tratamientos mediante masajes técnicos e hidroterapia. Te transformarás en un experto capaz de diagnosticar y rehabilitar lesiones deportivas, parálisis faciales y disfunciones severas de la columna vertebral.\n\nGradúate con **doble titulación**: Diploma en Habilitación Física Funcional y Diploma en Formación Integral en Quiro-terapia.",
         curriculum: [
             {
                 name: "Primer Periodo",
@@ -72,7 +72,6 @@ export const courses: Course[] = [
                     "Ejercicios Terapéuticos",
                     "Terapia con ventosas",
                     "Manipulaciones vertebrales 3",
-                    "Radiología 1",
                 ],
             },
             {
@@ -81,7 +80,6 @@ export const courses: Course[] = [
                     "Adaptación del entorno",
                     "Nosología y clínica articular",
                     "Manipulaciones vertebrales 4",
-                    "Radiología 2",
                     "Ley general de discapacidad",
                     "Nutrición",
                 ],
@@ -107,8 +105,8 @@ export const courses: Course[] = [
         frequency: "Clases un día a la semana",
         badge: "Incorporado a la SEP",
         themeColor: "#9ea7d1",
-        imagePath: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2000&auto=format&fit=crop",
-        description: "Curso Terapeuta SPA - Aplicación de Aceites Esenciales con Técnicas de Masaje.\n\nTe llevamos de la mano por el mágico mundo de las terapias SPA. Al finalizar el curso, contarás con el conocimiento y las habilidades necesarias para trabajar en un SPA o trabajar por cuenta propia en tu cabina SPA, podrás aplicar diversas técnicas de masaje para propiciar un bienestar físico y emocional en el usuario, supervisando el cumplimiento de las indicaciones y observando las contra-indicaciones de cada técnica, los estándares de seguridad, higiene, sanidad y el cuidado de las condiciones físicas de la persona que permita lograr un estado integral de bienestar.\n\nDuración de nueve meses con clases un día a la semana. Al concluir recibes diploma en Aplicación de Aceites esenciales con Técnicas de Masaje avalado por la SEP.",
+        imagePath: "/MASAJE.png",
+        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Aval avalado por la SEP** al terminar tus estudios.",
         curriculum: [
             {
                 name: "Módulo 1",
@@ -152,8 +150,8 @@ export const courses: Course[] = [
         frequency: "Clases un día a la semana",
         badge: "Avalado por la SEP",
         themeColor: "#84a5c0",
-        imagePath: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
-        description: "Habilitación Física Funcional es el conjunto de tratamientos encaminados a eliminar o reducir un déficit o disfunción física de las personas con discapacidad, así como mantener habilidades adquiridas en aquellos casos en los que por sus características especiales así lo requieran, con el objeto de lograr el mayor grado posible de autonomía personal e integración social.\n\nDirigido a cualquier persona interesada en formarse como auxiliar en rehabilitación en personas con problemas neurológicos, lesiones deportivas o adquiridas, que hayan sufrido lesiones del sistema neuro musculo esquelético como contracturas, esguinces, parálisis faciales, EVC, realizando tratamientos por medio de Quinesioterapia, masaje, medios físicos y ejercicios terapéuticos.\n\nDuración de quince meses, clases un día a la semana. Al concluir recibes diploma en Habilitación Física Funcional avalado por la SEP.",
+        imagePath: "/HABILITACION.JPG",
+        description: "Sé el eslabón clave en la recuperación funcional de pacientes. La **Habilitación Física** es la disciplina terapéutica de alto rendimiento enfocada en restaurar y mantener la independencia de personas afectadas por lesiones degenerativas, deportivas o neurológicas (como EVC y contracturas crónicas).\n\nCon un plan de **15 meses**, perfeccionarás tus dotes en Quinesioterapia y aplicación de agentes físicos avanzados, permitiéndote diagnosticar, tratar y rehabilitar sin fronteras.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
         curriculum: [
             {
                 name: "Módulo 1",
@@ -220,8 +218,8 @@ export const courses: Course[] = [
         frequency: "Clases un día a la semana",
         badge: "Diplomado",
         themeColor: "#009688",
-        imagePath: "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2000&auto=format&fit=crop",
-        description: "En este curso de 8 meses (160 horas) de duración, te enseñaremos técnicas de manipulación de toda la columna vertebral y pelvis, utilizando métodos de thrust, técnicas funcionales, de distracción, mio-fasciales, etc.\n\nAl finalizar tendrás las capacidades, habilidades y destrezas necesarias para brindar un gran servicio de calidad a tus pacientes y ayudar en sus procesos de recuperación.\n\nDiplomado dirigido a profesionales de la salud con conocimientos anatómicos y patológicos del ser humano, que buscan agregar nuevos elementos a su arsenal terapéutico.",
+        imagePath: "/MANIPULACION VERT.jpg",
+        description: "Un Diplomado exclusivo para profesionales de la salud. A lo largo de **160 horas (8 meses)**, profundizarás en técnicas altamente especializadas y avanzadas para la manipulación y rectificación biomecánica de la columna vertebral y la articulación pélvica.\n\nEl programa aborda, de forma vanguardista, la biomecánica clínica a través de diagnósticos de *Síndrome de Subluxación*, inhibición fascial, y por supuesto, manipulación directa mediante la técnica *thrust*.\n\nIntegra al arsenal terapéutico de tu consultorio privado los procedimientos biomecánicos más buscados y consolida un estándar oro de tratamiento ortopédico.",
         curriculum: [
             {
                 name: "Primer Cuatrimestre",
