@@ -10,7 +10,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export default function WhatsAppButton() {
     const phoneNumber = "522211502725";
-    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    const message = "Hola, me gustaría recibir información sobre los cursos y programas que ofrecen. ¿Me podrían brindar más detalles?";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
         <div className="fixed bottom-6 right-6 z-[60] flex items-center gap-3 group">
