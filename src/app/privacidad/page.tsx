@@ -41,7 +41,7 @@ export default function PrivacidadPage() {
                     </h2>
 
                     <p>
-                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Calle 49 Poniente # 721 Colonia Prados Agua Azul C.P. 72430 en la ciudad de Puebla, Puebla, es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
+                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Privada 5 B Sur #4718 Col. Fracc. Alpha 2, Puebla, Pue., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
                     </p>
 
                     <p>

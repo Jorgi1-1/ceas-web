@@ -23,12 +23,12 @@ export const courses: Course[] = [
         slug: "quiroterapia-integral",
         title: "Quiroterapia Integral",
         shortDescription: "Formación integral en quiroterapia.",
-        duration: "20 meses",
+        duration: "22 meses",
         frequency: "Clases un día a la semana",
         badge: "",
         themeColor: "#00B4D8",
         imagePath: "/QUIROTERAPIAA.jpg",
-        description: "Alcanza la maestría en terapia manual. Nuestro programa avanzado de Quiroterapia Integral combina manipulaciones articulares, tratamientos de liberación miofascial y métodos de habilitación física; enfocándose en solucionar afecciones neuromusculoesqueléticas complejas.\n\nDurante **20 intensos meses (un día a la semana)**, adquirirás las competencias fundamentales en anatomía clínica, patología y tratamientos mediante masajes técnicos e hidroterapia. Te transformarás en un experto capaz de diagnosticar y rehabilitar lesiones deportivas, parálisis faciales y disfunciones severas de la columna vertebral.\n\nGradúate con **doble titulación**: Diploma en Habilitación Física Funcional y Diploma en Formación Integral en Quiro-terapia.",
+        description: "Alcanza la excelencia en terapia manual. Nuestro programa avanzado de Quiroterapia Integral combina **manipulaciones articulares, tratamientos de liberación miofascial y métodos de habilitación física;** enfocándose en solucionar afecciones neuromusculoesqueléticas complejas.\n\n**Durante 22 meses (un día a la semana),** adquirirás las competencias fundamentales en anatomía clínica, patología y tratamientos mediante **hidroterapia, masajes técnicos y manipulaciones articulares.** Te transformarás en un experto capaz de diagnosticar y rehabilitar lesiones deportivas, problemas musculares y disfunciones de la columna vertebral.\n\nGradúate con doble reconocimiento: Diploma en Habilitación Física Funcional y Diploma en Formación Integral en Quiro-terapia.",
         curriculum: [
             {
                 name: "Primer Periodo",
