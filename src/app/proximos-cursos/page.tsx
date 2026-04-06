@@ -193,7 +193,7 @@ export default function ProximosCursosPage() {
                             <Image src="/HABILITACION.JPG" alt="Habilitación gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                            <Image src="/QUIROTERAPIA.jpg" alt="Quiroterapia gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                            <Image src="/QUIROTERAPIAA.jpg" alt="Quiroterapia gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
                         </div>
                         <div className="aspect-square relative rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                             <Image src="/SPA.png" alt="SPA gallery" fill className="object-cover hover:scale-110 transition-transform duration-500" />
