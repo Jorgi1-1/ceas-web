@@ -8,10 +8,10 @@ const upcomingEvents = [
         id: "quiroterapia",
         title: "Formación integral en Quiroterapia",
         dates: [
-            "Jueves 19 de Marzo",
-            "Sábado 18 de Abril"
+            "Jueves 16 de Abril",
+            "Sábado 2 de Mayo"
         ],
-        duration: "20 meses",
+        duration: "22 meses",
         frequency: "Clases 1 día a la semana",
         schedule: "9:00 am a 3:00 pm",
         imagePath: "/QUIROTERAPIAA.jpg",
@@ -21,7 +21,7 @@ const upcomingEvents = [
         id: "manipulaciones",
         title: "Curso de Manipulaciones vertebrales avanzadas",
         dates: [
-            "Sábado 28 de Marzo"
+            "Sábado 2 de Mayo"
         ],
         duration: "8 meses",
         frequency: "Clases 1 día a la semana",
@@ -33,7 +33,7 @@ const upcomingEvents = [
         id: "spa",
         title: "Diplomado SPA",
         dates: [
-            "Miércoles 15 de Abril"
+            "Miércoles 29 de Abril"
         ],
         duration: "9 meses",
         frequency: "Clases 1 día a la semana",

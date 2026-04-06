@@ -113,9 +113,9 @@ export default function ContactoPage() {
                                         <h3 className="font-semibold text-lg mb-1">Visítanos</h3>
                                         <p className="text-white/80 leading-relaxed text-sm">
                                             IFPCEAS Centro de Estudios<br />Avanzados en Salud<br />
-                                            Calle 49 Poniente #721<br />
-                                            Colonia Prados Agua Azul,<br />
-                                            Puebla, Puebla.
+                                            Privada 5 B Sur #4718<br />
+                                            Col. Fracc. Alpha 2,<br />
+                                            Puebla, Pue.
                                         </p>
                                     </div>
                                 </li>
@@ -125,7 +125,7 @@ export default function ContactoPage() {
                                         <WhatsAppIcon className="w-6 h-6 text-white" />
                                     </div>
                                     <div className="pt-1">
-                                        <h3 className="font-semibold text-lg mb-1">WhatsApp directo</h3>
+                                        <h3 className="font-semibold text-lg mb-1">WhatsApp</h3>
                                         <a href="https://wa.me/522211502725" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide">
                                             221 150 2725
                                         </a>
