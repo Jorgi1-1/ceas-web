@@ -36,7 +36,7 @@ export default function BlogPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 pb-8">
                 {/* Main Articles Container */}
-                <div className="bg-white border text-gray-800 rounded-[32px] p-6 sm:p-10 md:p-12 shadow-sm mb-16">
+                <div className="bg-white border text-gray-800 rounded-[32px] p-6 sm:p-10 md:p-12 shadow-sm mb-16 scroll-animate">
                     <h2 className="text-2xl md:text-3xl font-bold text-primary mb-10">
                         Últimos Artículos
                     </h2>

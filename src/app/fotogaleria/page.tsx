@@ -49,7 +49,7 @@ export default function FotogaleriaPage() {
             </div>
 
             {/* Main Content Centered - Dome Gallery */}
-            <div className="w-full flex-grow flex flex-col relative z-0 bg-white">
+            <div className="w-full flex-grow flex flex-col relative z-0 bg-white scroll-animate">
                 <div className="w-full relative min-h-[500px]" style={{ height: '70vh' }}>
                     <DomeGallery
                         images={localImages}
@@ -65,7 +65,7 @@ export default function FotogaleriaPage() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="w-full bg-bg-light border-t border-gray-100 py-12 relative z-20 flex flex-col items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+            <div className="w-full bg-bg-light border-t border-gray-100 py-12 relative z-20 flex flex-col items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] scroll-animate">
                 <Link
                     href="/contacto"
                     className="px-10 py-4 bg-[#333333] hover:bg-black text-white text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 uppercase mb-8"

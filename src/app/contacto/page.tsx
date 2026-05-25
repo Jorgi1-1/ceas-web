@@ -90,7 +90,7 @@ export default function ContactoPage() {
 
             {/* Main Content Premium Split Layout */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 pb-20 w-full flex-grow">
-                <div className="bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden border border-gray-100">
+                <div className="bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden border border-gray-100 scroll-animate">
 
                     {/* Left Panel: Info de Contacto con Diseño Immersivo */}
                     <div className="bg-gradient-to-br from-primary to-[#0f8eab] p-10 md:p-14 text-white lg:w-2/5 relative overflow-hidden">
@@ -114,7 +114,7 @@ export default function ContactoPage() {
                                         <p className="text-white/80 leading-relaxed text-sm">
                                             IFPCEAS Centro de Estudios<br />Avanzados en Salud<br />
                                             Privada 5 B Sur #4718<br />
-                                            Col. Fracc. Alpha 2,<br />
+                                            Col. Huexotitla,<br />
                                             Puebla, Pue.
                                         </p>
                                     </div>

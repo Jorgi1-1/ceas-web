@@ -1,184 +1,198 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { courses } from "@/data/courses";
+import NavbarFlowItem from "@/components/ui/NavbarFlowItem";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Toggle scroll lock when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => { document.body.style.overflow = "unset"; };
+    }, [isMobileMenuOpen]);
 
     return (
-        <header className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16 md:h-20">
+        <div className="fixed top-0 left-0 w-full z-50 flex justify-center pointer-events-none md:pt-4">
+            <header className={`pointer-events-auto w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white/90 backdrop-blur-xl md:rounded-[2.5rem] border-b md:border border-black/5 shadow-[0_2px_8px_rgb(0,0,0,0.08)] will-change-transform ${scrolled ? "md:w-[90vw] lg:w-[85vw] max-w-7xl md:shadow-[0_8px_40px_rgb(0,0,0,0.08)]" : "md:w-[96vw] max-w-[1920px]"
+                }`}>
+                <div className={`flex justify-between items-center transition-all duration-500 px-4 md:px-8 ${scrolled ? "h-16 md:h-16" : "h-20 md:h-[4.5rem]"}`}>
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0 flex items-center h-full py-2">
                             <Image
                                 src="/CEAS LOGO 2.png"
                                 alt="CEAS Logo"
-                                width={160}
-                                height={60}
-                                className="object-contain w-auto h-12 md:h-14"
+                                width={140}
+                                height={50}
+                                className={`object-contain w-auto transition-all duration-500 ${scrolled ? "h-8 md:h-10" : "h-10 md:h-11"}`}
                                 priority
                             />
                         </Link>
                     </div>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden md:flex items-center space-x-8">
-                        <Link href="/" className="text-text-dark hover:text-primary transition-colors font-medium">
+                    <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+                        <Link href="/" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Inicio
                         </Link>
 
-                        <div className="relative group h-full flex items-center">
-                            <button className="flex items-center text-text-dark hover:text-primary transition-colors font-medium">
-                                Oferta Académica
+                        <div className="navbar-item relative group h-full flex items-center px-4 py-2 rounded-md hover:bg-[#0098D4]/5 cursor-pointer">
+                            <span className="flex items-center text-[#333333] group-hover:text-[#0098D4] transition-colors font-medium text-[14px]">
+                                Cursos
                                 <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
-                            </button>
+                            </span>
 
-                            <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
-                                <div className="py-2">
+                            <div className="navbar-dropdown absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+                                <div className="bg-white shadow-[0_8px_24px_rgb(0,0,0,0.12)] rounded-lg border border-gray-100 overflow-hidden py-2">
                                     {courses.map((course) => (
-                                        <Link
+                                        <NavbarFlowItem
                                             key={course.id}
                                             href={`/oferta-academica/${course.slug}`}
-                                            className="block px-4 py-2 text-sm text-text-dark hover:bg-bg-light hover:text-primary"
-                                        >
-                                            {course.title}
-                                        </Link>
+                                            text={course.title}
+                                        />
                                     ))}
+                                    <div className="border-t border-gray-100 my-1"></div>
+                                    <NavbarFlowItem
+                                        href="/proximos-cursos"
+                                        text="Ver Próximas Fechas"
+                                    />
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative group h-full flex items-center">
-                            <button className="flex items-center text-text-dark hover:text-primary transition-colors font-medium">
-                                Conócenos
-                                <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
-                            </button>
+                        {/* <Link href="/testimonios" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                            Testimonios
+                        </Link>*/}
 
-                            <div className="absolute top-full left-0 w-56 bg-white shadow-lg rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
-                                <div className="py-2">
-                                    <Link href="/nosotros" className="block px-4 py-3 text-sm font-medium text-text-dark hover:bg-bg-light hover:text-primary transition-colors">
-                                        Sobre nosotros
-                                    </Link>
-                                    <Link href="/fotogaleria" className="block px-4 py-3 text-sm font-medium text-text-dark hover:bg-bg-light hover:text-primary transition-colors">
-                                        Fotogalería
-                                    </Link>
-                                    <Link href="/privacidad" className="block px-4 py-3 text-sm font-medium text-text-dark hover:bg-bg-light hover:text-primary transition-colors">
-                                        Aviso de privacidad
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        <Link href="/proximos-cursos" className="text-text-dark hover:text-primary transition-colors font-medium">
-                            Próximos Cursos
+                        <Link href="/faq" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                            FAQ
                         </Link>
 
-                        <Link href="/contacto" className="text-text-dark hover:text-primary transition-colors font-medium">
-                            Contacto
-                        </Link>
-                        <Link href="/blog" className="text-text-dark hover:text-primary transition-colors font-medium">
+                        <Link href="/blog" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Blog
+                        </Link>
+
+                        <Link href="/contacto" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                            Contacto
                         </Link>
                     </nav>
 
                     {/* Mobile Menu Button */}
-                    <div className="flexitems-center md:hidden flex">
-                        <button
+                    <div className="flex items-center md:hidden">
+                        <div
+                            className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-text-dark hover:text-primary hover:bg-bg-light focus:outline-none"
                         >
-                            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-100">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link
-                            href="/"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-text-dark hover:text-primary hover:bg-primary/5 transition-all duration-300 animate-fade-in-up"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Inicio
-                        </Link>
+                {/* Mobile Sidebar overlay */}
+                {isMobileMenuOpen && (
+                    <div className="fixed inset-0 top-[70px] bg-black/50 z-40 md:hidden" onClick={() => setIsMobileMenuOpen(false)}></div>
+                )}
 
-                        <div className="px-3 py-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                            <div className="text-base font-medium text-text-dark mb-2">Oferta Académica</div>
-                            <div className="pl-4 space-y-1 border-l-2 border-primary/20">
-                                {courses.map((course) => (
+                {/* Mobile Sidebar */}
+                {isMobileMenuOpen && (
+                    <div className="fixed top-[70px] left-0 w-[80%] h-[calc(100vh-70px)] bg-white z-50 md:hidden overflow-y-auto animate-slideInLeft shadow-2xl">
+                        <div className="flex flex-col py-4">
+                            <Link
+                                href="/"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Inicio
+                            </Link>
+
+                            <div className="px-6 py-4 border-b border-gray-100">
+                                <div className="text-[16px] font-medium text-[#333333] mb-3">Cursos</div>
+                                <div className="pl-4 border-l-2 border-[#0098D4]/20 flex flex-col gap-2">
+                                    {courses.map((course) => (
+                                        <Link
+                                            key={course.id}
+                                            href={`/oferta-academica/${course.slug}`}
+                                            className="block py-2 text-[15px] text-[#555555] hover:text-[#0098D4] transition-colors"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {course.title}
+                                        </Link>
+                                    ))}
                                     <Link
-                                        key={course.id}
-                                        href={`/oferta-academica/${course.slug}`}
-                                        className="block px-3 py-2 rounded-md text-sm text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-300"
+                                        href="/proximos-cursos"
+                                        className="block py-2 mt-2 text-[15px] text-[#0098D4] font-medium transition-colors"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
-                                        {course.title}
+                                        Ver Próximas Fechas →
                                     </Link>
-                                ))}
+                                </div>
+                            </div>
+
+                            <Link
+                                href="/testimonios"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Testimonios
+                            </Link>
+
+                            <Link
+                                href="/faq"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                FAQ
+                            </Link>
+
+                            <Link
+                                href="/blog"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Blog
+                            </Link>
+
+                            <Link
+                                href="/contacto"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Contacto
+                            </Link>
+
+                            <div className="px-6 py-6 mt-4">
+                                <a
+                                    href="https://wa.me/522211502725"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-primary w-full"
+                                >
+                                    Chat con asesor
+                                </a>
                             </div>
                         </div>
-
-                        <div className="px-3 py-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                            <div className="text-base font-medium text-text-dark mb-2">Conócenos</div>
-                            <div className="pl-4 space-y-1 border-l-2 border-primary/20">
-                                <Link
-                                    href="/nosotros"
-                                    className="block px-3 py-2 rounded-md text-sm text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-300"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    Sobre nosotros
-                                </Link>
-                                <Link
-                                    href="/fotogaleria"
-                                    className="block px-3 py-2 rounded-md text-sm text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-300"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    Fotogalería
-                                </Link>
-                                <Link
-                                    href="/privacidad"
-                                    className="block px-3 py-2 rounded-md text-sm text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-300"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    Aviso de privacidad
-                                </Link>
-                            </div>
-                        </div>
-
-                        <Link
-                            href="/proximos-cursos"
-                            className="block px-3 py-2 mt-4 rounded-md text-base font-medium text-text-dark hover:text-primary hover:bg-primary/5 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Próximos Cursos
-                        </Link>
-
-                        <Link
-                            href="/contacto"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-text-dark hover:text-primary hover:bg-primary/5 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.4s' }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Contacto
-                        </Link>
-
-                        <Link
-                            href="/blog"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-text-dark hover:text-primary hover:bg-primary/5 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Blog
-                        </Link>
                     </div>
-                </div>
-            )}
-        </header>
+                )}
+            </header>
+        </div>
     );
 }

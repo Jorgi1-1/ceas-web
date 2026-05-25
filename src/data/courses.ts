@@ -13,11 +13,77 @@ export interface Course {
     imagePath: string;
     description: string;
     badge?: string;
+    rvoe?: string;
     themeColor: string;
     curriculum: CurriculumPeriod[];
 }
 
 export const courses: Course[] = [
+    {
+        id: "3",
+        slug: "habilitacion-fisica-funcional",
+        title: "Habilitación Física Funcional",
+        shortDescription: "Formación como auxiliar en rehabilitación para problemas neurológicos y lesiones adquiridas.",
+        duration: "15 meses",
+        frequency: "Clases un día a la semana",
+        badge: "Avalado por la SEP",
+        rvoe: "RVOE Acuerdo 16FT184 07/06/2016",
+        themeColor: "#84a5c0",
+        imagePath: "/HABILITACION.JPG",
+        description: "Desarrollar competencias profesionales para mejorar la calidad de vida de los usuarios mediante un enfoque integral de prevención y rehabilitación.\n\nSé el eslabón clave en la recuperación funcional de pacientes. La **Habilitación Física** es la disciplina terapéutica de alto rendimiento enfocada en restaurar y mantener la independencia de personas afectadas por lesiones degenerativas, deportivas o neurológicas (como EVC y contracturas crónicas).\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
+        curriculum: [
+            {
+                name: "Periodo 1",
+                subjects: [
+                    "Anatomía y fisiología.",
+                    "Sistema óseo axial.",
+                    "Sistema muscular: cráneo y tronco.",
+                    "Historia clínica y exámenes físicos.",
+                    "Masoterapia 1.",
+                    "Anatomía del tren inferior.",
+                    "Introducción a la quiroterapia.",
+                    "Quiroterapia del tren inferior."
+                ],
+            },
+            {
+                name: "Periodo 2",
+                subjects: [
+                    "Sistema nervioso.",
+                    "Fundamentos de inmunología.",
+                    "Introducción a los agentes físicos naturales.",
+                    "Agentes físicos naturales.",
+                    "Masoterapia 2.",
+                    "Anatomía del tren superior.",
+                    "Quiroterapia del tren superior."
+                ],
+            },
+            {
+                name: "Periodo 3",
+                subjects: [
+                    "Crecimiento y desarrollo.",
+                    "Adaptación del entorno.",
+                    "Nosología y clínica articular.",
+                    "Mecanoterapia.",
+                    "Ejercicio terapéutico.",
+                    "Masaje terapéutico.",
+                    "Manipulación vertebral 1.",
+                    "Vendajes elásticos."
+                ],
+            },
+            {
+                name: "Periodo 4",
+                subjects: [
+                    "Ética profesional.",
+                    "Ley general de discapacidad.",
+                    "Nosología y clínica de columna.",
+                    "Radiología.",
+                    "Digitopresión.",
+                    "Manipulación vertebral 2.",
+                    "Prácticas clínicas."
+                ],
+            },
+        ],
+    },
     {
         id: "1",
         slug: "quiroterapia-integral",
@@ -137,74 +203,6 @@ export const courses: Course[] = [
                     "Envolturas y Fangos",
                     "Masaje de Feet tense",
                     "Shiatsu en silla",
-                ],
-            },
-        ],
-    },
-    {
-        id: "3",
-        slug: "habilitacion-fisica-funcional",
-        title: "Habilitación Física Funcional",
-        shortDescription: "Formación como auxiliar en rehabilitación para problemas neurológicos y lesiones adquiridas.",
-        duration: "15 meses",
-        frequency: "Clases un día a la semana",
-        badge: "Avalado por la SEP",
-        themeColor: "#84a5c0",
-        imagePath: "/HABILITACION.JPG",
-        description: "Sé el eslabón clave en la recuperación funcional de pacientes. La **Habilitación Física** es la disciplina terapéutica de alto rendimiento enfocada en restaurar y mantener la independencia de personas afectadas por lesiones degenerativas, deportivas o neurológicas (como EVC y contracturas crónicas).\n\nCon un plan de **15 meses**, perfeccionarás tus dotes en Quinesioterapia y aplicación de agentes físicos avanzados, permitiéndote diagnosticar, tratar y rehabilitar sin fronteras.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
-        curriculum: [
-            {
-                name: "Módulo 1",
-                subjects: [
-                    "Historia Clínica",
-                    "Anatomía humana 1",
-                    "Liberación miofascial",
-                    "Anatomía de Miembros Inferiores",
-                    "Quinesioterapia de Miembros inferiores",
-                    "Crecimiento y desarrollo",
-                ],
-            },
-            {
-                name: "Módulo 2",
-                subjects: [
-                    "Anatomía y fisiología",
-                    "Puntos gatillo",
-                    "Anatomía de Miembros Superiores",
-                    "Quinesioterapia de Miembros Superiores",
-                    "Modelos y Marcos de referencia",
-                    "Introducción a los agentes físicos",
-                ],
-            },
-            {
-                name: "Módulo 3",
-                subjects: [
-                    "Ley general de discapacidad",
-                    "Patología de inflamación",
-                    "PNF Facilitación neuro propioceptiva",
-                    "Actividad Física 1",
-                    "Masaje transverso",
-                    "Agentes físicos 1",
-                ],
-            },
-            {
-                name: "Módulo 4",
-                subjects: [
-                    "Terapia ocupacional",
-                    "Adaptación del entorno",
-                    "Active release technique",
-                    "Actividad física 2",
-                    "Ejercicios neurodinámicos",
-                    "Mecanoterapia",
-                ],
-            },
-            {
-                name: "Módulo 5",
-                subjects: [
-                    "Ergonomía",
-                    "Agentes físicos 2",
-                    "Elaboración de programas de TX",
-                    "Seguimiento de programas de TX",
-                    "Prácticas Profesionales",
                 ],
             },
         ],

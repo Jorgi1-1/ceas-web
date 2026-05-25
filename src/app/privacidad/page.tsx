@@ -35,13 +35,13 @@ export default function PrivacidadPage() {
             {/* Main Content Centered */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow flex flex-col items-center">
 
-                <div className="w-full text-gray-600 text-sm leading-relaxed space-y-6 text-justify pb-16 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                <div className="w-full text-gray-600 text-sm leading-relaxed space-y-6 text-justify pb-16 scroll-animate">
                     <h2 className="text-3xl text-[#1a5fb4] font-medium text-left mb-6">
                         Aviso de privacidad
                     </h2>
 
                     <p>
-                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Privada 5 B Sur #4718 Col. Fracc. Alpha 2, Puebla, Pue., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
+                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Privada 5 B Sur #4718 Col. Huexotitla, Puebla, Pue., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
                     </p>
 
                     <p>

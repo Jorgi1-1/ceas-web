@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Main Content Area */}
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow relative">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow relative scroll-animate">
 
                 {/* Floating Social Share (Desktop) */}
                 <div className="hidden lg:block absolute left-[-4rem] top-24">
@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
 
                 {/* Next/Prev Navigation Placeholder */}
-                <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center bg-gray-50 p-6 rounded-2xl">
+                <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center bg-gray-50 p-6 rounded-2xl scroll-animate">
                     <div className="mb-4 md:mb-0 text-center md:text-left flex-1">
                         {nextPost ? (
                             <>

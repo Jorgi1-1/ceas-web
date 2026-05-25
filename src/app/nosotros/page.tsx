@@ -38,7 +38,7 @@ export default function SobreNosotrosPage() {
             <div className="w-full flex-grow flex flex-col items-center">
 
                 {/* Intro paragraph - Light background section */}
-                <div className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center animate-fade-in-up">
+                <div className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center scroll-animate">
                     <div className="md:w-1/2">
                         <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Quiénes Somos</h2>
                         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">Expertos formadores en el área de la salud alternativa</h3>
@@ -70,7 +70,7 @@ export default function SobreNosotrosPage() {
                 <div className="w-full bg-bg-light border-y border-gray-100 mt-16 pb-16 pt-24">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
                         {/* Mision Card */}
-                        <div className="bg-white p-10 md:p-12 rounded-2xl shadow-lg border border-gray-50 hover:shadow-xl transition-shadow relative overflow-hidden group">
+                        <div className="bg-white p-10 md:p-12 rounded-2xl shadow-lg border border-gray-50 hover:shadow-xl transition-shadow relative overflow-hidden group scroll-animate">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                             <Target className="w-12 h-12 text-primary mb-6" strokeWidth={1.5} />
                             <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Misión</h2>
@@ -83,7 +83,7 @@ export default function SobreNosotrosPage() {
                         </div>
 
                         {/* Vision Card */}
-                        <div className="bg-white p-10 md:p-12 rounded-2xl shadow-lg border border-gray-50 hover:shadow-xl transition-shadow relative overflow-hidden group">
+                        <div className="bg-white p-10 md:p-12 rounded-2xl shadow-lg border border-gray-50 hover:shadow-xl transition-shadow relative overflow-hidden group scroll-animate scroll-delay-100">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                             <Eye className="w-12 h-12 text-secondary mb-6" strokeWidth={1.5} />
                             <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Visión</h2>
@@ -101,7 +101,7 @@ export default function SobreNosotrosPage() {
                 {/* Valores Section - Grid Pattern */}
                 <div className="w-full bg-primary py-24 relative overflow-hidden">
                     <div className="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-animate">
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 tracking-wide">Nuestros Valores</h2>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                             {[
@@ -127,7 +127,7 @@ export default function SobreNosotrosPage() {
                 </div>
 
                 {/* Objetivos Section */}
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full scroll-animate">
 
                     <div className="bg-white p-10 md:p-14 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 relative overflow-hidden mb-16">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-full -mr-16 -mt-16"></div>
@@ -158,13 +158,13 @@ export default function SobreNosotrosPage() {
                                 'Crear una actitud positiva hacia el trabajo multidisciplinario, la auto-formación y la permanente educación.'
                             ].map((obj, i) => (
                                 <div key={i} className="bg-bg-light rounded-xl p-8 hover:bg-primary/5 transition-colors duration-300 border border-transparent hover:border-primary/10 flex">
-                                    <div className="text-3xl font-black text-primary/20 mr-4 font-serif">0{i + 1}</div>
+                                    <div className="text-3xl font-black text-primary/20 mr-4 font-heading">0{i + 1}</div>
                                     <p className="text-gray-700 leading-relaxed text-sm md:text-base mt-2">{obj}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="mt-8 bg-gray-900 text-white rounded-xl p-8 text-center max-w-3xl mx-auto shadow-2xl">
+                        <div className="mt-8 bg-gray-900 text-white rounded-xl p-8 text-center max-w-3xl mx-auto shadow-2xl scroll-animate">
                             <p className="text-lg font-medium leading-relaxed italic">
                                 &quot;Formar profesionales que consideren al ser humano integral en sus
                                 aspectos físicos, emocionales, mentales y sociales de modo que el

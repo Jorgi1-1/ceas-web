@@ -12,13 +12,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className = '', variant = 'primary', fullWidth, leftIcon, rightIcon, children, isLoading, disabled, ...props }, ref) => {
 
         // Base styles
-        const baseStyles = "inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all duration-300 shadow-sm hover:shadow-md active:-translate-y-0 disabled:opacity-75 disabled:cursor-not-allowed";
+        const baseStyles = "inline-flex items-center justify-center px-8 py-3.5 font-bold tracking-wide rounded-full transition-all duration-300 active:scale-[0.98] disabled:opacity-75 disabled:cursor-not-allowed";
 
         // Variant styles
         const variants = {
-            primary: "bg-primary text-white hover:bg-opacity-90 hover:-translate-y-0.5",
-            secondary: "bg-secondary text-white hover:bg-opacity-90 hover:-translate-y-0.5",
-            outline: "border-2 border-primary text-primary hover:bg-primary/5",
+            primary: "bg-primary text-white shadow-sm hover:shadow-md hover:bg-[#0096cc]",
+            secondary: "bg-secondary text-white shadow-sm hover:shadow-md hover:bg-[#bba65b]",
+            outline: "border border-primary text-primary hover:bg-primary hover:text-white",
         };
 
         const widthStyles = fullWidth ? "w-full" : "";
