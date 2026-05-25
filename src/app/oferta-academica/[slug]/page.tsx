@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,11 +6,35 @@ import { Calendar, Clock, ArrowRight, CheckCircle2, Award } from "lucide-react";
 import { courses } from "@/data/courses";
 import CurriculumAccordion from "@/components/ui/CurriculumAccordion";
 import SidebarUrgency from "@/components/ui/SidebarUrgency";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { CourseCard } from "@/components/ui/CourseCard";
 
 interface CoursePageProps {
     params: Promise<{
         slug: string;
     }>;
+}
+
+export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const course = courses.find((c) => c.slug === slug);
+    if (!course) return {};
+
+    return {
+        title: course.title,
+        description: course.shortDescription,
+        openGraph: {
+            title: `${course.title} | CEAS`,
+            description: course.shortDescription,
+            url: `https://ceas.com.mx/oferta-academica/${course.slug}`,
+            images: [
+                {
+                    url: course.imagePath,
+                    alt: course.title,
+                }
+            ],
+        },
+    };
 }
 
 export async function generateStaticParams() {
@@ -25,6 +50,27 @@ export default async function CoursePage({ params }: CoursePageProps) {
     if (!course) {
         notFound();
     }
+
+    const courseJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": course.title,
+        "description": course.shortDescription,
+        "provider": {
+            "@type": "EducationalOrganization",
+            "name": "CEAS - Centro de Estudios Avanzados en Salud",
+            "sameAs": "https://ceas.com.mx"
+        },
+        "educationalCredentialAwarded": course.rvoe ? `Diploma Oficial avalado por la SEP con RVOE: ${course.rvoe}` : "Diploma de Formación en Quiroterapia Integral",
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "Onsite",
+            "duration": course.duration,
+            "courseWorkload": course.frequency
+        }
+    };
+
+    const relatedCourses = courses.filter((c) => c.slug !== slug).slice(0, 3);
 
     const descriptionParagraphs = course.description
         .split('\n\n')
@@ -61,6 +107,10 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
     return (
         <div className="flex flex-col min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+            />
 
             {/* ═══════════════════════════════════════════════════════════════
                 HERO – Full-bleed cinematic header
@@ -94,6 +144,13 @@ export default async function CoursePage({ params }: CoursePageProps) {
                     </p>
                 </div>
             </section>
+
+            <Breadcrumbs
+                items={[
+                    { label: "Cursos", href: "/#oferta-educativa" },
+                    { label: course.title }
+                ]}
+            />
 
             {/* ═══════════════════════════════════════════════════════════════
                 MAIN LAYOUT – Two-column grid
@@ -201,6 +258,22 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
                 </div>
             </div>
+
+            {/* ═══════════════════════════════════════════════════════════════
+                RELATED COURSES SECTION
+            ═══════════════════════════════════════════════════════════════ */}
+            <section className="py-16 bg-[#F8F7F4] border-t border-gray-100 scroll-animate">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-[-0.02em] mb-10 text-center">
+                        Otros diplomados relacionados
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {relatedCourses.map((c) => (
+                            <CourseCard key={c.id} course={c} />
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* ═══════════════════════════════════════════════════════════════
                 FINAL CTA – Full-width conversion band

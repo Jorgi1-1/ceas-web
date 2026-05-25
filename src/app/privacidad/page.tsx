@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+
+export const metadata: Metadata = {
+  title: "Aviso de Privacidad",
+  description: "Aviso de Privacidad del Centro de Estudios Avanzados en Salud (CEAS). Conoce cómo protegemos y tratamos tus datos personales.",
+  openGraph: {
+    title: "Aviso de Privacidad | CEAS",
+    description: "Aviso de Privacidad del Centro de Estudios Avanzados en Salud (CEAS). Conoce cómo protegemos y tratamos tus datos personales.",
+  },
+};
 
 export default function PrivacidadPage() {
     return (
@@ -9,7 +19,7 @@ export default function PrivacidadPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Privacidad Background"
+                        alt="Instalaciones del Centro de Estudios Avanzados en Salud CEAS"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority

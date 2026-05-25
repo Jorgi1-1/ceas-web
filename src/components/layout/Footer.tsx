@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail, Award } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail, Award } from "lucide-react";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+);
 
 export default function Footer() {
     return (
@@ -71,14 +77,14 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h3 className="font-poppins text-[16px] font-bold uppercase tracking-[0.5px] mb-2">Síguenos</h3>
                         <div className="flex gap-4 mb-6">
-                            <a href="https://www.facebook.com/ifpceas" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:-translate-y-1 transition-all">
+                            <a href="https://www.facebook.com/ifpceas" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:-translate-y-1 transition-all">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all">
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all">
                                 <Instagram className="w-5 h-5" />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#FF0000] hover:-translate-y-1 transition-all">
-                                <Youtube className="w-5 h-5" />
+                            <a href="https://www.tiktok.com/@ceas_puebla" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-black hover:-translate-y-1 transition-all">
+                                <TikTokIcon className="w-5 h-5" />
                             </a>
                         </div>
                         <div className="mt-auto opacity-90 hover:opacity-100 transition-opacity">

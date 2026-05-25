@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Blog y Artículos de Salud",
+  description: "Aprende sobre técnicas de quiroterapia, masajes, mitos y realidades, y consejos profesionales de salud en nuestro blog oficial de CEAS.",
+  openGraph: {
+    title: "Blog y Artículos de Salud | CEAS",
+    description: "Aprende sobre técnicas de quiroterapia, masajes, mitos y realidades, y consejos profesionales de salud en nuestro blog oficial de CEAS.",
+  },
+};
 
 export default function BlogPage() {
     return (
@@ -11,7 +22,7 @@ export default function BlogPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Blog Background"
+                        alt="Aulas del Centro de Estudios Avanzados en Salud CEAS en Puebla"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
@@ -33,6 +44,8 @@ export default function BlogPage() {
                     <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm"></div>
                 </div>
             </div>
+
+            <Breadcrumbs items={[{ label: "Blog" }]} />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 pb-8">
                 {/* Main Articles Container */}

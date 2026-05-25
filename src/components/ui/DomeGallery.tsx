@@ -794,8 +794,10 @@ export default function DomeGallery({
                     } as React.CSSProperties
                 }
             >
-                <main
+                <div
                     ref={mainRef}
+                    role="region"
+                    aria-label="Galería 3D de imágenes"
                     className="absolute inset-0 grid place-items-center overflow-hidden select-none bg-transparent"
                     style={{
                         touchAction: 'none',
@@ -919,7 +921,7 @@ export default function DomeGallery({
                             }}
                         />
                     </div>
-                </main>
+                </div>
             </div>
         </>
     );

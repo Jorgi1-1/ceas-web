@@ -1,12 +1,40 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import { blogPosts } from "@/data/blog";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 // Type definition for Page props in Next.js 15
 interface BlogPostPageProps {
     params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = blogPosts.find((p) => p.slug === slug);
+    if (!post) return {};
+
+    const formattedDate = post.date.split(".").reverse().join("-");
+
+    return {
+        title: post.title,
+        description: post.excerpt,
+        openGraph: {
+            title: `${post.title} | CEAS`,
+            description: post.excerpt,
+            url: `https://ceas.com.mx/blog/${post.slug}`,
+            type: "article",
+            publishedTime: formattedDate,
+            images: post.imagePath ? [
+                {
+                    url: post.imagePath,
+                    alt: post.title,
+                }
+            ] : undefined,
+        },
+    };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -16,6 +44,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     if (!post) {
         notFound();
     }
+
+    const blogJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "datePublished": post.date.split(".").reverse().join("-"),
+        "image": post.imagePath ? `https://ceas.com.mx${post.imagePath}` : undefined,
+        "author": {
+            "@type": "Organization",
+            "name": "CEAS"
+        },
+        "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "CEAS - Centro de Estudios Avanzados en Salud",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ceas.com.mx/icon.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://ceas.com.mx/blog/${post.slug}`
+        }
+    };
 
     // Determine if we should show a large hero image or just a simple header
     // We use the imagePath if it exists, otherwise a generic fallback or just color
@@ -38,6 +91,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     return (
         <div className="flex flex-col min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+            />
             {/* Minimalist Hero Section */}
             <div className="relative w-full h-[50vh] min-h-[400px] flex items-end pb-12 overflow-hidden bg-gray-900">
                 <div className="absolute inset-0 z-0 opacity-60">
@@ -74,6 +131,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     </div>
                 </div>
             </div>
+
+            <Breadcrumbs
+                items={[
+                    { label: "Blog", href: "/blog" },
+                    { label: post.title }
+                ]}
+            />
 
             {/* Main Content Area */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow relative scroll-animate">

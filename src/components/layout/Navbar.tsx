@@ -35,7 +35,7 @@ export default function Navbar() {
                 }`}>
                 <div className={`flex justify-between items-center transition-all duration-500 px-4 md:px-8 ${scrolled ? "h-16 md:h-16" : "h-20 md:h-[4.5rem]"}`}>
                     <div className="flex items-center">
-                        <Link href="/" className="flex-shrink-0 flex items-center h-full py-2">
+                        <Link href="/" aria-label="Página de inicio CEAS" className="flex-shrink-0 flex items-center h-full py-2">
                             <Image
                                 src="/CEAS LOGO 2.png"
                                 alt="CEAS Logo"
@@ -96,14 +96,17 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button */}
                     <div className="flex items-center md:hidden">
-                        <div
+                        <button
+                            type="button"
                             className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Abrir menú de navegación"
+                            aria-expanded={isMobileMenuOpen}
                         >
                             <span></span>
                             <span></span>
                             <span></span>
-                        </div>
+                        </button>
                     </div>
                 </div>
 
@@ -147,13 +150,13 @@ export default function Navbar() {
                                 </div>
                             </div>
 
-                            <Link
+                            {/* <Link
                                 href="/testimonios"
                                 className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Testimonios
-                            </Link>
+                            </Link> */}
 
                             <Link
                                 href="/faq"

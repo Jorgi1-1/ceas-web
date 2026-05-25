@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import DomeGallery from "@/components/ui/DomeGallery";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Galería de Instalaciones",
+  description: "Explora la fotogalería del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Conoce nuestras aulas, áreas de prácticas y comunidad.",
+  openGraph: {
+    title: "Galería de Instalaciones | CEAS",
+    description: "Explora la fotogalería del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Conoce nuestras aulas, áreas de prácticas y comunidad.",
+  },
+};
 
 const localImages = [
     { src: "/HABILITACION.JPG", alt: "Habilitación" },
@@ -25,7 +36,7 @@ export default function FotogaleriaPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Fotogalería Background"
+                        alt="Aulas del Centro de Estudios Avanzados en Salud CEAS para prácticas de quiroterapia"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
@@ -47,6 +58,8 @@ export default function FotogaleriaPage() {
                     <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm"></div>
                 </div>
             </div>
+
+            <Breadcrumbs items={[{ label: "Galería" }]} />
 
             {/* Main Content Centered - Dome Gallery */}
             <div className="w-full flex-grow flex flex-col relative z-0 bg-white scroll-animate">

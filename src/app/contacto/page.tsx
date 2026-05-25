@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { courses } from "@/data/courses";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -62,7 +63,7 @@ export default function ContactoPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Contacto Background"
+                        alt="Instalaciones del Centro de Estudios Avanzados en Salud CEAS para informes e inscripciones"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
@@ -87,6 +88,8 @@ export default function ContactoPage() {
                     </p>
                 </div>
             </div>
+
+            <Breadcrumbs items={[{ label: "Contacto" }]} />
 
             {/* Main Content Premium Split Layout */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 pb-20 w-full flex-grow">
@@ -294,6 +297,22 @@ export default function ContactoPage() {
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+
+            {/* Google Maps Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full scroll-animate">
+                <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 p-2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.3396349383637!2d-98.21626352422002!3d19.026759753696803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc1aed586fb9f%3A0x3199ca59c3a98993!2sCEAS!5e0!3m2!1ses-419!2smx!4v1716616000000!5m2!1ses-419!2smx"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0, borderRadius: "1rem" }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Ubicación de CEAS en Google Maps"
+                    ></iframe>
                 </div>
             </div>
         </div>

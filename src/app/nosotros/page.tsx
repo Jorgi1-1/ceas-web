@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Target, Eye, Award, CheckCircle2 } from "lucide-react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Quiénes Somos",
+  description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Formamos terapeutas éticos, conscientes y profesionales.",
+  openGraph: {
+    title: "Quiénes Somos | CEAS",
+    description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Formamos terapeutas éticos, conscientes y profesionales.",
+  },
+};
 
 export default function SobreNosotrosPage() {
     return (
@@ -11,7 +22,7 @@ export default function SobreNosotrosPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Sobre Nosotros Background"
+                        alt="Instalaciones del centro de formación de terapeutas CEAS en Puebla"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
@@ -33,6 +44,8 @@ export default function SobreNosotrosPage() {
                     <div className="h-1.5 w-24 bg-secondary rounded-full shadow-sm"></div>
                 </div>
             </div>
+
+            <Breadcrumbs items={[{ label: "Sobre Nosotros" }]} />
 
             {/* Main Content */}
             <div className="w-full flex-grow flex flex-col items-center">
@@ -58,7 +71,7 @@ export default function SobreNosotrosPage() {
                     <div className="md:w-1/2 w-full h-[500px] relative rounded-2xl overflow-hidden shadow-2xl group border-4 border-white">
                         <Image
                             src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop"
-                            alt="Especialista"
+                            alt="Médico especialista docente de CEAS impartiendo clases de anatomía clínica"
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />

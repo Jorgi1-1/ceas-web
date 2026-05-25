@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export interface BlogPost {
     id: string;
@@ -32,7 +33,7 @@ export const blogPosts: BlogPost[] = [
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es la quiropráctica?</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">Por lo general, la quiroterapia engloba el conjunto de las prácticas que se realizan para la sanación del cuerpo. Así, dentro encontramos la quiropráctica, que es una profesión del cuidado de la salud que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mecánicos del sistema musculoesquelético, especialmente la columna vertebral.</p>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">Por lo general, la quiroterapia engloba el conjunto de las prácticas que se realizan para la sanación del cuerpo. Así, dentro encontramos la quiropráctica (puedes especializarte en esto en nuestro <Link href="/oferta-academica/quiroterapia-integral" className="text-[#0098D4] hover:underline font-semibold">Diplomado en Quiroterapia Integral</Link>), que es una profesión del cuidado de la salud que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mecánicos del sistema musculoesquelético, especialmente la columna vertebral.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">De hecho, la quiropráctica es una forma de medicina alternativa que fue desarrollada en América del Norte a finales del siglo XIX por Daniel David Palmer. De este modo, los quiroprácticos creen que las desalineaciones de la columna (subluxaciones) interfieren con la función nerviosa y causan enfermedades a través de los efectos sobre el sistema nervioso.</p>
 
                 <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es un quiropráctico?</h3>
@@ -86,7 +87,7 @@ export const blogPosts: BlogPost[] = [
         content: (
             <>
                 <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-5 border-l-4 border-[#759CB6] pl-4">Definición</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El síndrome del piramidal o piriforme (SP) es una afección dolorosa del sistema musculoesquelético, caracterizada por una combinación de síntomas que incluyen dolor de glúteos o cadera. En varios artículos, el SP se define como una neuritis periférica de las ramas del nervio ciático causada por una condición anormal del músculo piriforme (PM), como un músculo lesionado o irritado.</p>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El síndrome del piramidal o piriforme (SP) es una afección dolorosa del sistema musculoesquelético, caracterizada por una combinación de síntomas que incluyen dolor de glúteos o cadera. En varios artículos, el SP se define como una neuritis periférica de las ramas del nervio ciático causada por una condición anormal del músculo piriforme (PM), como un músculo lesionado o irritado (aprende a tratar y rehabilitar estas condiciones en nuestro <Link href="/oferta-academica/habilitacion-fisica-funcional" className="text-[#0098D4] hover:underline font-semibold">Diplomado en Habilitación Física Funcional</Link>).</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Frecuentemente se utilizan sinónimos para definir el SP y son: síndrome glúteo profundo, ciática extraespinal, neuritis de la cartera, etc. Hay más mujeres diagnosticadas con SP que hombres, con una proporción de mujeres a hombres de 6:1. Esta relación puede explicarse por el ángulo del músculo cuádriceps femoral más ancho en el hueso coxal de las mujeres.</p>
 
                 <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Relevancia anatómica clínica</h3>
@@ -151,7 +152,7 @@ export const blogPosts: BlogPost[] = [
                             <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">04</span> Los quiroprácticos solo tratan dolores de espalda</h3>
                         </div>
                         <div className="p-6">
-                            <p className="text-gray-600 leading-relaxed text-lg">Los quiroprácticos son expertos en el sistema musculoesquelético y están capacitados para evaluar, diagnosticar, tratar y prevenir los trastornos biomecánicos que se originan en el sistema muscular, esquelético y nervioso. Además de la evidencia que respalda el cuidado quiropráctico en el manejo de las molestias musculoesqueléticas de la columna, también hay evidencia de que respalda el manejo quiropráctico de las extremidades, dolores de cabeza e incluso el dolor de la articulación temporomandibular.</p>
+                            <p className="text-gray-600 leading-relaxed text-lg">Los quiroprácticos son expertos en el sistema musculoesquelético y están capacitados para evaluar, diagnosticar, tratar y prevenir los trastornos biomecánicos (puedes aprender técnicas profesionales de ajuste en nuestro <Link href="/oferta-academica/manipulaciones-vertebrales" className="text-[#0098D4] hover:underline font-semibold">Curso de Manipulaciones Vertebrales Avanzadas</Link>) que se originan en el sistema muscular, esquelético y nervioso. Además de la evidencia que respalda el cuidado quiropráctico en el manejo de las molestias musculoesqueléticas de la columna, también hay evidencia de que respalda el manejo quiropráctico de las extremidades, dolores de cabeza e incluso el dolor de la articulación temporomandibular.</p>
                             <p className="text-gray-600 leading-relaxed text-lg mt-4">Los quiroprácticos también pueden brindar asesoramiento sobre el estilo de vida sobre nutrición, estado físico y ergonomía, entre otros, que pueden ser útiles para controlar o prevenir una variedad de condiciones de salud. La salud de su sistema musculoesquelético no solo comienza con una columna vertebral sana, ¡necesita ser plenamente consciente de su salud para mantener un estilo de vida saludable y completo!</p>
                         </div>
                     </div>

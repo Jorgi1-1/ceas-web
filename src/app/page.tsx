@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, Check, CheckCircle2, Stethoscope, Users, Building, Award, Star } from "lucide-react";
 import { courses } from "@/data/courses";
@@ -5,6 +6,15 @@ import { CourseCard } from "@/components/ui/CourseCard";
 import TrustMetrics from "@/components/ui/TrustMetrics";
 import UrgencyBanner from "@/components/ui/UrgencyBanner";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Escuela de Quiroterapia, Masoterapia y Habilitación Física en Puebla",
+  description: "Aprende masaje, técnicas de quiropráctica, osteopatía y ventosas con el respaldo de un programa diseñado para tu profesionalización y seguridad.",
+  openGraph: {
+    title: "Escuela de Quiroterapia, Masoterapia y Habilitación Física en Puebla",
+    description: "Aprende masaje, técnicas de quiropráctica, osteopatía y ventosas con el respaldo de un programa diseñado para tu profesionalización y seguridad.",
+  },
+};
 
 // WhatsApp Number
 const WA_NUMBER = "522211502725";

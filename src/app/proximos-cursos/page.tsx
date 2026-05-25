@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, ArrowRight, Award, Star, Users } from "lucide-react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Próximos Inicios y Cursos",
+  description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
+  openGraph: {
+    title: "Próximos Inicios y Cursos | CEAS",
+    description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
+  },
+};
 
 const upcomingEvents = [
     {
@@ -64,7 +75,7 @@ export default function ProximosCursosPage() {
                 <div className="absolute inset-0 z-0 bg-black">
                     <Image
                         src="/Sala CEAS.JPG"
-                        alt="Background"
+                        alt="Sala de prácticas con camillas en el Centro de Estudios Avanzados en Salud CEAS en Puebla"
                         fill
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
@@ -89,6 +100,8 @@ export default function ProximosCursosPage() {
                     </p>
                 </div>
             </div>
+
+            <Breadcrumbs items={[{ label: "Próximos Inicios" }]} />
 
             {/* ═══════════════════════════════════════════════════════════════
                 COURSE CARDS — Mirroring SidebarUrgency design language
