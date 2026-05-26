@@ -8,6 +8,7 @@ import CurriculumAccordion from "@/components/ui/CurriculumAccordion";
 import SidebarUrgency from "@/components/ui/SidebarUrgency";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CourseCard } from "@/components/ui/CourseCard";
+import { siteConfig } from "@/config/site";
 
 interface CoursePageProps {
     params: Promise<{
@@ -305,7 +306,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
                     {/* Trust signals */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-x-8 gap-y-3 text-[13px] text-[#64748b] font-medium">
-                        <span className="flex items-center"><Calendar className="w-4 h-4 text-[#0098D4] mr-2" /> Próximo inicio: 15 de Junio</span>
+                        <span className="flex items-center"><Calendar className="w-4 h-4 text-[#0098D4] mr-2" /> Próximo inicio: {siteConfig.urgency.nextStartDate}</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>
                         <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#0098D4] mr-2" /> Espacios limitados</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>

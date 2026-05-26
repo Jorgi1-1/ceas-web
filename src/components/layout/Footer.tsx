@@ -80,7 +80,7 @@ export default function Footer() {
                             <a href="https://www.facebook.com/ifpceas" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] hover:-translate-y-1 transition-all">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all">
+                            <a href="https://www.instagram.com/ceaspuebla" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E1306C] hover:-translate-y-1 transition-all">
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a href="https://www.tiktok.com/@ceas_puebla" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-black hover:-translate-y-1 transition-all">

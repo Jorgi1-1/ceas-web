@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Calendar, Clock, User, ArrowRight, Target, Star, Award } from "lucide-react";
 import type { Course } from "@/data/courses";
+import { siteConfig } from "@/config/site";
 
 interface SidebarUrgencyProps {
     course: Course;
@@ -15,6 +16,9 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    const { availableSpots, totalSpots, discountPercentage } = siteConfig.urgency;
+    const progressPercentage = ((totalSpots - availableSpots) / totalSpots) * 100;
 
     return (
         <div className="rounded-3xl border border-[rgba(0,0,0,0.06)] bg-white/70 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] overflow-hidden">
@@ -87,11 +91,11 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 <div className="border border-[rgba(0,0,0,0.06)] rounded-xl p-4 space-y-3 bg-[#fefefe]">
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
                         <Target className="w-4 h-4 text-[#0098D4] mr-2 shrink-0" />
-                        Solo <strong className="mx-1">2 espacios</strong> disponibles
+                        Solo <strong className="mx-1">{availableSpots} espacios</strong> disponibles
                     </div>
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
                         <Star className="w-4 h-4 text-[#0098D4] mr-2 shrink-0 fill-[#0098D4]" />
-                        25% de descuento hasta el cierre
+                        {discountPercentage}% de descuento hasta el cierre
                     </div>
 
                     {/* Progress bar */}
@@ -99,11 +103,11 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                         {mounted && (
                             <div
                                 className="h-full bg-gradient-to-r from-[#0098D4] to-[#00b4d8] rounded-full progress-fill"
-                                style={{ "--progress-width": "80%" } as React.CSSProperties}
+                                style={{ "--progress-width": `${progressPercentage}%` } as React.CSSProperties}
                             ></div>
                         )}
                     </div>
-                    <p className="text-[11px] text-[#94a3b8] text-right">8 de 10 espacios ocupados</p>
+                    <p className="text-[11px] text-[#94a3b8] text-right">{totalSpots - availableSpots} de {totalSpots} espacios ocupados</p>
                 </div>
 
                 {/* ── CTAs ── */}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Calendar, Clock, MapPin, ArrowRight, Award, Star, Users } from "lucide-react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Próximos Inicios y Cursos",
@@ -13,49 +14,6 @@ export const metadata: Metadata = {
     description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
   },
 };
-
-const upcomingEvents = [
-    {
-        id: "quiroterapia",
-        title: "Formación integral en Quiroterapia",
-        dates: [
-            "Jueves 16 de Abril",
-            "Sábado 2 de Mayo"
-        ],
-        duration: "22 meses",
-        frequency: "Clases 1 día a la semana",
-        schedule: "9:00 am a 3:00 pm",
-        modality: "Presencial",
-        imagePath: "/QUIROTERAPIAA.jpg",
-        courseLink: "/oferta-academica/quiroterapia-integral"
-    },
-    {
-        id: "manipulaciones",
-        title: "Manipulaciones Vertebrales Avanzadas",
-        dates: [
-            "Sábado 2 de Mayo"
-        ],
-        duration: "8 meses",
-        frequency: "Clases 1 día a la semana",
-        schedule: "9:30 am a 2:30 pm",
-        modality: "Presencial",
-        imagePath: "/MANIPULACION VERT.jpg",
-        courseLink: "/oferta-academica/manipulaciones-vertebrales"
-    },
-    {
-        id: "spa",
-        title: "Diplomado SPA",
-        dates: [
-            "Miércoles 29 de Abril"
-        ],
-        duration: "9 meses",
-        frequency: "Clases 1 día a la semana",
-        schedule: "10:00 am a 2:30 pm",
-        modality: "Presencial",
-        imagePath: "/MASAJE.png",
-        courseLink: "/oferta-academica/terapeuta-spa"
-    }
-];
 
 const galleryImages = [
     { src: "/HABILITACION.JPG", alt: "Práctica de Habilitación Física" },
@@ -124,7 +82,7 @@ export default function ProximosCursosPage() {
 
                     {/* Cards grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {upcomingEvents.map((event) => (
+                        {siteConfig.upcomingEvents.map((event) => (
                             <div
                                 key={event.id}
                                 className="rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex flex-col scroll-animate"
@@ -242,7 +200,7 @@ export default function ProximosCursosPage() {
 
                     <div className="inline-block bg-[#0098D4]/5 border border-[#0098D4]/15 rounded-xl px-8 py-6 mb-10">
                         <p className="text-xl md:text-2xl text-[#0f172a] font-bold mb-1">
-                            25% de beca en colegiatura
+                            {siteConfig.urgency.discountPercentage}% de beca en colegiatura
                         </p>
                         <p className="text-[15px] text-[#64748b] font-normal">
                             en cursos mayores a 8 meses de duración
