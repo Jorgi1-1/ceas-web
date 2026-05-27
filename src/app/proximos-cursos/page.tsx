@@ -73,7 +73,7 @@ export default function ProximosCursosPage() {
                             Calendario Académico
                         </span>
                         <h2 className="text-[28px] md:text-[36px] font-extrabold text-[#0f172a] tracking-[-0.02em] mb-4">
-                            Fechas de Próximo Inicio
+                            Fechas de Próximos Inicios
                         </h2>
                         <p className="text-[15px] md:text-[16px] text-[#64748b] leading-relaxed">
                             Consulta las opciones disponibles y elige el programa que impulse tu carrera.

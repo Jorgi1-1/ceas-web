@@ -130,7 +130,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 </Link>
 
                 <p className="text-center text-[12px] text-[#94a3b8] leading-relaxed px-2">
-                    Un asesor educativo se pondrá en contacto contigo dentro de 24h.
+                    Un asesor educativo se pondrá en contacto contigo en menos de 24 horas.
                 </p>
             </div>
         </div>

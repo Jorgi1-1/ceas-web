@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
         id: "mitos",
         title: "Los 5 mitos más comunes sobre el tratamiento quiropráctico",
         date: "12.02.2021",
-        excerpt: "Muchas personas siguen teniendo preguntas sobre el papel que desempeñan los quiroprácticos en el cuidado de la salud, y los beneficios que los tratamientos quiroprácticos tendrán en su salud. siempre tendrás la oportunidad de consultar un quiropráctico cerca de ti y platicar a cerca de tus necesidades específicas, hoy nos corresponde hablar de los...",
+        excerpt: "Muchas personas siguen teniendo preguntas sobre el papel que desempeñan los quiroprácticos en el cuidado de la salud, y los beneficios que los tratamientos quiroprácticos tendrán en su salud. Siempre tendrás la oportunidad de consultar un quiropráctico cerca de ti y platicar acerca de tus necesidades específicas, hoy nos corresponde hablar de los...",
         imagePath: "/PIERNA.JPG",
         slug: "5-mitos-tratamiento-quiropractico",
         content: (
@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
                             <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">02</span> Una vez que te atendió un quiropráctico deberás seguirlo viendo siempre.</h3>
                         </div>
                         <div className="p-6">
-                            <p className="text-gray-600 leading-relaxed text-lg"><strong className="text-gray-800">Esto es falso.</strong> Cuando busques atención quiropráctica, se te realizará una evaluación que incluye un historial y un examen físico para determinar la causa de el dolor o disfunción. A partir de estas observaciones, se realizará un diagnóstico y se desarrollará el plan de tratamiento en colaboración con el paciente, de acuerdo a sus propias necesidades y objetivos.</p>
+                            <p className="text-gray-600 leading-relaxed text-lg"><strong className="text-gray-800">Esto es falso.</strong> Cuando busques atención quiropráctica, se te realizará una evaluación que incluye un historial y un examen físico para determinar la causa del dolor o disfunción. A partir de estas observaciones, se realizará un diagnóstico y se desarrollará el plan de tratamiento en colaboración con el paciente, de acuerdo a sus propias necesidades y objetivos.</p>
                             <p className="text-gray-600 leading-relaxed text-lg mt-4">Según el paciente y su padecimiento, el curso de atención puede variar. El plan de tratamiento inicial recomendará una serie de visitas para ver si el paciente responde adecuadamente al tratamiento. Como paciente, si se tienen dudas o preguntas sobre el tratamiento, debe sentirse cómodo para pedirle al quiropráctico toda la información que necesite sobre las recomendaciones hechas y abordar cualquier inquietud.</p>
                         </div>
                     </div>
@@ -149,17 +149,17 @@ export const blogPosts: BlogPost[] = [
 
                     <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
                         <div className="bg-[#759CB6] px-6 py-4 text-white">
-                            <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">04</span> Los quiroprácticos solo tratan dolores de espalda</h3>
+                            <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">04</span> Los quiroprácticos solo tratan dolores de espalda.</h3>
                         </div>
                         <div className="p-6">
-                            <p className="text-gray-600 leading-relaxed text-lg">Los quiroprácticos son expertos en el sistema musculoesquelético y están capacitados para evaluar, diagnosticar, tratar y prevenir los trastornos biomecánicos (puedes aprender técnicas profesionales de ajuste en nuestro <Link href="/oferta-academica/manipulaciones-vertebrales" className="text-[#0098D4] hover:underline font-semibold">Curso de Manipulaciones Vertebrales Avanzadas</Link>) que se originan en el sistema muscular, esquelético y nervioso. Además de la evidencia que respalda el cuidado quiropráctico en el manejo de las molestias musculoesqueléticas de la columna, también hay evidencia de que respalda el manejo quiropráctico de las extremidades, dolores de cabeza e incluso el dolor de la articulación temporomandibular.</p>
+                            <p className="text-gray-600 leading-relaxed text-lg">Los quiroprácticos son expertos en el sistema musculoesquelético y están capacitados para evaluar, diagnosticar, tratar y prevenir los trastornos biomecánicos (puedes aprender técnicas profesionales de ajuste en nuestro <Link href="/oferta-academica/manipulaciones-vertebrales" className="text-[#0098D4] hover:underline font-semibold">Curso de Manipulaciones Vertebrales Avanzadas</Link>) que se originan en el sistema muscular, esquelético y nervioso. Además de la evidencia que respalda el cuidado quiropráctico en el manejo de las molestias musculoesqueléticas de la columna, también hay evidencia que respalda el manejo quiropráctico de las extremidades, dolores de cabeza e incluso el dolor de la articulación temporomandibular.</p>
                             <p className="text-gray-600 leading-relaxed text-lg mt-4">Los quiroprácticos también pueden brindar asesoramiento sobre el estilo de vida sobre nutrición, estado físico y ergonomía, entre otros, que pueden ser útiles para controlar o prevenir una variedad de condiciones de salud. La salud de su sistema musculoesquelético no solo comienza con una columna vertebral sana, ¡necesita ser plenamente consciente de su salud para mantener un estilo de vida saludable y completo!</p>
                         </div>
                     </div>
 
                     <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
                         <div className="bg-[#759CB6] px-6 py-4 text-white">
-                            <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">05</span> No existe evidencia que respalde la efectividad del tratamiento quiropráctico</h3>
+                            <h3 className="text-xl font-bold flex items-center"><span className="text-3xl font-black text-white/30 mr-3 block">05</span> No existe evidencia que respalde la efectividad del tratamiento quiropráctico.</h3>
                         </div>
                         <div className="p-6">
                             <p className="text-gray-600 leading-relaxed text-lg">El tratamiento quiropráctico a veces se cuestiona sobre su efectividad. Sin embargo, la profesión quiropráctica y otros han invertido importantes recursos para construir un sólido cuerpo de evidencia que estudie el impacto de las terapias manuales en las afecciones musculoesqueléticas.</p>

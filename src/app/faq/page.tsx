@@ -22,7 +22,7 @@ const jsonLd = {
       "name": "¿Qué es quiroterapia integral?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La quiroterapia integral es una disciplina terapéutica manual que combina técnicas como hidroterapia, masaje, manipulaciones articulares quiroprácticas, osteopatía, y rehabilitación física para ayudar a disminuir el dolor, mejorar la movilidad y restaurar el equilibrio funcional del cuerpo de forma natural y no invasiva."
+        "text": "La quiroterapia integral es una disciplina terapéutica manual que combina técnicas como hidroterapia, masaje, manipulaciones articulares quiroprácticas, osteopatía y rehabilitación física para ayudar a disminuir el dolor, mejorar la movilidad y restaurar el equilibrio funcional del cuerpo de forma natural y no invasiva."
       }
     },
     {
@@ -30,7 +30,7 @@ const jsonLd = {
       "name": "¿Necesito experiencia previa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No se requiere experiencia previa, al ser una formación integral, nosotros te capacitamos con los conocimientos necesarios desde lo más básico hasta lo especializado para poder dar atención a los problemas musculares, articulares, ligamentosos, causados por lesiones deportivas o laborales."
+        "text": "No se requiere experiencia previa. Al ser una formación integral, nosotros te capacitamos con los conocimientos necesarios, desde lo más básico hasta lo especializado, para poder dar atención a los problemas musculares, articulares y ligamentosos causados por lesiones deportivas o laborales."
       }
     },
     {
@@ -46,7 +46,7 @@ const jsonLd = {
       "name": "¿Puedo cambiar de programa si comienzo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí puedes cambiar a otro curso, pero probablemente tengas que iniciar desde que comienza el nuevo curso debiendo cubrir las colegiaturas que correspondan al nuevo programa que elijas."
+        "text": "Sí, puedes cambiar a otro curso, pero probablemente tengas que iniciar desde el principio del nuevo ciclo, cubriendo las colegiaturas correspondientes al nuevo programa que elijas."
       }
     },
     {
@@ -54,7 +54,7 @@ const jsonLd = {
       "name": "¿Puedo estudiar a mi ritmo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Las clases son presenciales y un día a la semana en un horario establecido, por lo que se recomienda que el resto de los días en la semana repases lo visto en clase presencial."
+        "text": "Las clases son presenciales y un día a la semana en un horario establecido, por lo que se recomienda que el resto de los días de la semana repases lo visto en la clase presencial."
       }
     },
     {
@@ -62,7 +62,7 @@ const jsonLd = {
       "name": "¿Tienen becas o descuentos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí contamos con becas que son parte del programa de la SEP además de descuentos preferenciales a los primeros que se inscriban a cada curso."
+        "text": "Sí, contamos con becas que son parte del programa de la SEP, además de descuentos preferenciales a los primeros que se inscriban a cada curso."
       }
     },
     {
@@ -70,7 +70,7 @@ const jsonLd = {
       "name": "¿Qué oportunidades laborales tengo al egresar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedes laborar principalmente de manera independiente estableciendo tu propio centro de terapias manuales naturales, también puedes trabajar en centros deportivos, equipos deportivos, o como auxiliar en algunas clínicas de terapia física, así como establecer convenios con médicos que requieran referir a sus pacientes para alguna terapia de recuperación."
+        "text": "Puedes laborar principalmente de manera independiente, estableciendo tu propio centro de terapias manuales naturales. También puedes trabajar en centros deportivos, equipos deportivos, o como auxiliar en clínicas de terapia física, así como establecer convenios con médicos que requieran referir a sus pacientes para alguna terapia de recuperación."
       }
     },
     {
@@ -78,7 +78,7 @@ const jsonLd = {
       "name": "¿Es válido el certificado a nivel nacional?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestros cursos de Habilitación física funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son reconocidos por SEP, por lo que el certificado obtenido sí es válido a nivel nacional."
+        "text": "Nuestros cursos de Habilitación Física Funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son reconocidos por la SEP, por lo que el certificado obtenido sí es válido a nivel nacional."
       }
     },
     {
@@ -86,7 +86,7 @@ const jsonLd = {
       "name": "¿El diploma es avalado por SEP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestros cursos de Habilitación física funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son avalados por SEP. Otros cursos pueden estar avalados por la Federación mundial de masaje (WMF) o por CONOCER-SEP."
+        "text": "Nuestros cursos de Habilitación Física Funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son avalados por la SEP. Otros cursos pueden estar avalados por la Federación Mundial de Masaje (WMF) o por CONOCER-SEP."
       }
     },
     {

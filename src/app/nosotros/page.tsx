@@ -56,8 +56,8 @@ export default function SobreNosotrosPage() {
                         <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Quiénes Somos</h2>
                         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">Expertos formadores en el área de la salud alternativa</h3>
                         <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
-                            Somos un centro de capacitación con registro en la DGCFT dirección general de centros de formación
-                            para el trabajo, que brinda capacitación en las distintas áreas de la quiroterapia.
+                            Somos un centro de capacitación con registro en la DGCFT, Dirección General de Centros de Formación
+                            para el Trabajo, que brinda capacitación en las distintas áreas de la quiroterapia.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
                             Abarcamos diversas formas de masaje, medios físicos naturales, técnicas de manipulación vertebral y de extremidades, con
@@ -168,7 +168,7 @@ export default function SobreNosotrosPage() {
                                 'Formar profesionales con alto sentido humano y ético que desde su profesión tengan la capacidad de participar activamente en la solución de problemas de salud.',
                                 'Brindar una sólida preparación académica que promueva la formación de criterios y toma de decisiones que les permita el logro de la excelencia en su desempeño profesional.',
                                 'Promover la investigación para que contribuya a los avances de la ciencia y tecnología universal y aporte al conocimiento propio de la profesión.',
-                                'Crear una actitud positiva hacia el trabajo multidisciplinario, la auto-formación y la permanente educación.'
+                                'Crear una actitud positiva hacia el trabajo multidisciplinario, la autoformación y la permanente educación.'
                             ].map((obj, i) => (
                                 <div key={i} className="bg-bg-light rounded-xl p-8 hover:bg-primary/5 transition-colors duration-300 border border-transparent hover:border-primary/10 flex">
                                     <div className="text-3xl font-black text-primary/20 mr-4 font-heading">0{i + 1}</div>

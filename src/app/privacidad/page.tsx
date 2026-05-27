@@ -51,11 +51,11 @@ export default function PrivacidadPage() {
                     </h2>
 
                     <p>
-                        Con Fundamento en los artículos 15 y 16 y demás aplicables en la Ley Federal de Protección de Datos Personales en Posesión de Particulares hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Privada 5 B Sur #4718 Col. Huexotitla, Puebla, Pue., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
+                        Con fundamento en los artículos 15 y 16 y demás aplicables de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, hacemos de su conocimiento que el Centro de Estudios Avanzados en Salud, a través de su representante legal y colaboradores, con domicilio en Privada 5 B Sur #4718 Col. Huexotitla, Puebla, Pue., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.
                     </p>
 
                     <p>
-                        Su información personal será utilizada para proveer los servicios e información que ha solicitado, comunicarle sobre cambios de estos y evaluar la calidad del servicio que le brinda.
+                        Su información personal será utilizada para proveer los servicios e información que ha solicitado, comunicarle sobre cambios en estos y evaluar la calidad del servicio que le brinda.
                     </p>
 
                     <p>
@@ -83,7 +83,7 @@ export default function PrivacidadPage() {
                     </ul>
 
                     <p>
-                        Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente. Todos sus datos personales son tratados de acuerdo con la legislación aplicable y vigente en el país, por ello le informamos que usted tiene en todo momento los derechos (ARCO) de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales; derecho que podrá hacer valer a través del Teléfono (222) 237-3407 o correo electrónico contacto@ceas.com.mx
+                        Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente. Todos sus datos personales son tratados de acuerdo con la legislación aplicable y vigente en el país; por ello, le informamos que usted tiene en todo momento los derechos (ARCO) de acceder, rectificar, cancelar u oponerse al tratamiento que le damos a sus datos personales, derecho que podrá hacer valer a través del teléfono (222) 237-3407 o al correo electrónico contacto@ceas.com.mx.
                     </p>
 
                     <p>

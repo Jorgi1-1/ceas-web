@@ -23,7 +23,7 @@ const formSchema = z.object({
     email: z.string().email({ message: "Por favor, ingresa un correo electrónico válido." }),
     mensaje: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
     whatsapp: z.string().min(10, { message: "El número de WhatsApp es requerido." }),
-    opcion: z.string().min(1, { message: "Por favor elige una opción." })
+    opcion: z.string().min(1, { message: "Por favor, elige una opción." })
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -154,9 +154,9 @@ export default function ContactoPage() {
                                     <div className="pt-1">
                                         <h3 className="font-semibold text-lg mb-1">Horarios</h3>
                                         <div className="text-white/80 text-sm space-y-1">
-                                            <p>Lun - Vie: 9:00 am - 5:30 pm</p>
-                                            <p>Sábados: 9:00 am a 2:30 pm</p>
-                                            <p><span className="font-bold text-white bg-white/20 px-2 py-0.5 rounded text-xs mt-1 inline-block">Domingos Cerrado</span></p>
+                                             <p>Lun - Vie: 9:00 am - 5:30 pm</p>
+                                             <p>Sábados: 9:00 am - 2:30 pm</p>
+                                             <p><span className="font-bold text-white bg-white/20 px-2 py-0.5 rounded text-xs mt-1 inline-block">Domingos: Cerrado</span></p>
                                         </div>
                                     </div>
                                 </li>

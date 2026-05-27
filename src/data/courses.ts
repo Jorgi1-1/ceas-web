@@ -23,14 +23,14 @@ export const courses: Course[] = [
         id: "3",
         slug: "habilitacion-fisica-funcional",
         title: "Habilitación Física Funcional",
-        shortDescription: "Programa profesional de estudios alineado a normas de copmetencia laboral para el tratamiento físico y la rehabilitación.",
+        shortDescription: "Programa profesional de estudios alineado a normas de competencia laboral para el tratamiento físico y la rehabilitación.",
         duration: "15 meses",
         frequency: "Clases un día a la semana",
         badge: "Avalado por la SEP",
         rvoe: "RVOE Acuerdo 16FT184 07/06/2016",
         themeColor: "#84a5c0",
         imagePath: "/HABILITACION.JPG",
-        description: "Habolitación Física Funcional es un programa de capacitación profesional diseñado para enseñar a preparar, ejecutar y evaluar planes de terapia física y rehabilitación. Bajo un enfoque de calidez humana, el alumno apernde desde la toma de signos vitales e historia clínica, hasta la aplicación de masajes, agentes físicos, ejercicios terapéuticos y manipulaciones articulares. El curso está alienado a las Normas Técnicas de Competencia Laboral, lo que garantiza una formación oficial y de alta demanda. Su objetivo principal es devolver la independencia funcional a las personas mediante técnicas seguras y la adaptación de su entorno.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
+        description: "Habilitación Física Funcional es un programa de capacitación profesional diseñado para enseñar a preparar, ejecutar y evaluar planes de terapia física y rehabilitación. Bajo un enfoque de calidez humana, el alumno aprende desde la toma de signos vitales e historia clínica, hasta la aplicación de masajes, agentes físicos, ejercicios terapéuticos y manipulaciones articulares. El curso está alineado a las Normas Técnicas de Competencia Laboral, lo que garantiza una formación oficial y de alta demanda. Su objetivo principal es devolver la independencia funcional a las personas mediante técnicas seguras y la adaptación de su entorno.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
         curriculum: [
             {
                 name: "Periodo 1",
@@ -173,7 +173,7 @@ export const courses: Course[] = [
         rvoe: "RVOE Acuerdo 17FT403 29/08/2016",
         themeColor: "#9ea7d1",
         imagePath: "/MASAJE.png",
-        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Aval avalado por la SEP** al terminar tus estudios.",
+        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Reconocimiento avalado por la SEP** al terminar tus estudios.",
         curriculum: [
             {
                 name: "Módulo 1",

@@ -45,7 +45,7 @@ export default function Footer() {
                             <div>
                                 <p className="text-[14px] mb-1">Ubicación</p>
                                 <span className="text-white font-medium text-[14px] leading-relaxed block max-w-[250px]">
-                                    Privada 5 B Sur #4718 col. Huexotitla, Puebla, Pue.
+                                    Privada 5 B Sur #4718 Col. Huexotitla, Puebla, Pue.
                                 </span>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                                 <span className="w-1.5 h-1.5 bg-[#0098D4] rounded-full"></span> Sobre Nosotros
                             </Link>
                             <Link href="/privacidad" className="text-[14px] text-[#CCCCCC] hover:text-[#0098D4] hover:translate-x-1 transition-all flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-[#0098D4] rounded-full"></span> Política de privacidad
+                                <span className="w-1.5 h-1.5 bg-[#0098D4] rounded-full"></span> Aviso de Privacidad
                             </Link>
                         </nav>
                     </div>
