@@ -11,8 +11,13 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+// Initialize Firebase only if we have an API key (prevents crash during Vercel build)
+const app = getApps().length > 0 ? getApp() : (
+    process.env.NEXT_PUBLIC_FIREBASE_API_KEY 
+        ? initializeApp(firebaseConfig) 
+        : initializeApp({ ...firebaseConfig, apiKey: "dummy-key", projectId: "dummy-project" })
+);
+
 const auth = getAuth(app);
 const db = getFirestore(app);
 

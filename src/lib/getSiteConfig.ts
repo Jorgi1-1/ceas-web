@@ -2,10 +2,14 @@ import { siteConfig as fallbackConfig } from "@/config/site";
 
 export async function getSiteConfig() {
     try {
+        if (!process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID) {
+            return fallbackConfig;
+        }
+
         const res = await fetch(
             `https://firestore.googleapis.com/v1/projects/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/databases/(default)/documents/config/siteConfig`,
             { 
-                cache: "no-store" // Fix: Next.js cacheaba los resultados, forzamos a traer siempre la versión más reciente
+                next: { revalidate: 10 } // Cacheamos por 10 segundos para no romper las páginas estáticas de Next.js (SSG)
             }
         );
         
