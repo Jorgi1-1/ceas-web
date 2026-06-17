@@ -8,11 +8,11 @@ import UrgencyBanner from "@/components/ui/UrgencyBanner";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Escuela de Quiroterapia, Masoterapia y Habilitación Física en Puebla",
-  description: "Aprende masaje, técnicas de quiropráctica, osteopatía y ventosas con el respaldo de un programa diseñado para tu profesionalización y seguridad.",
+  title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
+  description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, técnicas de quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
   openGraph: {
-    title: "Escuela de Quiroterapia, Masoterapia y Habilitación Física en Puebla",
-    description: "Aprende masaje, técnicas de quiropráctica, osteopatía y ventosas con el respaldo de un programa diseñado para tu profesionalización y seguridad.",
+    title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
+    description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, técnicas de quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
   },
 };
 
@@ -61,7 +61,7 @@ export default function Home() {
 
             {/* Subheadline */}
             <p className="text-[#E0E0E0] text-[16px] md:text-[18px] leading-[1.5] mb-8 hero__subheadline font-light">
-              Especialízate como Profesional en Salud Natural
+              La escuela de masajes y quiroterapia líder en Puebla. Especialízate como profesional y estudia masoterapia de alto nivel.
             </p>
 
             {/* Bullets */}

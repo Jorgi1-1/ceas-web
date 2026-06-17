@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     "habilitación física funcional",
     "diplomado quiroterapia",
     "curso masaje puebla",
+    "diplomado de masajes puebla",
+    "escuela de masajes en puebla",
+    "diplomado spa puebla",
+    "aprender masoterapia puebla",
     "CEAS Puebla"
   ],
   authors: [{ name: "CEAS" }],

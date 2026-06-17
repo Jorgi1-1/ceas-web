@@ -165,15 +165,15 @@ export const courses: Course[] = [
     {
         id: "2",
         slug: "terapeuta-spa",
-        title: "Terapeuta SPA",
-        shortDescription: "Aplicación de Aceites Esenciales con Técnicas de Masaje.",
+        title: "Diplomado en Masajes y Terapeuta SPA",
+        shortDescription: "Aprende masoterapia profunda y aplicación de aceites esenciales en nuestro diplomado de masajes en Puebla.",
         duration: "9 meses",
         frequency: "Clases un día a la semana",
         badge: "Incorporado a la SEP",
         rvoe: "RVOE Acuerdo 17FT403 29/08/2016",
         themeColor: "#9ea7d1",
         imagePath: "/MASAJE.png",
-        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Reconocimiento avalado por la SEP** al terminar tus estudios.",
+        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia en el mejor **diplomado de masajes en Puebla**. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la masoterapia, aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Reconocimiento avalado por la SEP** al terminar tus estudios.",
         curriculum: [
             {
                 name: "Módulo 1",

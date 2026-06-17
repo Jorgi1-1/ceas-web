@@ -6,11 +6,11 @@ import ScrollFloat from "@/components/ui/ScrollFloat";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos",
-  description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Formamos terapeutas éticos, conscientes y profesionales.",
+  title: "Escuela de Masaje en Puebla | Quiénes Somos",
+  description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS), la mejor escuela de masajes en Puebla. Formamos terapeutas profesionales en masoterapia.",
   openGraph: {
-    title: "Quiénes Somos | CEAS",
-    description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Formamos terapeutas éticos, conscientes y profesionales.",
+    title: "Escuela de Masaje en Puebla | Quiénes Somos CEAS",
+    description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS), la mejor escuela de masajes en Puebla.",
   },
 };
 
@@ -56,8 +56,7 @@ export default function SobreNosotrosPage() {
                         <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Quiénes Somos</h2>
                         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">Expertos formadores en el área de la salud alternativa</h3>
                         <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
-                            Somos un centro de capacitación con registro en la DGCFT, Dirección General de Centros de Formación
-                            para el Trabajo, que brinda capacitación en las distintas áreas de la quiroterapia.
+                            Somos un colegio e instituto integral, posicionado como la mejor <strong>escuela de masaje en Puebla</strong> y centro de capacitación oficial avalado por la DGCFT. Nos dedicamos a formar terapeutas expertos brindando instrucción intensiva en masoterapia, terapias spa y las distintas áreas de la quiroterapia.
                         </p>
                         <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
                             Abarcamos diversas formas de masaje, medios físicos naturales, técnicas de manipulación vertebral y de extremidades, con

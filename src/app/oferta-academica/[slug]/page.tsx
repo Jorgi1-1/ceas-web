@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     if (!course) return {};
 
     return {
-        title: course.title,
-        description: course.shortDescription,
+        title: `${course.title} en Puebla | Diplomado`,
+        description: `${course.shortDescription} Estudia en Puebla y obtén tu diploma oficial.`,
         openGraph: {
-            title: `${course.title} | CEAS`,
-            description: course.shortDescription,
+            title: `${course.title} en Puebla | CEAS`,
+            description: `${course.shortDescription} Únete a nuestro diplomado en Puebla.`,
             url: `https://ceas.com.mx/oferta-academica/${course.slug}`,
             images: [
                 {
