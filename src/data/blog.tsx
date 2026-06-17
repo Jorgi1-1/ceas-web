@@ -13,6 +13,69 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        id: "quiroterapia-integral-beneficios",
+        title: "¿Qué es la Quiroterapia Integral y cuáles son sus beneficios?",
+        date: "16.06.2026",
+        excerpt: "El dolor muscular, las molestias articulares y las tensiones acumuladas se han convertido en problemas cada vez más frecuentes debido al estrés, las malas posturas y el sedentarismo...",
+        imagePath: "/quiroterapia-integral-blog.jpg",
+        slug: "quiroterapia-integral-beneficios",
+        content: (
+            <>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">El dolor muscular, las molestias articulares y las tensiones acumuladas se han convertido en problemas cada vez más frecuentes debido al estrés, las malas posturas y el sedentarismo. Ante esta situación, muchas personas buscan alternativas naturales y efectivas para mejorar su calidad de vida. Una de ellas es la Quiroterapia Integral.</p>
+                
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es la Quiroterapia Integral?</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La Quiroterapia Integral es un conjunto de técnicas manuales orientadas a evaluar, prevenir y tratar alteraciones del sistema musculoesquelético. Su enfoque combina diferentes métodos terapéuticos para ayudar al cuerpo a recuperar su equilibrio funcional y mejorar la movilidad.</p>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">A diferencia de otros enfoques que utilizan una sola técnica, la Quiroterapia Integral integra herramientas como masaje terapéutico, manipulaciones articulares, movilizaciones vertebrales, osteopatía, hidroterapia y ventosas terapéuticas, entre otras.</p>
+
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Principales beneficios</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h4 className="text-lg font-bold text-[#759CB6] mb-3 text-center">Alivio del dolor muscular y articular</h4>
+                        <p className="text-gray-600 leading-relaxed text-[15px]">Las técnicas manuales ayudan a disminuir la tensión muscular y mejorar la función de las articulaciones, contribuyendo a reducir molestias en cuello, espalda, hombros, caderas y extremidades.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h4 className="text-lg font-bold text-[#759CB6] mb-3 text-center">Mejora de la movilidad</h4>
+                        <p className="text-gray-600 leading-relaxed text-[15px]">La restauración del movimiento articular favorece una mayor flexibilidad y amplitud de movimiento, permitiendo realizar las actividades diarias con mayor comodidad.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h4 className="text-lg font-bold text-[#759CB6] mb-3 text-center">Disminución de la tensión y el estrés</h4>
+                        <p className="text-gray-600 leading-relaxed text-[15px]">El trabajo terapéutico sobre músculos y tejidos blandos promueve la relajación física y mental, ayudando a combatir los efectos del estrés cotidiano.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                        <h4 className="text-lg font-bold text-[#759CB6] mb-3 text-center">Apoyo en procesos de recuperación</h4>
+                        <p className="text-gray-600 leading-relaxed text-[15px]">La Quiroterapia Integral puede formar parte de programas de recuperación funcional en casos de lesiones musculares, esguinces, contracturas y otros trastornos del aparato locomotor.</p>
+                    </div>
+                </div>
+
+                <div className="bg-[#f8fcfd] border border-[#e1eff5] p-8 rounded-xl my-8 text-center text-lg text-gray-700 italic">
+                    Al reducir el dolor y mejorar la función corporal, muchas personas experimentan una mayor sensación de bienestar y un mejor desempeño en sus actividades personales y laborales.
+                </div>
+
+                <h3 className="text-2xl font-bold text-[#759CB6] mt-10 mb-5">¿Quién puede beneficiarse?</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La Quiroterapia Integral puede ser útil para personas que presentan:</p>
+                <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-8 text-lg">
+                    <li>Dolor de espalda o cuello.</li>
+                    <li>Contracturas musculares.</li>
+                    <li>Estrés y tensión acumulada.</li>
+                    <li>Limitaciones de movilidad.</li>
+                    <li>Molestias posturales.</li>
+                    <li>Recuperación de lesiones musculares o articulares.</li>
+                </ul>
+
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">La importancia de acudir con profesionales capacitados</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La aplicación adecuada de las técnicas manuales requiere conocimientos sólidos de anatomía, biomecánica y evaluación física. Por ello, es fundamental acudir con terapeutas debidamente capacitados y con formación especializada.</p>
+
+                <div className="my-8 flex justify-center">
+                    <div className="h-px bg-gray-200 w-1/3"></div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Conclusión</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">La Quiroterapia Integral representa una alternativa terapéutica que combina diversas técnicas manuales para promover el bienestar físico, mejorar la movilidad y contribuir al alivio del dolor. Su enfoque integral permite atender las necesidades específicas de cada persona, favoreciendo una mejor calidad de vida de manera natural y no invasiva.</p>
+            </>
+        )
+    },
+    {
         id: "quiroterapia",
         title: "Quiroterapia",
         date: "26.04.2022",

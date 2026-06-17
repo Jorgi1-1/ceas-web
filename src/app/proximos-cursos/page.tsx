@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Calendar, Clock, MapPin, ArrowRight, Award, Star, Users } from "lucide-react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import { siteConfig } from "@/config/site";
+import { getSiteConfig } from "@/lib/getSiteConfig";
+import { formatDate } from "@/lib/formatDate";
 
 export const metadata: Metadata = {
   title: "Próximos Inicios y Cursos",
@@ -23,7 +24,8 @@ const galleryImages = [
     { src: "/MANIPULACION VERT.jpg", alt: "Manipulaciones Vertebrales" },
 ];
 
-export default function ProximosCursosPage() {
+export default async function ProximosCursosPage() {
+    const siteConfig = await getSiteConfig();
     return (
         <div className="flex flex-col min-h-screen bg-white">
             {/* ═══════════════════════════════════════════════════════════════
@@ -82,7 +84,7 @@ export default function ProximosCursosPage() {
 
                     {/* Cards grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {siteConfig.upcomingEvents.map((event) => (
+                        {siteConfig.upcomingEvents.map((event: any) => (
                             <div
                                 key={event.id}
                                 className="rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex flex-col scroll-animate"
@@ -104,13 +106,13 @@ export default function ProximosCursosPage() {
                                             Inicios de clases
                                         </p>
                                         <div className="flex flex-wrap gap-2">
-                                            {event.dates.map((date, idx) => (
+                                            {event.dates.map((date: string, idx: number) => (
                                                 <span
                                                     key={idx}
                                                     className="inline-flex items-center px-3 py-1.5 rounded-lg bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#0098D4] text-[13px] font-semibold"
                                                 >
                                                     <Calendar className="w-3.5 h-3.5 mr-1.5 shrink-0" />
-                                                    {date}
+                                                    {formatDate(date)}
                                                 </span>
                                             ))}
                                         </div>

@@ -1,7 +1,7 @@
 export const siteConfig = {
     // Configuración general de fechas y urgencia para banners
     urgency: {
-        nextStartDate: "6 de junio",
+        nextStartDate: "2026-06-06",
         availableSpots: 2,
         totalSpots: 10,
         discountPercentage: 25,
@@ -13,8 +13,8 @@ export const siteConfig = {
             id: "habilitacion",
             title: "Habilitación Física Funcional",
             dates: [
-                "Sábado 6 de junio",
-                "Viernes 3 de julio" // Reemplazar por fechas futuras
+                "2026-06-06",
+                "2026-07-03" // Reemplazar por fechas futuras
             ],
             duration: "15 meses",
             frequency: "Clases 1 día a la semana",
@@ -27,7 +27,7 @@ export const siteConfig = {
             id: "spa",
             title: "Diplomado SPA",
             dates: [
-                "Miércoles 1 de julio"
+                "2026-07-01"
             ],
             duration: "9 meses",
             frequency: "Clases 1 día a la semana",
@@ -40,8 +40,8 @@ export const siteConfig = {
             id: "quiroterapia",
             title: "Formación integral en Quiroterapia",
             dates: [
-                "Sábado 6 de junio",
-                "Viernes 3 de julio"
+                "2026-06-06",
+                "2026-07-03"
             ],
             duration: "22 meses",
             frequency: "Clases 1 día a la semana",
@@ -54,7 +54,7 @@ export const siteConfig = {
             id: "manipulaciones",
             title: "Manipulaciones Vertebrales Avanzadas",
             dates: [
-                "Martes 4 de agosto"
+                "2026-08-04"
             ],
             duration: "8 meses",
             frequency: "Clases 1 día a la semana",

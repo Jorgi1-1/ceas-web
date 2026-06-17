@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Calendar, Clock, User, ArrowRight, Target, Star, Award } from "lucide-react";
 import type { Course } from "@/data/courses";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/context/SiteConfigContext";
 
 interface SidebarUrgencyProps {
     course: Course;
@@ -17,6 +17,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
         setMounted(true);
     }, []);
 
+    const siteConfig = useSiteConfig();
     const { availableSpots, totalSpots, discountPercentage } = siteConfig.urgency;
     const progressPercentage = ((totalSpots - availableSpots) / totalSpots) * 100;
 

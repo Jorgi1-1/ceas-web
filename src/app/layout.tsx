@@ -6,6 +6,8 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { Analytics } from "@vercel/analytics/next";
 
 import ScrollObserver from "@/components/ui/ScrollObserver";
+import { SiteConfigProvider } from "@/context/SiteConfigContext";
+import { getSiteConfig } from "@/lib/getSiteConfig";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -132,30 +134,33 @@ const jsonLd = {
   ]
 };
 
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const config = await getSiteConfig();
+
   return (
     <html lang="es">
       <body className={`${poppins.variable} antialiased bg-bg-light text-text-dark font-sans flex flex-col min-h-screen selection:bg-primary/20`}>
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#0098D4] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md focus:border focus:border-gray-200">
-          Saltar al contenido principal
-        </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <ScrollObserver />
-        <Navbar />
-        <main id="main-content" className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
-        <Analytics />
+        <SiteConfigProvider initialConfig={config}>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#0098D4] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md focus:border focus:border-gray-200">
+            Saltar al contenido principal
+          </a>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <ScrollObserver />
+          <Navbar />
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+          <Analytics />
+        </SiteConfigProvider>
       </body>
     </html>
   );

@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Permitir a cualquiera leer (para la página web pública)
+    match /{document=**} {
+      allow read: if true;
+    }
+    
+    // Configuración general (fechas, etc.)
+    match /config/{document=**} {
+      allow write: if request.auth != null && request.auth.uid == "qNqmJw3X4tVaPnnwO9hKxF03z4l2";
+    }
+
+    // Artículos de blog
+    match /blog/{document=**} {
+      allow write: if request.auth != null && request.auth.uid == "qNqmJw3X4tVaPnnwO9hKxF03z4l2";
+    }
+  }
+}
