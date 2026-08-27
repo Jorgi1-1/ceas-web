@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Clock, ArrowRight, CheckCircle2, Award } from "lucide-react";
+import { Calendar, ArrowRight, CheckCircle2, Award } from "lucide-react";
 import { courses } from "@/data/courses";
 import CurriculumAccordion from "@/components/ui/CurriculumAccordion";
 import SidebarUrgency from "@/components/ui/SidebarUrgency";
@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { getSiteConfig } from "@/lib/getSiteConfig";
 import { formatDate } from "@/lib/formatDate";
+import { isFutureDate } from "@/lib/siteDates";
 
 interface CoursePageProps {
     params: Promise<{
@@ -23,8 +24,13 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     if (!course) return {};
 
     return {
-        title: `${course.title} en Puebla | Diplomado`,
+        title: {
+            absolute: `${course.title} en Puebla | Diplomado CEAS`,
+        },
         description: `${course.shortDescription} Estudia en Puebla y obtén tu diploma oficial.`,
+        alternates: {
+            canonical: `/oferta-academica/${course.slug}`,
+        },
         openGraph: {
             title: `${course.title} en Puebla | CEAS`,
             description: `${course.shortDescription} Únete a nuestro diplomado en Puebla.`,
@@ -139,7 +145,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                             {course.badge}
                         </div>
                     )}
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-[-0.02em] mb-3 leading-[1.05]">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-[-0.02em] mb-3 leading-[1.05] reveal-focus" style={{ animationDelay: '0.15s' }}>
                         {course.title}
                     </h1>
                     <p className="text-lg md:text-xl text-white/75 font-normal max-w-2xl leading-relaxed">
@@ -229,17 +235,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                                 <h3 className="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-[-0.01em] mb-2">
                                                     {inst.name}
                                                 </h3>
-                                                <p className="text-[15px] font-semibold text-[#0098D4] mb-3 leading-snug">
+                                                <p className="text-[15px] font-semibold text-[#007CAD] mb-3 leading-snug">
                                                     {inst.role}
                                                 </p>
                                                 <p className="text-[14px] text-[#64748b] leading-[1.6] mb-5 max-w-2xl">
                                                     {inst.experience}
                                                 </p>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#0098D4] bg-[#0098D4]/8 px-3 py-1 rounded-full">
+                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#007CAD] bg-[#0098D4]/8 px-3 py-1 rounded-full">
                                                         <CheckCircle2 className="w-3 h-3 mr-1.5" /> Experto
                                                     </span>
-                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#0098D4] bg-[#0098D4]/8 px-3 py-1 rounded-full">
+                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#007CAD] bg-[#0098D4]/8 px-3 py-1 rounded-full">
                                                         <Award className="w-3 h-3 mr-1.5" /> Experiencia Docente
                                                     </span>
                                                 </div>
@@ -308,11 +314,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
                     {/* Trust signals */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-x-8 gap-y-3 text-[13px] text-[#64748b] font-medium">
-                        <span className="flex items-center"><Calendar className="w-4 h-4 text-[#0098D4] mr-2" /> Próximo inicio: {formatDate(siteConfig.urgency.nextStartDate)}</span>
+                        <span className="flex items-center">
+                            <Calendar className="w-4 h-4 text-[#007CAD] mr-2" />
+                            {isFutureDate(siteConfig.urgency.nextStartDate)
+                                ? `Próximo inicio: ${formatDate(siteConfig.urgency.nextStartDate)}`
+                                : "Próximo inicio: fecha por confirmar, contáctanos"}
+                        </span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>
-                        <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#0098D4] mr-2" /> Espacios limitados</span>
+                        <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#007CAD] mr-2" /> Espacios limitados</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>
-                        <span className="flex items-center"><Award className="w-4 h-4 text-[#0098D4] mr-2" /> Avalado por SEP</span>
+                        <span className="flex items-center"><Award className="w-4 h-4 text-[#007CAD] mr-2" /> Avalado por SEP</span>
                     </div>
                 </div>
             </section>

@@ -26,7 +26,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                     {/* Badge overlay — unified token */}
                     {course.badge && (
                         <div className="absolute top-4 left-4 z-10">
-                            <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-[#0098D4] text-[10px] tracking-[0.1em] font-semibold uppercase rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+                            <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-[#007CAD] text-[10px] tracking-[0.1em] font-semibold uppercase rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
                                 {course.badge}
                             </span>
                         </div>
@@ -35,12 +35,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
 
                 {/* Card body */}
                 <div className="p-7 sm:p-8 flex-grow flex flex-col">
-                    <h3 className="text-xl font-bold text-[#0f172a] mb-2 group-hover:text-[#0098D4] transition-colors duration-300 leading-tight tracking-[-0.01em]">
+                    <h3 className="text-xl font-bold text-[#0f172a] mb-2 group-hover:text-[#007CAD] transition-colors duration-300 leading-tight tracking-[-0.01em]">
                         {course.title}
                     </h3>
 
                     {course.rvoe && (
-                        <p className="text-[#94a3b8] text-[11px] mb-5 font-medium italic">
+                        <p className="text-[#64748b] text-[11px] mb-5 font-medium italic">
                             {course.rvoe}
                         </p>
                     )}
@@ -52,17 +52,17 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                     {/* Meta info — clean bottom section */}
                     <div className="space-y-2.5 mb-6 pt-5 border-t border-[rgba(0,0,0,0.04)]">
                         <div className="flex items-center text-[#64748b] text-[13px]">
-                            <Calendar className="w-3.5 h-3.5 text-[#0098D4]/60 mr-2.5 shrink-0" />
+                            <Calendar className="w-3.5 h-3.5 text-[#007CAD]/60 mr-2.5 shrink-0" />
                             {course.frequency}
                         </div>
                         <div className="flex items-center text-[#64748b] text-[13px]">
-                            <Clock className="w-3.5 h-3.5 text-[#0098D4]/60 mr-2.5 shrink-0" />
+                            <Clock className="w-3.5 h-3.5 text-[#007CAD]/60 mr-2.5 shrink-0" />
                             Duración: {course.duration}
                         </div>
                     </div>
 
                     {/* CTA link */}
-                    <div className="inline-flex items-center text-[#0098D4] text-sm font-semibold">
+                    <div className="inline-flex items-center text-[#007CAD] text-sm font-semibold">
                         Ver plan de estudios
                         <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
                     </div>

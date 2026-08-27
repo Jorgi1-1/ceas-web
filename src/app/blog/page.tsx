@@ -8,6 +8,9 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Blog y Artículos de Salud",
   description: "Aprende sobre técnicas de quiroterapia, masajes, mitos y realidades, y consejos profesionales de salud en nuestro blog oficial de CEAS.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "Blog y Artículos de Salud | CEAS",
     description: "Aprende sobre técnicas de quiroterapia, masajes, mitos y realidades, y consejos profesionales de salud en nuestro blog oficial de CEAS.",

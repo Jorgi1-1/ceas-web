@@ -3,17 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
-interface CounterProps {
-  end: number;
-  duration: number;
-  suffix?: string;
-  label: string;
-  staggerIndex: number;
-}
-
-function AnimatedCounter({ end, duration, suffix = "", label, staggerIndex }: CounterProps) {
+function useCountUp(end: number, duration: number) {
   const [count, setCount] = useState(0);
-  const countRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [hasCounted, setHasCounted] = useState(false);
 
   useEffect(() => {
@@ -38,20 +30,34 @@ function AnimatedCounter({ end, duration, suffix = "", label, staggerIndex }: Co
       { threshold: 0.1 }
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => observer.disconnect();
   }, [end, duration, hasCounted]);
 
+  return { count, ref };
+}
+
+interface CounterProps {
+  end: number;
+  duration: number;
+  suffix?: string;
+  label: string;
+  staggerIndex: number;
+}
+
+function AnimatedCounter({ end, duration, suffix = "", label, staggerIndex }: CounterProps) {
+  const { count, ref } = useCountUp(end, duration);
+
   return (
     <div
-      ref={countRef}
+      ref={ref}
       className="text-center scroll-animate"
       style={{ transitionDelay: `${staggerIndex * 100}ms` }}
     >
-      <div className="font-poppins text-6xl md:text-7xl font-black bg-gradient-to-r from-[#0098D4] to-[#004A7C] bg-clip-text text-transparent mb-3 leading-none tracking-tight">
+      <div className="font-poppins text-6xl md:text-7xl font-black text-[#0098D4] mb-3 leading-none tracking-tight tabular-nums">
         {count}
         {suffix}
       </div>
@@ -62,17 +68,25 @@ function AnimatedCounter({ end, duration, suffix = "", label, staggerIndex }: Co
   );
 }
 
+function LeadStatCounter() {
+  const { count, ref } = useCountUp(80, 1400);
+
+  return (
+    <div ref={ref} className="font-poppins text-[80px] md:text-[110px] font-black text-[#0098D4] leading-[0.9] tracking-tighter mb-2 tabular-nums">
+      {count}<span className="text-[60px] md:text-[80px]">%</span>
+    </div>
+  );
+}
+
 export default function TrustMetrics() {
   return (
     <div className="w-full">
       {/* Metrics Section with Storytelling */}
       <div className="py-8 md:py-12 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
-        
+
         {/* Main Focus: 80% */}
         <div className="flex-1 text-center md:text-left">
-          <div className="font-poppins text-[80px] md:text-[110px] font-black bg-gradient-to-br from-[#0098D4] to-[#004A7C] bg-clip-text text-transparent leading-[0.9] tracking-tighter mb-2">
-            80<span className="text-[60px] md:text-[80px]">%</span>
-          </div>
+          <LeadStatCounter />
           <p className="text-[#333333] text-[18px] md:text-[20px] font-medium leading-snug max-w-sm mx-auto md:mx-0">
             de nuestros alumnos emprenden y abren su propio centro quiroterapéutico.
           </p>

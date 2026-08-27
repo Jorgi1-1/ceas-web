@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes y Requisitos",
   description: "Resuelve tus dudas sobre los diplomados en quiroterapia y masajes, validez oficial de la SEP, costos, horarios e inscripciones en CEAS Puebla.",
+  alternates: {
+    canonical: "/faq",
+  },
   openGraph: {
     title: "Preguntas Frecuentes y Requisitos | CEAS",
     description: "Resuelve tus dudas sobre los diplomados en quiroterapia y masajes, validez oficial de la SEP, costos, horarios e inscripciones en CEAS Puebla.",

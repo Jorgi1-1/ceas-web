@@ -5,7 +5,7 @@ import { useForm as useHookForm } from "react-hook-form";
 import { useForm as useFormspree } from "@formspree/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Clock, MapPin, Phone, Send, Building2 } from "lucide-react";
+import { Mail, Clock, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { courses } from "@/data/courses";
@@ -288,7 +288,7 @@ export default function ContactoPage() {
                                             Enviando solicitud...
                                         </>
                                     ) : (
-                                        "Enviar Solicitud Segura"
+                                        "Enviar Solicitud"
                                     )}
                                 </button>
                                 <p className="mt-4 text-xs text-gray-400 flex items-center">

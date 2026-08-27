@@ -49,17 +49,17 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
-                        <Link href="/" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                        <Link href="/" className="navbar-item relative text-[#333333] hover:text-[#007CAD] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Inicio
                         </Link>
 
                         <div className="navbar-item relative group h-full flex items-center px-4 py-2 rounded-md hover:bg-[#0098D4]/5 cursor-pointer">
-                            <span className="flex items-center text-[#333333] group-hover:text-[#0098D4] transition-colors font-medium text-[14px]">
+                            <span className="flex items-center text-[#333333] group-hover:text-[#007CAD] transition-colors font-medium text-[14px]">
                                 Cursos
                                 <ChevronDown className="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" />
                             </span>
 
-                            <div className="navbar-dropdown absolute top-full left-0 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+                            <div className="navbar-dropdown absolute top-full left-0 pt-2 w-64 opacity-0 invisible -translate-y-1.5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none group-hover:pointer-events-auto z-50">
                                 <div className="bg-white shadow-[0_8px_24px_rgb(0,0,0,0.12)] rounded-lg border border-gray-100 overflow-hidden py-2">
                                     {courses.map((course) => (
                                         <NavbarFlowItem
@@ -77,19 +77,19 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        {/* <Link href="/testimonios" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                        {/* <Link href="/testimonios" className="navbar-item relative text-[#333333] hover:text-[#007CAD] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Testimonios
                         </Link>*/}
 
-                        <Link href="/faq" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                        <Link href="/faq" className="navbar-item relative text-[#333333] hover:text-[#007CAD] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             FAQ
                         </Link>
 
-                        <Link href="/blog" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                        <Link href="/blog" className="navbar-item relative text-[#333333] hover:text-[#007CAD] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Blog
                         </Link>
 
-                        <Link href="/contacto" className="navbar-item relative text-[#333333] hover:text-[#0098D4] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
+                        <Link href="/contacto" className="navbar-item relative text-[#333333] hover:text-[#007CAD] hover:bg-[#0098D4]/5 px-4 py-2 rounded-md transition-all font-medium text-[14px]">
                             Contacto
                         </Link>
                     </nav>
@@ -118,10 +118,20 @@ export default function Navbar() {
                 {/* Mobile Sidebar */}
                 {isMobileMenuOpen && (
                     <div className="fixed top-[70px] left-0 w-[80%] h-[calc(100vh-70px)] bg-white z-50 md:hidden overflow-y-auto animate-slideInLeft shadow-2xl">
+                        <div className="flex justify-end px-4 pt-3">
+                            <button
+                                type="button"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                aria-label="Cerrar menú de navegación"
+                                className="flex items-center justify-center w-9 h-9 rounded-full text-[#333333] hover:text-[#007CAD] hover:bg-gray-100 transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
                         <div className="flex flex-col py-4">
                             <Link
                                 href="/"
-                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#007CAD] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Inicio
@@ -134,7 +144,7 @@ export default function Navbar() {
                                         <Link
                                             key={course.id}
                                             href={`/oferta-academica/${course.slug}`}
-                                            className="block py-2 text-[15px] text-[#555555] hover:text-[#0098D4] transition-colors"
+                                            className="block py-2 text-[15px] text-[#555555] hover:text-[#007CAD] transition-colors"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             {course.title}
@@ -142,7 +152,7 @@ export default function Navbar() {
                                     ))}
                                     <Link
                                         href="/proximos-cursos"
-                                        className="block py-2 mt-2 text-[15px] text-[#0098D4] font-medium transition-colors"
+                                        className="block py-2 mt-2 text-[15px] text-[#007CAD] font-medium transition-colors"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         Ver Próximas Fechas →
@@ -152,7 +162,7 @@ export default function Navbar() {
 
                             {/* <Link
                                 href="/testimonios"
-                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#007CAD] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Testimonios
@@ -160,7 +170,7 @@ export default function Navbar() {
 
                             <Link
                                 href="/faq"
-                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#007CAD] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 FAQ
@@ -168,7 +178,7 @@ export default function Navbar() {
 
                             <Link
                                 href="/blog"
-                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#007CAD] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Blog
@@ -176,7 +186,7 @@ export default function Navbar() {
 
                             <Link
                                 href="/contacto"
-                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#0098D4] hover:bg-gray-50 transition-colors"
+                                className="block px-6 py-4 border-b border-gray-100 text-[16px] font-medium text-[#333333] hover:text-[#007CAD] hover:bg-gray-50 transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Contacto

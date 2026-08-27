@@ -8,6 +8,9 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Galería de Instalaciones",
   description: "Explora la fotogalería del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Conoce nuestras aulas, áreas de prácticas y comunidad.",
+  alternates: {
+    canonical: "/fotogaleria",
+  },
   openGraph: {
     title: "Galería de Instalaciones | CEAS",
     description: "Explora la fotogalería del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Conoce nuestras aulas, áreas de prácticas y comunidad.",
@@ -25,7 +28,7 @@ const localImages = [
     { src: "/PIERNA.JPG", alt: "Pierna" },
     { src: "/Sala CEAS.JPG", alt: "Sala CEAS" },
     { src: "/cuniformes.JPG", alt: "Uniformes" },
-    { src: "/masaje feo.jpg", alt: "Instalaciones" }
+    { src: "/instalaciones-terapia.jpg", alt: "Instalaciones" }
 ];
 
 export default function FotogaleriaPage() {

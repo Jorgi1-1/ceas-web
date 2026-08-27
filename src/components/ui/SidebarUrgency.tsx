@@ -42,30 +42,30 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 <div className="space-y-3">
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <Calendar className="w-5 h-5 text-[#0098D4]" />
+                            <Calendar className="w-5 h-5 text-[#007CAD]" />
                         </div>
                         <div>
-                            <p className="text-[11px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Frecuencia</p>
+                            <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Frecuencia</p>
                             <p className="text-[#0f172a] font-bold text-[15px]">{course.frequency}</p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <Clock className="w-5 h-5 text-[#0098D4]" />
+                            <Clock className="w-5 h-5 text-[#007CAD]" />
                         </div>
                         <div>
-                            <p className="text-[11px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Duración Total</p>
+                            <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Duración Total</p>
                             <p className="text-[#0f172a] font-bold text-[15px]">{course.duration}</p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <User className="w-5 h-5 text-[#0098D4]" />
+                            <User className="w-5 h-5 text-[#007CAD]" />
                         </div>
                         <div>
-                            <p className="text-[11px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Modalidad</p>
+                            <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Modalidad</p>
                             <p className="text-[#0f172a] font-bold text-[15px]">Presencial</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
 
                 {/* SEP Badge */}
                 {course.badge && (
-                    <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#0098D4]">
+                    <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#007CAD]">
                         <Award className="w-4 h-4" />
                         <span className="text-[12px] font-bold uppercase tracking-[0.06em]">
                             Diploma {course.badge}
@@ -91,11 +91,11 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 {/* ── Urgency Widget (from Homepage) ── */}
                 <div className="border border-[rgba(0,0,0,0.06)] rounded-xl p-4 space-y-3 bg-[#fefefe]">
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
-                        <Target className="w-4 h-4 text-[#0098D4] mr-2 shrink-0" />
+                        <Target className="w-4 h-4 text-[#007CAD] mr-2 shrink-0" />
                         Solo <strong className="mx-1">{availableSpots} espacios</strong> disponibles
                     </div>
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
-                        <Star className="w-4 h-4 text-[#0098D4] mr-2 shrink-0 fill-[#0098D4]" />
+                        <Star className="w-4 h-4 text-[#007CAD] mr-2 shrink-0 fill-[#007CAD]" />
                         {discountPercentage}% de descuento hasta el cierre
                     </div>
 
@@ -108,7 +108,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                             ></div>
                         )}
                     </div>
-                    <p className="text-[11px] text-[#94a3b8] text-right">{totalSpots - availableSpots} de {totalSpots} espacios ocupados</p>
+                    <p className="text-[11px] text-[#64748b] text-right">{totalSpots - availableSpots} de {totalSpots} espacios ocupados</p>
                 </div>
 
                 {/* ── CTAs ── */}
@@ -130,7 +130,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                     Próximas Fechas
                 </Link>
 
-                <p className="text-center text-[12px] text-[#94a3b8] leading-relaxed px-2">
+                <p className="text-center text-[12px] text-[#64748b] leading-relaxed px-2">
                     Un asesor educativo se pondrá en contacto contigo en menos de 24 horas.
                 </p>
             </div>

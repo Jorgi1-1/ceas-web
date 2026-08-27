@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Clock, Target, Star } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 import { formatDate } from "@/lib/formatDate";
+import { isFutureDate } from "@/lib/siteDates";
 
 export default function UrgencyBanner() {
   const [mounted, setMounted] = useState(false);
@@ -15,23 +16,28 @@ export default function UrgencyBanner() {
   const siteConfig = useSiteConfig();
   const { nextStartDate, availableSpots, totalSpots, discountPercentage } = siteConfig.urgency;
   const progressPercentage = ((totalSpots - availableSpots) / totalSpots) * 100;
+  const hasConfirmedDate = isFutureDate(nextStartDate);
 
   return (
     <div className="urgency-banner urgency-banner-pulse bg-gradient-to-r from-[#0098D4]/10 to-[#0098D4]/5 border border-[#0098D4] rounded-lg p-5 md:p-6 w-full max-w-xl bg-white shadow-lg scroll-animate">
       <div className="space-y-4">
         <div className="flex items-center">
-          <Clock className="w-5 h-5 text-[#0098D4] mr-3 shrink-0" />
+          <Clock className="w-5 h-5 text-[#007CAD] mr-3 shrink-0" />
           <div>
             <p className="text-[11px] uppercase tracking-wider text-gray-500 font-bold mb-0.5">Próximo inicio</p>
-            <p className="text-[14px] font-bold text-gray-900">{formatDate(nextStartDate)}</p>
+            {hasConfirmedDate ? (
+              <p className="text-[14px] font-bold text-gray-900">{formatDate(nextStartDate)}</p>
+            ) : (
+              <p className="text-[14px] font-bold text-gray-900">Fecha por confirmar &mdash; contáctanos</p>
+            )}
           </div>
         </div>
         <div className="flex items-center text-[#1a1a1a] font-poppins text-[14px] md:text-[16px] leading-[1.8]">
-          <Target className="w-5 h-5 text-[#0098D4] mr-2 shrink-0" />
+          <Target className="w-5 h-5 text-[#007CAD] mr-2 shrink-0" />
           <span>Solo <strong>{availableSpots} espacios disponibles</strong></span>
         </div>
         <div className="flex items-center text-[#1a1a1a] font-poppins text-[14px] md:text-[16px] leading-[1.8]">
-          <Star className="w-5 h-5 text-[#0098D4] mr-2 shrink-0 fill-[#0098D4]" />
+          <Star className="w-5 h-5 text-[#007CAD] mr-2 shrink-0 fill-[#007CAD]" />
           <span>{discountPercentage}% de descuento hasta el cierre</span>
         </div>
       </div>

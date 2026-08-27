@@ -5,6 +5,9 @@ import ScrollFloat from "@/components/ui/ScrollFloat";
 export const metadata: Metadata = {
   title: "Aviso de Privacidad",
   description: "Aviso de Privacidad del Centro de Estudios Avanzados en Salud (CEAS). Conoce cómo protegemos y tratamos tus datos personales.",
+  alternates: {
+    canonical: "/privacidad",
+  },
   openGraph: {
     title: "Aviso de Privacidad | CEAS",
     description: "Aviso de Privacidad del Centro de Estudios Avanzados en Salud (CEAS). Conoce cómo protegemos y tratamos tus datos personales.",
@@ -45,7 +48,7 @@ export default function PrivacidadPage() {
             {/* Main Content Centered */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow flex flex-col items-center">
 
-                <div className="w-full text-gray-600 text-sm leading-relaxed space-y-6 text-justify pb-16 scroll-animate">
+                <div className="w-full text-gray-600 text-sm leading-relaxed space-y-6 pb-16 scroll-animate">
                     <h2 className="text-3xl text-[#1a5fb4] font-medium text-left mb-6">
                         Aviso de privacidad
                     </h2>

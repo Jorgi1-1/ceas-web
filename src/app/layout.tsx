@@ -19,10 +19,13 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ceas.com.mx"),
   title: {
-    default: "Centro de Estudios Avanzados en Salud - CEAS",
-    template: "%s | CEAS"
+    default: "Centro de Estudios Avanzados en Salud - CEAS Puebla",
+    template: "%s | CEAS Puebla"
   },
   description: "Formación profesional en quiroterapia, masajes, rehabilitación y habilitación física funcional en Puebla. Diplomados con aval de la SEP y alta calidad humana.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "quiroterapia",
     "masoterapia",
@@ -46,8 +49,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     url: "https://ceas.com.mx",
-    siteName: "CEAS - Centro de Estudios Avanzados en Salud",
-    title: "Centro de Estudios Avanzados en Salud - CEAS",
+    siteName: "CEAS Puebla - Centro de Estudios Avanzados en Salud",
+    title: "Centro de Estudios Avanzados en Salud - CEAS Puebla",
     description: "Formación profesional en quiroterapia, masajes, rehabilitación y habilitación física funcional en Puebla. Diplomados con aval de la SEP.",
     images: [
       {
@@ -94,7 +97,9 @@ const jsonLd = {
         "addressCountry": "MX"
       },
       "sameAs": [
-        "https://www.facebook.com/ifpceas"
+        "https://www.facebook.com/ifpceas",
+        "https://www.instagram.com/ceaspuebla",
+        "https://www.tiktok.com/@ceas_puebla"
       ]
     },
     {
@@ -104,6 +109,11 @@ const jsonLd = {
       "image": "https://ceas.com.mx/icon.png",
       "telephone": "+522211502725",
       "email": "contacto@ceas.com.mx",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "Puebla"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Privada 5 B Sur #4718, Col. Huexotitla",
@@ -112,6 +122,11 @@ const jsonLd = {
         "postalCode": "72534",
         "addressCountry": "MX"
       },
+      "sameAs": [
+        "https://www.facebook.com/ifpceas",
+        "https://www.instagram.com/ceaspuebla",
+        "https://www.tiktok.com/@ceas_puebla"
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -149,7 +164,7 @@ export default async function RootLayout({
     <html lang="es">
       <body className={`${poppins.variable} antialiased bg-bg-light text-text-dark font-sans flex flex-col min-h-screen selection:bg-primary/20`}>
         <SiteConfigProvider initialConfig={config}>
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#0098D4] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md focus:border focus:border-gray-200">
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#007CAD] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md focus:border focus:border-gray-200">
             Saltar al contenido principal
           </a>
           <script

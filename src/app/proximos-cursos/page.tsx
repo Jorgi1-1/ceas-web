@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Clock, MapPin, ArrowRight, Award, Star, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, ArrowRight, Star } from "lucide-react";
 import ScrollFloat from "@/components/ui/ScrollFloat";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getSiteConfig } from "@/lib/getSiteConfig";
 import { formatDate } from "@/lib/formatDate";
+import { getFutureDates } from "@/lib/siteDates";
 
 export const metadata: Metadata = {
   title: "Próximos Inicios y Cursos",
   description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
+  alternates: {
+    canonical: "/proximos-cursos",
+  },
   openGraph: {
     title: "Próximos Inicios y Cursos | CEAS",
     description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
@@ -26,6 +30,9 @@ const galleryImages = [
 
 export default async function ProximosCursosPage() {
     const siteConfig = await getSiteConfig();
+    const noConfirmedDatesAnywhere = siteConfig.upcomingEvents.every(
+        (event: any) => getFutureDates(event.dates).length === 0
+    );
     return (
         <div className="flex flex-col min-h-screen bg-white">
             {/* ═══════════════════════════════════════════════════════════════
@@ -71,7 +78,7 @@ export default async function ProximosCursosPage() {
 
                     {/* Section header */}
                     <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16 scroll-animate">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#0098D4]/8 text-[#0098D4] font-bold tracking-widest uppercase text-[11px] mb-4">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#0098D4]/8 text-[#007CAD] font-bold tracking-widest uppercase text-[11px] mb-4">
                             Calendario Académico
                         </span>
                         <h2 className="text-[28px] md:text-[36px] font-extrabold text-[#0f172a] tracking-[-0.02em] mb-4">
@@ -82,12 +89,26 @@ export default async function ProximosCursosPage() {
                         </p>
                     </div>
 
+                    {noConfirmedDatesAnywhere && (
+                        <div className="mb-10 md:mb-12 rounded-2xl border border-[#0098D4]/20 bg-[#0098D4]/5 px-6 py-5 text-center scroll-animate">
+                            <p className="text-[15px] md:text-[16px] text-[#0f172a] font-semibold">
+                                Estamos actualizando el calendario de próximos inicios.
+                            </p>
+                            <p className="text-[14px] text-[#64748b] mt-1">
+                                Escríbenos y un asesor te comparte la fecha más próxima disponible para tu programa.
+                            </p>
+                        </div>
+                    )}
+
                     {/* Cards grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {siteConfig.upcomingEvents.map((event: any) => (
+                        {siteConfig.upcomingEvents.map((event: any, idx: number) => {
+                            const futureDates = getFutureDates(event.dates);
+                            return (
                             <div
                                 key={event.id}
                                 className="rounded-2xl border border-slate-200/80 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden flex flex-col scroll-animate"
+                                style={{ transitionDelay: `${Math.min(idx, 3) * 90}ms` }}
                             >
                                 {/* Card header — Blue band */}
                                 <div className="bg-[#0098D4] px-6 py-5 relative overflow-hidden">
@@ -102,19 +123,25 @@ export default async function ProximosCursosPage() {
 
                                     {/* Start dates */}
                                     <div className="mb-5">
-                                        <p className="text-[11px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold mb-2.5">
+                                        <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold mb-2.5">
                                             Inicios de clases
                                         </p>
                                         <div className="flex flex-wrap gap-2">
-                                            {event.dates.map((date: string, idx: number) => (
-                                                <span
-                                                    key={idx}
-                                                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#0098D4] text-[13px] font-semibold"
-                                                >
-                                                    <Calendar className="w-3.5 h-3.5 mr-1.5 shrink-0" />
-                                                    {formatDate(date)}
+                                            {futureDates.length > 0 ? (
+                                                futureDates.map((date: string, idx: number) => (
+                                                    <span
+                                                        key={idx}
+                                                        className="inline-flex items-center px-3 py-1.5 rounded-lg bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#007CAD] text-[13px] font-semibold"
+                                                    >
+                                                        <Calendar className="w-3.5 h-3.5 mr-1.5 shrink-0" />
+                                                        {formatDate(date)}
+                                                    </span>
+                                                ))
+                                            ) : (
+                                                <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-[#64748b] text-[13px] font-medium">
+                                                    Fecha por confirmar &mdash; contáctanos
                                                 </span>
-                                            ))}
+                                            )}
                                         </div>
                                     </div>
 
@@ -122,40 +149,40 @@ export default async function ProximosCursosPage() {
                                     <div className="space-y-3 mb-6">
                                         <div className="flex items-center gap-3.5 p-3 bg-[#f8fafc] rounded-xl">
                                             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)] shrink-0">
-                                                <Calendar className="w-4 h-4 text-[#0098D4]" />
+                                                <Calendar className="w-4 h-4 text-[#007CAD]" />
                                             </div>
                                             <div>
-                                                <p className="text-[10px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Frecuencia</p>
+                                                <p className="text-[10px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Frecuencia</p>
                                                 <p className="text-[#0f172a] font-bold text-[14px]">{event.frequency}</p>
                                             </div>
                                         </div>
 
                                         <div className="flex items-center gap-3.5 p-3 bg-[#f8fafc] rounded-xl">
                                             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)] shrink-0">
-                                                <Clock className="w-4 h-4 text-[#0098D4]" />
+                                                <Clock className="w-4 h-4 text-[#007CAD]" />
                                             </div>
                                             <div>
-                                                <p className="text-[10px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Duración Total</p>
+                                                <p className="text-[10px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Duración Total</p>
                                                 <p className="text-[#0f172a] font-bold text-[14px]">{event.duration}</p>
                                             </div>
                                         </div>
 
                                         <div className="flex items-center gap-3.5 p-3 bg-[#f8fafc] rounded-xl">
                                             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)] shrink-0">
-                                                <MapPin className="w-4 h-4 text-[#0098D4]" />
+                                                <MapPin className="w-4 h-4 text-[#007CAD]" />
                                             </div>
                                             <div>
-                                                <p className="text-[10px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Modalidad</p>
+                                                <p className="text-[10px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Modalidad</p>
                                                 <p className="text-[#0f172a] font-bold text-[14px]">{event.modality}</p>
                                             </div>
                                         </div>
 
                                         <div className="flex items-center gap-3.5 p-3 bg-[#f8fafc] rounded-xl">
                                             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)] shrink-0">
-                                                <Clock className="w-4 h-4 text-[#0098D4]" />
+                                                <Clock className="w-4 h-4 text-[#007CAD]" />
                                             </div>
                                             <div>
-                                                <p className="text-[10px] text-[#94a3b8] uppercase tracking-[0.08em] font-semibold">Horario</p>
+                                                <p className="text-[10px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Horario</p>
                                                 <p className="text-[#0f172a] font-bold text-[14px]">{event.schedule}</p>
                                             </div>
                                         </div>
@@ -181,7 +208,8 @@ export default async function ProximosCursosPage() {
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -191,7 +219,7 @@ export default async function ProximosCursosPage() {
             ═══════════════════════════════════════════════════════════════ */}
             <section className="bg-white py-16 md:py-20 border-y border-slate-200/80">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-animate">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0098D4]/8 text-[#0098D4] text-[11px] font-bold tracking-widest uppercase mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0098D4]/8 text-[#007CAD] text-[11px] font-bold tracking-widest uppercase mb-6">
                         <Star className="w-3.5 h-3.5 fill-current" />
                         Oferta Especial
                     </div>

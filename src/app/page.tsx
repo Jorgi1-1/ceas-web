@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Check, CheckCircle2, Stethoscope, Users, Building, Award, Star } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, Stethoscope, Users, Award } from "lucide-react";
 import { courses } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
+import { CourseComparisonTable } from "@/components/ui/CourseComparisonTable";
 import TrustMetrics from "@/components/ui/TrustMetrics";
 import UrgencyBanner from "@/components/ui/UrgencyBanner";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
-  description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, técnicas de quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
+  description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
-    description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, técnicas de quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
+    description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
   },
 };
 
@@ -44,18 +48,20 @@ export default function Home() {
           <div className="max-w-2xl">
 
             {/* Badges */}
-            <div className="flex flex-wrap items-center gap-3 mb-6 hero__headline">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#0098D4]/10 border border-[#0098D4] text-[#0098D4] text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0098D4] mr-2"></span>
+            <div className="flex flex-wrap items-center gap-4 mb-6 hero__headline">
+              <div className="inline-flex items-center gap-2 text-[#0098D4] text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0098D4] shrink-0"></span>
                 Excelencia Académica
               </div>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white text-white text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
+              <span className="hidden sm:block w-px h-3 bg-white/25"></span>
+              <div className="inline-flex items-center gap-2 text-white/80 text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0"></span>
                 Clave SEP: 21PBT0505Q DGCFT
               </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-white text-[40px] md:text-[56px] font-bold leading-[1.1] mb-4 hero__headline">
+            {/* Headline — the site's signature focal reveal: tension releasing into focus */}
+            <h1 className="text-white text-[40px] md:text-[56px] font-bold leading-[1.1] mb-4 reveal-focus" style={{ animationDelay: '0.15s' }}>
               Centro de Estudios <br className="hidden md:block" /> Avanzados en Salud
             </h1>
 
@@ -120,7 +126,7 @@ export default function Home() {
             {/* Card 1 */}
             <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate border border-transparent hover:border-[#0098D4]/10">
               <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Stethoscope className="w-6 h-6 text-[#0098D4]" />
+                <Stethoscope className="w-6 h-6 text-[#007CAD]" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Abundante Práctica</h3>
               <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
@@ -132,7 +138,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-100 border border-transparent hover:border-[#0098D4]/10">
               <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Users className="w-6 h-6 text-[#0098D4]" />
+                <Users className="w-6 h-6 text-[#007CAD]" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Atención personalizada</h3>
               <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
@@ -144,7 +150,7 @@ export default function Home() {
             {/* Card 3 */}
             <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-200 border border-transparent hover:border-[#0098D4]/10">
               <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Award className="w-6 h-6 text-[#0098D4]" />
+                <Award className="w-6 h-6 text-[#007CAD]" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Diploma con validez oficial SEP</h3>
               <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
@@ -165,7 +171,7 @@ export default function Home() {
       <section id="oferta-educativa" className="py-[60px] md:py-[100px] bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20 scroll-animate">
-            <span className="inline-block px-5 py-2 rounded-full bg-[#0098D4]/10 text-[#0098D4] font-bold tracking-widest uppercase text-[12px] mb-4">
+            <span className="inline-block px-5 py-2 rounded-full bg-[#0098D4]/10 text-[#007CAD] font-bold tracking-widest uppercase text-[12px] mb-4">
               Nuestra Oferta
             </span>
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1a1a1a] mb-6">
@@ -177,9 +183,22 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 scroll-animate scroll-delay-100">
-            {courses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+          <div className="mb-12 md:mb-16 scroll-animate scroll-delay-100">
+            <h3 className="text-center text-[13px] font-bold uppercase tracking-[0.1em] text-[#007CAD] mb-5">
+              Compara los 4 programas de un vistazo
+            </h3>
+            <CourseComparisonTable courses={courses} />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {courses.map((course, idx) => (
+              <div
+                key={course.id}
+                className="scroll-animate h-full"
+                style={{ transitionDelay: `${Math.min(idx, 3) * 90}ms` }}
+              >
+                <CourseCard course={course} />
+              </div>
             ))}
           </div>
 

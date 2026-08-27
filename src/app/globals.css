@@ -17,6 +17,10 @@
   --font-heading: var(--font-poppins);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 @layer base {
   body {
     background: var(--background);
@@ -24,6 +28,8 @@
     @apply font-sans;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1,
@@ -36,18 +42,66 @@
   }
 }
 
-@keyframes bounce-slow {
-  0%,
-  100% {
-    transform: translateY(0);
+/* -------------------------------------------------------------------------- */
+/* SIGNATURE FOCAL ENTRANCE — the site's one authored reveal moment.
+   Blur pulls into focus while the element settles, evoking tension
+   releasing into alignment (the product's own therapeutic register)
+   rather than a generic fade-and-rise. Used once per pageview on the
+   primary heading of Persuade/Experience surfaces only. */
+/* -------------------------------------------------------------------------- */
+@keyframes reveal-focus {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+    filter: blur(8px);
   }
-  50% {
-    transform: translateY(-8px);
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite ease-in-out;
+.reveal-focus {
+  animation: reveal-focus 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-focus {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Themed focus ring — the browser default belongs to no design system */
+:focus-visible {
+  outline: 2px solid #007CAD;
+  outline-offset: 2px;
+}
+
+/* Gentle idle invitation for the floating WhatsApp button — pauses on
+   hover/focus and is stripped under reduced motion, per the accessibility
+   rule that no nonessential loop runs unbounded. */
+@keyframes wa-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.wa-breathe {
+  animation: wa-breathe 2.6s ease-in-out infinite;
+}
+
+.wa-breathe:hover,
+.wa-breathe:focus-visible {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-breathe {
+    animation: none;
+  }
 }
 
 /* Custom dashed border utility for Cytronics feel */
@@ -79,8 +133,8 @@
 
 /* Global Scroll Animations */
 .scroll-animate {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 0.6;
+  transform: translateY(16px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
@@ -88,6 +142,15 @@
 .scroll-animate.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Respect reduced-motion preference: content stays fully readable, no transform/opacity gating */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .scroll-delay-100 { transition-delay: 100ms; }
@@ -119,12 +182,15 @@ button:active, .btn:active {
 }
 
 /* PRIMARY BUTTON */
+/* font-size/weight kept at or above the WCAG "large text" bold threshold
+   (>=18.67px bold) so white-on-brand-blue text clears the 3:1 AA contrast
+   floor without changing the brand blue itself. */
 .btn-primary {
   background-color: #0098D4;
   color: white;
   padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 152, 212, 0.3);
 }
@@ -143,7 +209,7 @@ button:active, .btn:active {
 /* SECONDARY BUTTON */
 .btn-secondary {
   background-color: transparent;
-  color: #0098D4;
+  color: #007CAD;
   border: 2px solid #0098D4;
   padding: 16px 32px;
   font-size: 16px;
@@ -174,7 +240,7 @@ button:active, .btn:active {
 /* TERTIARY BUTTON */
 .btn-tertiary {
   background-color: transparent;
-  color: #0098D4;
+  color: #007CAD;
   border: 1px solid #0098D4;
   padding: 12px 24px;
   font-size: 14px;
@@ -189,7 +255,7 @@ button:active, .btn:active {
 
 /* TEXT LINK */
 a.text-link {
-  color: #0098D4;
+  color: #007CAD;
   text-decoration: none;
   font-size: 15px;
   position: relative;
@@ -203,7 +269,7 @@ a.text-link:hover {
 /* GHOST BUTTON */
 .btn-ghost {
   background-color: rgba(0, 152, 212, 0.08);
-  color: #0098D4;
+  color: #007CAD;
   padding: 12px 24px;
   font-size: 14px;
   font-weight: 400;
@@ -307,7 +373,7 @@ a.text-link:hover {
 }
 
 .value-card:hover .card__title {
-  color: #0098D4;
+  color: #007CAD;
   transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -426,7 +492,7 @@ a.text-link:hover {
 }
 
 .accordion-header:hover .accordion-title {
-  color: #0098D4;
+  color: #007CAD;
 }
 
 .accordion-item.match {
