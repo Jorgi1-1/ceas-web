@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling state (impeccable skill config/cache, Claude Code local settings)
+.impeccable/
+public/.impeccable/
+.claude/settings.local.json

@@ -1,8 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Panel de Administración - CEAS",
+  title: "Panel de Administración",
   description: "Panel privado de administración de contenido",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function AdminLayout({

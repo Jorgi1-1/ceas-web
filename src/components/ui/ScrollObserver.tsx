@@ -41,8 +41,18 @@ export default function ScrollObserver() {
       observeElements();
     }, 100);
 
+    // Safety net: force-reveal any element the observer never resolved
+    // (interrupted transition, missed intersection, disabled JS timing edge case)
+    // so persuasive copy never gets stuck at a faint, seemingly-broken opacity.
+    const safetyTimeout = setTimeout(() => {
+      document.querySelectorAll(".scroll-animate:not(.is-visible)").forEach((el) => {
+        el.classList.add("is-visible");
+      });
+    }, 1500);
+
     return () => {
       clearTimeout(timeout);
+      clearTimeout(safetyTimeout);
       observer.disconnect();
     };
   }, [pathname]); // Re-run when route changes

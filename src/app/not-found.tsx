@@ -43,7 +43,7 @@ export default function NotFound() {
             href="/#oferta-educativa"
             className="flex items-center justify-center px-6 py-3.5 bg-white hover:bg-gray-50 border border-gray-200 text-gray-700 font-bold rounded-xl transition-all text-sm uppercase tracking-wider"
           >
-            <BookOpen className="w-4.5 h-4.5 mr-2 text-[#0098D4]" />
+            <BookOpen className="w-4.5 h-4.5 mr-2 text-[#007CAD]" />
             Ver Oferta Educativa
           </Link>
 
@@ -61,7 +61,7 @@ export default function NotFound() {
         <div className="pt-2">
           <Link 
             href="/" 
-            className="inline-flex items-center text-xs font-semibold text-gray-400 hover:text-[#0098D4] transition-colors gap-1.5"
+            className="inline-flex items-center text-xs font-semibold text-gray-400 hover:text-[#007CAD] transition-colors gap-1.5"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Regresar

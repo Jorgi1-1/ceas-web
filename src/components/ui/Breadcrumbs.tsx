@@ -13,7 +13,11 @@ interface BreadcrumbsProps {
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const baseUrl = "https://ceas.com.mx";
 
-  // Build JSON-LD structured data for BreadcrumbList
+  // Build JSON-LD structured data for BreadcrumbList.
+  // The current page (last item) is kept without an `item` URL — per
+  // schema.org/Google guidance the final crumb may omit it — rather than
+  // dropped from the list entirely, which used to silently remove the
+  // most relevant crumb (the actual course/post name) from every rich snippet.
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -24,12 +28,17 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         "name": "Inicio",
         "item": baseUrl
       },
-      ...items.map((item, index) => ({
-        "@type": "ListItem",
-        "position": index + 2,
-        "name": item.label,
-        "item": item.href ? `${baseUrl}${item.href}` : undefined
-      })).filter(item => item.item !== undefined)
+      ...items.map((item, index) => {
+        const listItem: Record<string, unknown> = {
+          "@type": "ListItem",
+          "position": index + 2,
+          "name": item.label,
+        };
+        if (item.href) {
+          listItem.item = `${baseUrl}${item.href}`;
+        }
+        return listItem;
+      })
     ]
   };
 
@@ -45,7 +54,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       >
         <Link 
           href="/" 
-          className="hover:text-[#0098D4] flex items-center transition-colors text-gray-500 hover:scale-105"
+          className="hover:text-[#007CAD] flex items-center transition-colors text-gray-500 hover:scale-105"
         >
           <Home className="w-4 h-4 mr-1 shrink-0" />
           <span className="sr-only">Inicio</span>
@@ -62,7 +71,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
               ) : (
                 <Link 
                   href={item.href} 
-                  className="hover:text-[#0098D4] transition-colors truncate max-w-[200px] md:max-w-none"
+                  className="hover:text-[#007CAD] transition-colors truncate max-w-[200px] md:max-w-none"
                 >
                   {item.label}
                 </Link>

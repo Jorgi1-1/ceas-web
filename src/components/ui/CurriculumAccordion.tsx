@@ -34,24 +34,28 @@ export default function CurriculumAccordion({ curriculum }: CurriculumAccordionP
                     >
                         {/* Header — clickable row */}
                         <button
+                            type="button"
+                            id={`curriculum-header-${index}`}
                             onClick={() => toggle(index)}
-                            className="w-full flex items-center justify-between px-6 md:px-8 py-5 md:py-6 cursor-pointer group text-left"
+                            aria-expanded={isOpen}
+                            aria-controls={`curriculum-panel-${index}`}
+                            className="w-full flex items-center justify-between gap-4 px-6 md:px-8 py-5 md:py-6 cursor-pointer group text-left"
                         >
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-4 min-w-0 flex-1">
                                 {/* Period number */}
                                 <div className={`
-                                    w-10 h-10 rounded-xl flex items-center justify-center text-sm font-extrabold
+                                    w-10 h-10 rounded-xl flex items-center justify-center text-sm font-extrabold shrink-0
                                     transition-all duration-500
                                     ${isOpen
                                         ? "bg-[#0098D4] text-white shadow-[0_4px_12px_rgba(0,152,212,0.3)]"
-                                        : "bg-white text-[#0098D4] shadow-[0_1px_3px_rgba(0,0,0,0.06)] group-hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+                                        : "bg-white text-[#007CAD] shadow-[0_1px_3px_rgba(0,0,0,0.06)] group-hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
                                     }
                                 `}>
                                     {index + 1}
                                 </div>
                                 {/* Period name */}
                                 <h3 className={`
-                                    text-base md:text-lg font-bold tracking-[-0.01em]
+                                    min-w-0 whitespace-normal text-base md:text-lg font-bold tracking-[-0.01em]
                                     transition-colors duration-300
                                     ${isOpen ? "text-[#0f172a]" : "text-[#334155] group-hover:text-[#0f172a]"}
                                 `}>
@@ -63,12 +67,15 @@ export default function CurriculumAccordion({ curriculum }: CurriculumAccordionP
                             <ChevronDown className={`
                                 w-5 h-5 text-[#94a3b8] shrink-0
                                 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                ${isOpen ? "rotate-180 text-[#0098D4]" : "group-hover:text-[#64748b]"}
+                                ${isOpen ? "rotate-180 text-[#007CAD]" : "group-hover:text-[#64748b]"}
                             `} />
                         </button>
 
                         {/* Body — collapsible content */}
                         <div
+                            id={`curriculum-panel-${index}`}
+                            role="region"
+                            aria-labelledby={`curriculum-header-${index}`}
                             className="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                             style={{
                                 maxHeight: isOpen ? `${period.subjects.length * 52 + 40}px` : "0px",
@@ -81,9 +88,14 @@ export default function CurriculumAccordion({ curriculum }: CurriculumAccordionP
                                         {period.subjects.map((subject, idx) => (
                                             <li
                                                 key={idx}
-                                                className="flex items-start text-[15px] text-[#475569] leading-relaxed"
+                                                className="flex items-start text-[15px] text-[#475569] leading-relaxed transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                                                style={{
+                                                    opacity: isOpen ? 1 : 0,
+                                                    transform: isOpen ? "translateY(0)" : "translateY(-6px)",
+                                                    transitionDelay: isOpen ? `${Math.min(idx, 6) * 40}ms` : "0ms",
+                                                }}
                                             >
-                                                <CheckCircle2 className="w-[18px] h-[18px] mr-3 mt-0.5 text-[#0098D4]/60 shrink-0" />
+                                                <CheckCircle2 className="w-[18px] h-[18px] mr-3 mt-0.5 text-[#007CAD]/60 shrink-0" />
                                                 <span>{subject}</span>
                                             </li>
                                         ))}

@@ -7,10 +7,13 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Escuela de Masaje en Puebla | Quiénes Somos",
-  description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS), la mejor escuela de masajes en Puebla. Formamos terapeutas profesionales en masoterapia.",
+  description: "Conoce la historia, misión y visión de CEAS, la mejor escuela de masajes en Puebla. Formamos terapeutas profesionales en masoterapia y quiroterapia.",
+  alternates: {
+    canonical: "/nosotros",
+  },
   openGraph: {
     title: "Escuela de Masaje en Puebla | Quiénes Somos CEAS",
-    description: "Conoce la historia, misión y visión del Centro de Estudios Avanzados en Salud (CEAS), la mejor escuela de masajes en Puebla.",
+    description: "Conoce la historia, misión y visión de CEAS, la mejor escuela de masajes en Puebla.",
   },
 };
 
@@ -55,14 +58,14 @@ export default function SobreNosotrosPage() {
                     <div className="md:w-1/2">
                         <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Quiénes Somos</h2>
                         <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">Expertos formadores en el área de la salud alternativa</h3>
-                        <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
                             Somos un colegio e instituto integral, posicionado como la mejor <strong>escuela de masaje en Puebla</strong> y centro de capacitación oficial avalado por la DGCFT. Nos dedicamos a formar terapeutas expertos brindando instrucción intensiva en masoterapia, terapias spa y las distintas áreas de la quiroterapia.
                         </p>
-                        <p className="text-gray-600 text-lg leading-relaxed text-justify mb-6">
+                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
                             Abarcamos diversas formas de masaje, medios físicos naturales, técnicas de manipulación vertebral y de extremidades, con
                             fundamento en la quiropráctica y la osteopatía estructural.
                         </p>
-                        <p className="text-gray-600 text-lg leading-relaxed text-justify border-l-4 border-primary pl-4 italic">
+                        <p className="text-gray-800 text-xl leading-relaxed italic font-medium">
                             Contamos con un amplio equipo de profesionales especialistas para asegurar la mejor formación de cada uno de los alumnos.
                         </p>
                     </div>
@@ -86,7 +89,7 @@ export default function SobreNosotrosPage() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                             <Target className="w-12 h-12 text-primary mb-6" strokeWidth={1.5} />
                             <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Misión</h2>
-                            <p className="text-gray-600 text-lg leading-relaxed text-justify">
+                            <p className="text-gray-600 text-lg leading-relaxed">
                                 Formar profesionales con alta calidad humana, responsables,
                                 honestos, con una sólida preparación, acordes a la realidad social,
                                 con actitud de servicio, capaces de contribuir al desarrollo humano a
@@ -99,7 +102,7 @@ export default function SobreNosotrosPage() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                             <Eye className="w-12 h-12 text-secondary mb-6" strokeWidth={1.5} />
                             <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Visión</h2>
-                            <p className="text-gray-600 text-lg leading-relaxed text-justify">
+                            <p className="text-gray-600 text-lg leading-relaxed">
                                 Brindar servicios de alta calidad, con enfoque humanista,
                                 comprometidos con la formación integral del ser humano y al
                                 servicio de la sociedad, con equidad, tolerancia, lealtad, justicia,
@@ -147,7 +150,7 @@ export default function SobreNosotrosPage() {
                             <Award className="w-8 h-8 text-primary mr-4" />
                             Objetivo General
                         </h2>
-                        <p className="text-gray-600 text-lg leading-relaxed text-justify relative z-10">
+                        <p className="text-gray-600 text-lg leading-relaxed relative z-10">
                             Formar profesionales con conocimiento y dominio del área
                             correspondiente, con habilidades, destrezas, conocimiento y criterio
                             para desempeñarse con ética y calidad en su profesión. Capaces de
@@ -161,7 +164,7 @@ export default function SobreNosotrosPage() {
                     </div>
 
                     <div className="space-y-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6 pl-4 border-l-4 border-secondary">Objetivos Específicos</h2>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Objetivos Específicos</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
                                 'Formar profesionales con alto sentido humano y ético que desde su profesión tengan la capacidad de participar activamente en la solución de problemas de salud.',
