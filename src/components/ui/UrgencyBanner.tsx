@@ -52,7 +52,7 @@ export default function UrgencyBanner() {
         )}
       </div>
       <div className="mt-2 text-right">
-        <span className="font-poppins text-[12px] text-[#999999]">{totalSpots - availableSpots} de {totalSpots} espacios ocupados</span>
+        <span className="font-poppins text-[12px] text-[#6B6B6B]">{totalSpots - availableSpots} de {totalSpots} espacios ocupados</span>
       </div>
     </div>
   );

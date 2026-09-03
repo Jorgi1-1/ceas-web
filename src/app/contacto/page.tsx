@@ -5,7 +5,8 @@ import { useForm as useHookForm } from "react-hook-form";
 import { useForm as useFormspree } from "@formspree/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Clock, MapPin, Send } from "lucide-react";
+import { Mail, Clock, MapPin, Send, ArrowUpRight } from "lucide-react";
+import { googleBusinessProfile } from "@/config/site";
 import Link from "next/link";
 import Image from "next/image";
 import { courses } from "@/data/courses";
@@ -65,6 +66,7 @@ export default function ContactoPage() {
                         src="/Sala CEAS.JPG"
                         alt="Instalaciones del Centro de Estudios Avanzados en Salud CEAS para informes e inscripciones"
                         fill
+                        sizes="100vw"
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />
@@ -114,12 +116,21 @@ export default function ContactoPage() {
                                     </div>
                                     <div className="pt-1">
                                         <h3 className="font-semibold text-lg mb-1">Visítanos</h3>
-                                        <p className="text-white/80 leading-relaxed text-sm">
+                                        <address className="text-white/80 leading-relaxed text-sm not-italic">
                                             IFPCEAS Centro de Estudios<br />Avanzados en Salud<br />
                                             Privada 5 B Sur #4718<br />
                                             Col. Huexotitla,<br />
                                             Puebla, Pue.
-                                        </p>
+                                        </address>
+                                        <a
+                                            href={googleBusinessProfile.mapsUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center mt-3 text-sm font-semibold text-white border-b border-white/30 pb-0.5 transition-colors hover:border-white"
+                                        >
+                                            Abrir en Google Maps
+                                            <ArrowUpRight className="w-4 h-4 ml-1" />
+                                        </a>
                                     </div>
                                 </li>
 

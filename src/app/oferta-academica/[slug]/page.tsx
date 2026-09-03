@@ -9,7 +9,9 @@ import SidebarUrgency from "@/components/ui/SidebarUrgency";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { getSiteConfig } from "@/lib/getSiteConfig";
-import { formatDate } from "@/lib/formatDate";
+import { formatDate, formatLongDate } from "@/lib/formatDate";
+import { SITE_URL } from "@/config/site";
+import { buildCourseJsonLd } from "@/lib/courseSchema";
 import { isFutureDate } from "@/lib/siteDates";
 
 interface CoursePageProps {
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
         openGraph: {
             title: `${course.title} en Puebla | CEAS`,
             description: `${course.shortDescription} Únete a nuestro diplomado en Puebla.`,
-            url: `https://ceas.com.mx/oferta-academica/${course.slug}`,
+            url: `${SITE_URL}/oferta-academica/${course.slug}`,
             images: [
                 {
                     url: course.imagePath,
@@ -60,24 +62,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
         notFound();
     }
 
-    const courseJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": course.title,
-        "description": course.shortDescription,
-        "provider": {
-            "@type": "EducationalOrganization",
-            "name": "CEAS - Centro de Estudios Avanzados en Salud",
-            "sameAs": "https://ceas.com.mx"
-        },
-        "educationalCredentialAwarded": course.rvoe ? `Diploma Oficial avalado por la SEP con RVOE: ${course.rvoe}` : "Diploma de Formación en Quiroterapia Integral",
-        "hasCourseInstance": {
-            "@type": "CourseInstance",
-            "courseMode": "Onsite",
-            "duration": course.duration,
-            "courseWorkload": course.frequency
-        }
-    };
+    const courseJsonLd = buildCourseJsonLd(course, siteConfig.upcomingEvents);
 
     const relatedCourses = courses.filter((c) => c.slug !== slug).slice(0, 3);
 
@@ -131,6 +116,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         src={course.imagePath}
                         alt={course.title}
                         fill
+                        sizes="100vw"
                         className="object-cover"
                         priority
                     />
@@ -184,6 +170,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                     </p>
                                 ))}
                             </div>
+                            {/* Señal de vigencia: el temario y la credencial se revisan por ciclo,
+                                y sin fecha visible tanto el visitante como los buscadores asumen
+                                que la información puede estar caduca. */}
+                            <p className="mt-8 pt-6 border-t border-[#e2e8f0] text-[13px] text-[#64748b]">
+                                Información del programa actualizada al{" "}
+                                <time dateTime={course.updatedAt} className="font-medium text-[#475569]">
+                                    {formatLongDate(course.updatedAt)}
+                                </time>
+                                .
+                            </p>
                         </section>
 
                         {/* ─────────────────────────────────────────

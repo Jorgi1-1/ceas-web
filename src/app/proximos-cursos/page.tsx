@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, ArrowRight, Star } from "lucide-react";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Próximos Inicios y Cursos | CEAS",
     description: "Consulta los calendarios de inicio, horarios y detalles de inscripción para nuestros diplomados presenciales en Puebla. ¡Reserva tu lugar hoy!",
+    images: OG_IMAGES,
   },
 };
 
@@ -44,6 +46,7 @@ export default async function ProximosCursosPage() {
                         src="/Sala CEAS.JPG"
                         alt="Sala de prácticas con camillas en el Centro de Estudios Avanzados en Salud CEAS en Puebla"
                         fill
+                        sizes="100vw"
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />
@@ -276,6 +279,7 @@ export default async function ProximosCursosPage() {
                                     src={img.src}
                                     alt={img.alt}
                                     fill
+                                    sizes="(max-width: 768px) 50vw, 20vw"
                                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { Target, Eye, Award, CheckCircle2 } from "lucide-react";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Escuela de Masaje en Puebla | Quiénes Somos CEAS",
     description: "Conoce la historia, misión y visión de CEAS, la mejor escuela de masajes en Puebla.",
+    images: OG_IMAGES,
   },
 };
 
@@ -27,6 +29,7 @@ export default function SobreNosotrosPage() {
                         src="/Sala CEAS.JPG"
                         alt="Instalaciones del centro de formación de terapeutas CEAS en Puebla"
                         fill
+                        sizes="100vw"
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />
@@ -75,6 +78,7 @@ export default function SobreNosotrosPage() {
                             src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop"
                             alt="Médico especialista docente de CEAS impartiendo clases de anatomía clínica"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

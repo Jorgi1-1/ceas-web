@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, MapPin, Phone, Mail, Award, ArrowRight, MessageCircle } from "lucide-react";
+import { googleBusinessProfile } from "@/config/site";
 
 const TikTokIcon = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -50,7 +51,12 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 sm:gap-6 lg:flex-row">
 
                     {/* Left panel — brand block */}
-                    <div className="bg-[#0098D4] text-white flex min-h-[420px] shrink-0 flex-col justify-between rounded-[2rem] p-8 sm:p-10 lg:w-[380px]">
+                    {/* #007CAD y no #0098D4: sobre el azul claro, el texto blanco de
+                        14px ("Síguenos") se queda en 3.26:1 y no alcanza el 4.5:1 de
+                        AA. El azul oscuro de la marca lo sube a 4.68:1 sin salir de
+                        la paleta. */}
+                    <div
+                        className="bg-[#007CAD] text-white flex min-h-[420px] shrink-0 flex-col justify-between rounded-[2rem] p-8 sm:p-10 lg:w-[380px]">
                         <div>
                             <Image
                                 src="/CEAS LOGO 2.png"
@@ -65,7 +71,7 @@ export default function Footer() {
                         </div>
 
                         <div className="mt-12">
-                            <p className="text-sm opacity-90 mb-4">Síguenos</p>
+                            <p className="text-sm font-semibold mb-4">Síguenos</p>
                             <div className="flex items-center gap-3">
                                 {socialLinks.map((social) => (
                                     <a
@@ -74,7 +80,7 @@ export default function Footer() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={social.label}
-                                        className="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center hover:bg-white hover:text-[#0098D4] transition-colors"
+                                        className="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center hover:bg-white hover:text-[#007CAD] transition-colors"
                                     >
                                         <social.icon className="w-5 h-5" />
                                     </a>
@@ -121,9 +127,14 @@ export default function Footer() {
                                         <MapPin className="w-5 h-5 text-[#0098D4] shrink-0 mt-0.5" />
                                         <div>
                                             <p className="text-[13px] text-[#999999] mb-0.5">Ubicación</p>
-                                            <span className="text-white font-medium text-[14px] leading-relaxed block max-w-[220px]">
+                                            <a
+                                                href={googleBusinessProfile.mapsUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white hover:text-[#0098D4] transition-colors font-medium text-[14px] leading-relaxed block max-w-[220px]"
+                                            >
                                                 Privada 5 B Sur #4718 Col. Huexotitla, Puebla, Pue.
-                                            </span>
+                                            </a>
                                         </div>
                                     </li>
                                 </ul>

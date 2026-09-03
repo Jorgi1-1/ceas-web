@@ -9,6 +9,13 @@ export interface BlogPost {
     imagePath: string | null;
     slug: string;
     content: React.ReactNode;
+    /**
+     * Fecha (DD.MM.YYYY) de la última revisión del artículo, si se revisó
+     * después de publicarlo. Se emite como `dateModified` en el BlogPosting.
+     * Se omite cuando no existe: declarar dateModified igual a datePublished
+     * no comunica frescura, sólo ruido.
+     */
+    updatedAt?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -23,11 +30,11 @@ export const blogPosts: BlogPost[] = [
             <>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">El dolor muscular, las molestias articulares y las tensiones acumuladas se han convertido en problemas cada vez más frecuentes debido al estrés, las malas posturas y el sedentarismo. Ante esta situación, muchas personas buscan alternativas naturales y efectivas para mejorar su calidad de vida. Una de ellas es la Quiroterapia Integral.</p>
                 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es la Quiroterapia Integral?</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">¿Qué es la Quiroterapia Integral?</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">La Quiroterapia Integral es un conjunto de técnicas manuales orientadas a evaluar, prevenir y tratar alteraciones del sistema musculoesquelético. Su enfoque combina diferentes métodos terapéuticos para ayudar al cuerpo a recuperar su equilibrio funcional y mejorar la movilidad.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">A diferencia de otros enfoques que utilizan una sola técnica, la Quiroterapia Integral integra herramientas como masaje terapéutico, manipulaciones articulares, movilizaciones vertebrales, osteopatía, hidroterapia y ventosas terapéuticas, entre otras.</p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Principales beneficios</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Principales beneficios</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
@@ -63,14 +70,14 @@ export const blogPosts: BlogPost[] = [
                     <li>Recuperación de lesiones musculares o articulares.</li>
                 </ul>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">La importancia de acudir con profesionales capacitados</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">La importancia de acudir con profesionales capacitados</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">La aplicación adecuada de las técnicas manuales requiere conocimientos sólidos de anatomía, biomecánica y evaluación física. Por ello, es fundamental acudir con terapeutas debidamente capacitados y con formación especializada.</p>
 
                 <div className="my-8 flex justify-center">
                     <div className="h-px bg-gray-200 w-1/3"></div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Conclusión</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Conclusión</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">La Quiroterapia Integral representa una alternativa terapéutica que combina diversas técnicas manuales para promover el bienestar físico, mejorar la movilidad y contribuir al alivio del dolor. Su enfoque integral permite atender las necesidades específicas de cada persona, favoreciendo una mejor calidad de vida de manera natural y no invasiva.</p>
             </>
         )
@@ -95,11 +102,11 @@ export const blogPosts: BlogPost[] = [
                     &quot;En este post, te hablaremos sobre cómo la quiroterapia puede ayudarte a mejorar tu calidad de vida y reducir el dolor de espalda. ¿Quieres descubrir todo esto y mucho más? No te pierdas lo que te contamos a lo largo de las siguientes líneas. ¡Vamos para allá!&quot;
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es la quiropráctica?</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">¿Qué es la quiropráctica?</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Por lo general, la quiroterapia engloba el conjunto de las prácticas que se realizan para la sanación del cuerpo. Así, dentro encontramos la quiropráctica (puedes especializarte en esto en nuestro <Link href="/oferta-academica/quiroterapia-integral" className="text-[#007CAD] hover:underline font-semibold">Diplomado en Quiroterapia Integral</Link>), que es una profesión del cuidado de la salud que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mecánicos del sistema musculoesquelético, especialmente la columna vertebral.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">De hecho, la quiropráctica es una forma de medicina alternativa que fue desarrollada en América del Norte a finales del siglo XIX por Daniel David Palmer. De este modo, los quiroprácticos creen que las desalineaciones de la columna (subluxaciones) interfieren con la función nerviosa y causan enfermedades a través de los efectos sobre el sistema nervioso.</p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">¿Qué es un quiropráctico?</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">¿Qué es un quiropráctico?</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">¿Alguna vez ha estado en una situación en la que experimenta dolor e incomodidad, pero es difícil identificar la fuente? Efectivamente, esto es algo bastante frecuente entre la población.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Sobre todo, si trabajas en una oficina, notarás que tu espalda se resiente día a día sin poder remediarlo...¿o sí puedes? Quizás la solución está más cerca de lo que pensabas. Pues un quiropráctico es un profesional de la salud con licencia que se especializa en el diagnóstico, tratamiento y prevención de trastornos de la columna vertebral.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">En concreto, los quiroprácticos utilizan la terapia manual, el ejercicio y la educación para mejorar su salud. También pueden usar otros tratamientos como la terapia de masajes, la terapia con láser, frío o el asesoramiento nutricional.</p>
@@ -149,11 +156,11 @@ export const blogPosts: BlogPost[] = [
         slug: "sindrome-del-piramidal",
         content: (
             <>
-                <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-5 border-l-4 border-[#759CB6] pl-4">Definición</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-8 mb-5">Definición</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">El síndrome del piramidal o piriforme (SP) es una afección dolorosa del sistema musculoesquelético, caracterizada por una combinación de síntomas que incluyen dolor de glúteos o cadera. En varios artículos, el SP se define como una neuritis periférica de las ramas del nervio ciático causada por una condición anormal del músculo piriforme (PM), como un músculo lesionado o irritado (aprende a tratar y rehabilitar estas condiciones en nuestro <Link href="/oferta-academica/habilitacion-fisica-funcional" className="text-[#007CAD] hover:underline font-semibold">Diplomado en Habilitación Física Funcional</Link>).</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Frecuentemente se utilizan sinónimos para definir el SP y son: síndrome glúteo profundo, ciática extraespinal, neuritis de la cartera, etc. Hay más mujeres diagnosticadas con SP que hombres, con una proporción de mujeres a hombres de 6:1. Esta relación puede explicarse por el ángulo del músculo cuádriceps femoral más ancho en el hueso coxal de las mujeres.</p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Relevancia anatómica clínica</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Relevancia anatómica clínica</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">El músculo piriforme (PM) se origina en la superficie pélvica de los segmentos sacros S2-S4 en las regiones comprendidas entre y lateralmente al agujero sacro anterior, la articulación sacroilíaca, el ligamento sacroilíaco anterior y ocasionalmente la superficie anterior del ligamento sacro-tuberoso. Pasa a través de la escotadura ciática mayor para insertarse en el trocánter mayor del fémur.</p>
 
                 <div className="bg-[#f2f6f8] p-6 rounded-lg my-6 text-[#3a586e] font-medium text-lg text-center shadow-inner">
@@ -163,7 +170,7 @@ export const blogPosts: BlogPost[] = [
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">El nervio ciático generalmente sale de la pelvis por debajo del vientre del músculo, sin embargo, pueden existir muchas variaciones congénitas.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Beaton y Anson han clasificado las relaciones entre el PM y el nervio ciático utilizando un sistema de clasificación de seis categorías. Una relación anómala se etiquetaría entre el tipo &quot;B&quot; y el tipo &quot;F&quot;, ya que se considera que el tipo &quot;A&quot; tiene una relación normal entre el PM y el nervio ciático.</p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5 border-l-4 border-[#759CB6] pl-4">Epidemiología / Etiología</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mt-10 mb-5">Epidemiología / Etiología</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">Según Boyajian- O &apos;Neill L.A. et al., Hay dos tipos de síndrome piriforme: primario y secundario.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">El síndrome piriforme primario tiene una causa anatómica, con variaciones como un músculo piriforme dividido, un nervio ciático dividido o un trayecto del nervio ciático anómalo. Entre los pacientes con síndrome piriforme, menos del 15% de los casos tienen causas primarias.</p>
                 <p className="text-gray-600 mb-6 leading-relaxed text-lg">En la actualidad, no existen valores aceptados para la prevalencia de la anomalía y hay poca evidencia que respalde si la anomalía del nervio ciático causa el síndrome piriforme u otros tipos de ciática. Estos hallazgos sugieren que las anomalías piriformes y ciáticas pueden no ser tan importantes para la fisiopatología del síndrome piriforme como se pensaba anteriormente.</p>

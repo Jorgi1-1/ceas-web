@@ -571,6 +571,14 @@ a.text-link:hover {
 .hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Las barras miden 20px, pero el objetivo táctil debe cumplir el mínimo de
+     44px de WCAG 2.2 (2.5.8): es el único control de navegación en móvil.
+     El padding crece el área sin mover el dibujo. */
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
   cursor: pointer;
 }
 @media (max-width: 768px) {

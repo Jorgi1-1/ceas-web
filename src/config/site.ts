@@ -1,3 +1,26 @@
+/**
+ * Origen canónico del sitio. Vercel redirige el ápex (ceas.com.mx) a www con un
+ * 307, así que www es la versión que se sirve: canonicals, sitemap, robots y los
+ * @id de JSON-LD deben apuntar aquí para no partir la identidad ante los bots.
+ */
+export const SITE_URL = "https://www.ceas.com.mx";
+
+/**
+ * Ficha de Google Business Profile de CEAS.
+ *
+ * `mapsUrl` usa la forma por CID en vez de la URL larga de la barra del
+ * navegador: la larga arrastra coordenadas de cámara, zoom y parámetros de
+ * sesión que cambian entre visitas, mientras que el CID identifica la ficha y
+ * no caduca.
+ *
+ * Las coordenadas son las del pin de la ficha, no las del centro del mapa.
+ */
+export const googleBusinessProfile = {
+    mapsUrl: "https://maps.google.com/?cid=3574110266178767251",
+    latitude: 19.0273174,
+    longitude: -98.2138006,
+};
+
 export const siteConfig = {
     // Configuración general de fechas y urgencia para banners
     urgency: {

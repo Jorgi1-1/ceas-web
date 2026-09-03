@@ -1,14 +1,16 @@
 import type { MetadataRoute } from "next";
 import { courses } from "@/data/courses";
 import { blogPosts } from "@/data/blog";
+import { SITE_URL } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ceas.com.mx";
+  const baseUrl = SITE_URL;
 
   // Static routes
   const staticRoutes = [
     "",
     "/nosotros",
+    "/oferta-academica",
     "/faq",
     "/contacto",
     "/blog",

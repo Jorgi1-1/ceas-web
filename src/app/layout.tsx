@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import ScrollObserver from "@/components/ui/ScrollObserver";
 import { SiteConfigProvider } from "@/context/SiteConfigContext";
 import { getSiteConfig } from "@/lib/getSiteConfig";
+import { SITE_URL, googleBusinessProfile } from "@/config/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -17,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ceas.com.mx"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Centro de Estudios Avanzados en Salud - CEAS Puebla",
     template: "%s | CEAS Puebla"
@@ -48,24 +49,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_MX",
-    url: "https://ceas.com.mx",
+    url: SITE_URL,
     siteName: "CEAS Puebla - Centro de Estudios Avanzados en Salud",
     title: "Centro de Estudios Avanzados en Salud - CEAS Puebla",
     description: "Formación profesional en quiroterapia, masajes, rehabilitación y habilitación física funcional en Puebla. Diplomados con aval de la SEP.",
-    images: [
-      {
-        url: "/icon.png",
-        width: 512,
-        height: 512,
-        alt: "CEAS Logo",
-      }
-    ],
+    // La imagen la aporta src/app/opengraph-image.tsx (1200×630). Declararla
+    // aquí la ataría a este objeto, y cualquier página que redefina `openGraph`
+    // la perdería — que es justo el bug que teníamos con el logo cuadrado.
   },
   twitter: {
     card: "summary_large_image",
     title: "Centro de Estudios Avanzados en Salud - CEAS",
     description: "Formación profesional en quiroterapia, masajes, rehabilitación y habilitación física funcional en Puebla. Diplomados con aval de la SEP.",
-    images: ["/icon.png"],
   },
 };
 
@@ -74,17 +69,17 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "EducationalOrganization",
-      "@id": "https://ceas.com.mx/#organization",
+      "@id": `${SITE_URL}/#organization`,
       "name": "CEAS - Centro de Estudios Avanzados en Salud",
       "alternateName": "IFPCEAS",
-      "url": "https://ceas.com.mx",
+      "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
-        "@id": "https://ceas.com.mx/#logo",
-        "url": "https://ceas.com.mx/icon.png",
+        "@id": `${SITE_URL}/#logo`,
+        "url": `${SITE_URL}/icon.png`,
         "caption": "CEAS"
       },
-      "image": "https://ceas.com.mx/icon.png",
+      "image": `${SITE_URL}/icon.png`,
       "description": "Institución educativa especializada en quiroterapia, masajes, rehabilitación y habilitación física funcional en Puebla, México.",
       "telephone": "+522211502725",
       "email": "contacto@ceas.com.mx",
@@ -99,14 +94,15 @@ const jsonLd = {
       "sameAs": [
         "https://www.facebook.com/ifpceas",
         "https://www.instagram.com/ceaspuebla",
-        "https://www.tiktok.com/@ceas_puebla"
+        "https://www.tiktok.com/@ceas_puebla",
+        googleBusinessProfile.mapsUrl
       ]
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://ceas.com.mx/#localbusiness",
+      "@id": `${SITE_URL}/#localbusiness`,
       "name": "CEAS - Centro de Estudios Avanzados en Salud",
-      "image": "https://ceas.com.mx/icon.png",
+      "image": `${SITE_URL}/icon.png`,
       "telephone": "+522211502725",
       "email": "contacto@ceas.com.mx",
       "priceRange": "$$",
@@ -125,8 +121,15 @@ const jsonLd = {
       "sameAs": [
         "https://www.facebook.com/ifpceas",
         "https://www.instagram.com/ceaspuebla",
-        "https://www.tiktok.com/@ceas_puebla"
+        "https://www.tiktok.com/@ceas_puebla",
+        googleBusinessProfile.mapsUrl
       ],
+      "hasMap": googleBusinessProfile.mapsUrl,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": googleBusinessProfile.latitude,
+        "longitude": googleBusinessProfile.longitude
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -161,7 +164,7 @@ export default async function RootLayout({
   const config = await getSiteConfig();
 
   return (
-    <html lang="es">
+    <html lang="es-MX">
       <body className={`${poppins.variable} antialiased bg-bg-light text-text-dark font-sans flex flex-col min-h-screen selection:bg-primary/20`}>
         <SiteConfigProvider initialConfig={config}>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#007CAD] focus:px-4 focus:py-2 focus:rounded-md focus:shadow-md focus:border focus:border-gray-200">
