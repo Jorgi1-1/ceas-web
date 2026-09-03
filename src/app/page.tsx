@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowRight, Calendar, CheckCircle2, Stethoscope, Users, Award } from "lucide-react";
 import { courses } from "@/data/courses";
@@ -7,6 +8,7 @@ import { CourseComparisonTable } from "@/components/ui/CourseComparisonTable";
 import TrustMetrics from "@/components/ui/TrustMetrics";
 import UrgencyBanner from "@/components/ui/UrgencyBanner";
 import Image from "next/image";
+import { faqs } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Escuela de Masajes y Quiroterapia en Puebla | CEAS",
     description: "Somos la mejor escuela de masaje en Puebla. Aprende masoterapia, quiropráctica, osteopatía y habilitación física con el respaldo de un instituto profesional.",
+    images: OG_IMAGES,
   },
 };
 
@@ -24,6 +27,22 @@ export const metadata: Metadata = {
 const WA_NUMBER = "522211502725";
 const WA_MESSAGE = encodeURIComponent("Hola, quiero información sobre los diplomados. Tengo dudas sobre duración, costo e inscripción. ¿Me pueden ayudar?");
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
+
+// Las cuatro dudas que más pesan al decidir la inscripción. Se seleccionan por
+// texto desde la fuente compartida para que editar una respuesta en un solo
+// lugar actualice el home, /faq y el JSON-LD a la vez.
+const HOME_FAQ_QUESTIONS = [
+  "¿Necesito experiencia previa?",
+  "¿Qué requisitos de escolaridad necesito?",
+  "¿El diploma es avalado por SEP?",
+  "¿Qué oportunidades laborales tengo al egresar?",
+];
+
+const homeFaqs = HOME_FAQ_QUESTIONS.map((question) => {
+  const faq = faqs.find((f) => f.question === question);
+  if (!faq) throw new Error(`Pregunta destacada del home no encontrada en src/data/faq.ts: ${question}`);
+  return faq;
+});
 
 export default function Home() {
   return (
@@ -38,6 +57,7 @@ export default function Home() {
             src="/SPA.png"
             alt="Estudiante CEAS practicando"
             fill
+            sizes="100vw"
             className="object-cover object-right md:object-center opacity-60"
             priority
           />
@@ -113,13 +133,37 @@ export default function Home() {
         <UrgencyBanner />
       </div>
 
+      {/* 📍 RESPUESTA DIRECTA — lo primero que leen tanto un visitante nuevo como
+          un bot: qué es CEAS, qué imparte, dónde, y con qué respaldo oficial.
+          El hero abre con el nombre; esto lo aterriza en hechos verificables. */}
+      <section className="py-[56px] md:py-[80px] bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[76ch] scroll-animate">
+            <h2 className="text-[#1a1a1a] text-[26px] md:text-[32px] font-bold leading-[1.25] mb-5">
+              ¿Qué es CEAS y qué se estudia aquí?
+            </h2>
+            <p className="text-[#404040] text-[17px] md:text-[18px] leading-[1.7]">
+              CEAS (Centro de Estudios Avanzados en Salud) es una escuela de terapias
+              manuales en Puebla, México. Imparte cuatro diplomados presenciales —
+              Quiroterapia Integral, Habilitación Física Funcional, Manipulaciones
+              Vertebrales Avanzadas y Masajes y Terapeuta SPA — con duraciones de 8 a
+              22 meses y clases un día a la semana. Al concluir se entrega un diploma
+              con validez oficial ante la SEP, bajo la clave{" "}
+              <strong className="font-semibold text-[#1a1a1a]">21PBT0505Q DGCFT</strong>.
+              Se puede empezar desde nivel principiante: el único requisito es
+              secundaria terminada.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 📍 SECCIÓN 2: PROPUESTA DE VALOR & DIFERENCIACIÓN */}
       <section className="py-[60px] md:py-[80px] bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-[600px] mx-auto mb-12 scroll-animate">
-            <h2 className="text-[#1a1a1a] text-[28px] md:text-[32px] font-bold mb-4">Diferenciación clave en el mercado educativo</h2>
-            <p className="text-[#666666] text-[16px] md:text-[18px]">Por qué estudiar en CEAS</p>
+            <h2 className="text-[#1a1a1a] text-[28px] md:text-[32px] font-bold mb-4">¿Por qué estudiar terapias manuales en CEAS?</h2>
+            <p className="text-[#666666] text-[16px] md:text-[18px]">Lo que distingue nuestra formación en el mercado educativo de Puebla.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[30px] mb-12">
@@ -171,11 +215,8 @@ export default function Home() {
       <section id="oferta-educativa" className="py-[60px] md:py-[100px] bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20 scroll-animate">
-            <span className="inline-block px-5 py-2 rounded-full bg-[#0098D4]/10 text-[#007CAD] font-bold tracking-widest uppercase text-[12px] mb-4">
-              Nuestra Oferta
-            </span>
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1a1a1a] mb-6">
-              OFERTA EDUCATIVA
+              ¿Qué diplomados puedes estudiar en CEAS?
             </h2>
             <div className="h-1 w-24 bg-[#0098D4] mx-auto mb-6 rounded-full opacity-80"></div>
             <p className="text-[16px] md:text-[18px] text-[#666666] font-light mb-6 leading-relaxed max-w-2xl mx-auto">
@@ -185,7 +226,7 @@ export default function Home() {
 
           <div className="mb-12 md:mb-16 scroll-animate scroll-delay-100">
             <h3 className="text-center text-[13px] font-bold uppercase tracking-[0.1em] text-[#007CAD] mb-5">
-              Compara los 4 programas de un vistazo
+              ¿Cuánto dura cada diplomado y qué credencial otorga?
             </h3>
             <CourseComparisonTable courses={courses} />
           </div>
@@ -215,6 +256,45 @@ export default function Home() {
         </div>
       </section>
 
-    </div>
+    
+      {/* 📍 PREGUNTAS FRECUENTES — respuestas legibles en el HTML, sin acordeón:
+          las dudas que deciden la inscripción no deberían costar un clic, y así
+          quedan disponibles tanto para el visitante como para quien cite la página.
+          El texto sale de src/data/faq.ts, la misma fuente que alimenta /faq. */}
+      <section className="py-[60px] md:py-[100px] bg-[#F9F9F9]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-[28px] md:text-[36px] font-bold text-[#1a1a1a] mb-10 md:mb-14 max-w-[20ch] scroll-animate">
+            Las dudas que llegan antes de inscribirse
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 max-w-6xl">
+            {homeFaqs.map((faq, idx) => (
+              <div
+                key={faq.question}
+                className="max-w-[58ch] scroll-animate"
+                style={{ transitionDelay: `${Math.min(idx, 3) * 90}ms` }}
+              >
+                <h3 className="text-[18px] md:text-[19px] font-bold text-[#1a1a1a] leading-[1.35] mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-[#555555] text-[15px] md:text-[16px] leading-[1.7]">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 md:mt-16 scroll-animate scroll-delay-200">
+            <Link
+              href="/faq"
+              className="group inline-flex items-center text-[#007CAD] font-semibold text-[16px] border-b border-[#007CAD]/30 pb-1 transition-colors duration-300 hover:border-[#007CAD]"
+            >
+              Ver las {faqs.length} preguntas frecuentes
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+</div>
   );
 }

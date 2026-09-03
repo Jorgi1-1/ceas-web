@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import DomeGallery from "@/components/ui/DomeGallery";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Galería de Instalaciones | CEAS",
     description: "Explora la fotogalería del Centro de Estudios Avanzados en Salud (CEAS) en Puebla. Conoce nuestras aulas, áreas de prácticas y comunidad.",
+    images: OG_IMAGES,
   },
 };
 
@@ -41,6 +43,7 @@ export default function FotogaleriaPage() {
                         src="/Sala CEAS.JPG"
                         alt="Aulas del Centro de Estudios Avanzados en Salud CEAS para prácticas de quiroterapia"
                         fill
+                        sizes="100vw"
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />

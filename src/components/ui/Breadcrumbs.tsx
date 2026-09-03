@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
+import { SITE_URL } from "@/config/site";
 
 interface BreadcrumbItem {
   label: string;
@@ -11,7 +12,7 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const baseUrl = "https://ceas.com.mx";
+  const baseUrl = SITE_URL;
 
   // Build JSON-LD structured data for BreadcrumbList.
   // The current page (last item) is kept without an `item` URL — per

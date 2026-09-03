@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { faqs } from "@/data/faq";
 import { MessageCircle } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
@@ -12,94 +14,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Preguntas Frecuentes y Requisitos | CEAS",
     description: "Resuelve tus dudas sobre los diplomados en quiroterapia y masajes, validez oficial de la SEP, costos, horarios e inscripciones en CEAS Puebla.",
+    images: OG_IMAGES,
   },
 };
 
+// FAQPage se deriva de la misma lista que renderiza el acordeón, de modo que el
+// schema no pueda quedar desfasado respecto a lo que el visitante ve en pantalla.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué es quiroterapia integral?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La quiroterapia integral es una disciplina terapéutica manual que combina técnicas como hidroterapia, masaje, manipulaciones articulares quiroprácticas, osteopatía y rehabilitación física para ayudar a disminuir el dolor, mejorar la movilidad y restaurar el equilibrio funcional del cuerpo de forma natural y no invasiva."
-      }
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
     },
-    {
-      "@type": "Question",
-      "name": "¿Necesito experiencia previa?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No se requiere experiencia previa. Al ser una formación integral, nosotros te capacitamos con los conocimientos necesarios, desde lo más básico hasta lo especializado, para poder dar atención a los problemas musculares, articulares y ligamentosos causados por lesiones deportivas o laborales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué requisitos de escolaridad necesito?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Puedes acceder a nuestros programas de estudio teniendo la secundaria terminada."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo cambiar de programa si comienzo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, puedes cambiar a otro curso, pero probablemente tengas que iniciar desde el principio del nuevo ciclo, cubriendo las colegiaturas correspondientes al nuevo programa que elijas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo estudiar a mi ritmo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las clases son presenciales y un día a la semana en un horario establecido, por lo que se recomienda que el resto de los días de la semana repases lo visto en la clase presencial."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Tienen becas o descuentos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, contamos con becas que son parte del programa de la SEP, además de descuentos preferenciales a los primeros que se inscriban a cada curso."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué oportunidades laborales tengo al egresar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Puedes laborar principalmente de manera independiente, estableciendo tu propio centro de terapias manuales naturales. También puedes trabajar en centros deportivos, equipos deportivos, o como auxiliar en clínicas de terapia física, así como establecer convenios con médicos que requieran referir a sus pacientes para alguna terapia de recuperación."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es válido el certificado a nivel nacional?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nuestros cursos de Habilitación Física Funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son reconocidos por la SEP, por lo que el certificado obtenido sí es válido a nivel nacional."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿El diploma es avalado por SEP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nuestros cursos de Habilitación Física Funcional y de Terapeuta SPA \"Aplicación de aceites esenciales con técnicas de masaje\" son avalados por la SEP. Otros cursos pueden estar avalados por la Federación Mundial de Masaje (WMF) o por CONOCER-SEP."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Hay seguimiento después de egresar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "¡Sí! Después de concluir nuestros cursos iniciales, puedes acceder a cursos de formación continua para adquirir nuevas habilidades, conocimientos y destrezas."
-      }
-    }
-  ]
+  })),
 };
 
 export default function FAQPage() {

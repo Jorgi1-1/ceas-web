@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import { SITE_URL } from "@/config/site";
 
 // Type definition for Page props in Next.js 15
 interface BlogPostPageProps {
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         openGraph: {
             title: `${post.title} | CEAS`,
             description: post.excerpt,
-            url: `https://ceas.com.mx/blog/${post.slug}`,
+            url: `${SITE_URL}/blog/${post.slug}`,
             type: "article",
             publishedTime: formattedDate,
             images: post.imagePath ? [
@@ -54,7 +55,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "headline": post.title,
         "description": post.excerpt,
         "datePublished": post.date.split(".").reverse().join("-"),
-        "image": post.imagePath ? `https://ceas.com.mx${post.imagePath}` : undefined,
+        ...(post.updatedAt
+            ? { "dateModified": post.updatedAt.split(".").reverse().join("-") }
+            : {}),
+        "image": post.imagePath ? `${SITE_URL}${post.imagePath}` : undefined,
         "author": {
             "@type": "Organization",
             "name": "CEAS"
@@ -64,12 +68,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             "name": "CEAS - Centro de Estudios Avanzados en Salud",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://ceas.com.mx/icon.png"
+                "url": `${SITE_URL}/icon.png`
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://ceas.com.mx/blog/${post.slug}`
+            "@id": `${SITE_URL}/blog/${post.slug}`
         }
     };
 
@@ -81,8 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
     const nextPost = currentIndex >= 0 && currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
 
-    // Build the share URLs (using a placeholder domain for now given it's local)
-    const baseUrl = "https://ceas.com.mx/blog"; // Replace with real domain when live
+    const baseUrl = `${SITE_URL}/blog`;
     const shareUrl = `${baseUrl}/${post.slug}`;
     const encodedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(post.title);
@@ -105,6 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         src={heroImage}
                         alt={post.title}
                         fill
+                        sizes="100vw"
                         className="object-cover"
                         priority
                     />

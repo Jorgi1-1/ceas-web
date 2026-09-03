@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGES } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog y Artículos de Salud | CEAS",
     description: "Aprende sobre técnicas de quiroterapia, masajes, mitos y realidades, y consejos profesionales de salud en nuestro blog oficial de CEAS.",
+    images: OG_IMAGES,
   },
 };
 
@@ -27,6 +29,7 @@ export default function BlogPage() {
                         src="/Sala CEAS.JPG"
                         alt="Aulas del Centro de Estudios Avanzados en Salud CEAS en Puebla"
                         fill
+                        sizes="100vw"
                         className="object-cover blur-[4px] md:blur-[6px] scale-110 opacity-60"
                         priority
                     />

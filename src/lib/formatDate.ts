@@ -17,3 +17,18 @@ export function formatDate(dateString: string, includeWeekday: boolean = true): 
     
     return formatted;
 }
+
+/**
+ * Fecha larga con año y sin día de la semana: "3 de septiembre de 2026".
+ * Se usa para las marcas de "Actualizado" visibles, donde el año es justo el
+ * dato que importa — una fecha sin año no comunica vigencia.
+ */
+export function formatLongDate(dateString: string): string {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateString)) return dateString;
+    const [year, month, day] = dateString.split("-").map(Number);
+    return new Intl.DateTimeFormat("es-MX", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    }).format(new Date(year, month - 1, day));
+}

@@ -16,6 +16,13 @@ export interface Course {
     rvoe?: string;
     themeColor: string;
     curriculum: CurriculumPeriod[];
+    /**
+     * Fecha (YYYY-MM-DD) de la última revisión del contenido de este diplomado.
+     * Se publica como texto visible y como `dateModified` en el schema Course.
+     * Súbela cuando cambie temario, duración, credencial o descripción — es la
+     * señal de vigencia que leen buscadores y asistentes de IA.
+     */
+    updatedAt: string;
 }
 
 export const courses: Course[] = [
@@ -31,6 +38,7 @@ export const courses: Course[] = [
         themeColor: "#84a5c0",
         imagePath: "/HABILITACION.JPG",
         description: "Habilitación Física Funcional es un programa de capacitación profesional diseñado para enseñar a preparar, ejecutar y evaluar planes de terapia física y rehabilitación. Bajo un enfoque de calidez humana, el alumno aprende desde la toma de signos vitales e historia clínica, hasta la aplicación de masajes, agentes físicos, ejercicios terapéuticos y manipulaciones articulares. El curso está alineado a las Normas Técnicas de Competencia Laboral, lo que garantiza una formación oficial y de alta demanda. Su objetivo principal es devolver la independencia funcional a las personas mediante técnicas seguras y la adaptación de su entorno.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
+        updatedAt: "2026-09-03",
         curriculum: [
             {
                 name: "Periodo 1",
@@ -95,6 +103,7 @@ export const courses: Course[] = [
         themeColor: "#00B4D8",
         imagePath: "/QUIROTERAPIAA.jpg",
         description: "Alcanza la excelencia en terapia manual. Nuestro programa avanzado de Quiroterapia Integral combina **manipulaciones articulares, tratamientos de liberación miofascial y métodos de habilitación física;** enfocándose en solucionar afecciones neuromusculoesqueléticas complejas.\n\n**Durante 22 meses (un día a la semana),** adquirirás las competencias fundamentales en anatomía clínica, patología y tratamientos mediante **hidroterapia, masajes técnicos y manipulaciones articulares.** Te transformarás en un experto capaz de diagnosticar y rehabilitar lesiones deportivas, problemas musculares y disfunciones de la columna vertebral.\n\nGradúate con doble reconocimiento: Diploma en Habilitación Física Funcional y Diploma en Formación Integral en Quiro-terapia.",
+        updatedAt: "2026-09-03",
         curriculum: [
             {
                 name: "Primer Periodo",
@@ -174,6 +183,7 @@ export const courses: Course[] = [
         themeColor: "#9ea7d1",
         imagePath: "/MASAJE.png",
         description: "Domina el arte del bienestar y relájate con técnicas de vanguardia en el mejor **diplomado de masajes en Puebla**. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la masoterapia, aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Reconocimiento avalado por la SEP** al terminar tus estudios.",
+        updatedAt: "2026-09-03",
         curriculum: [
             {
                 name: "Módulo 1",
@@ -219,6 +229,7 @@ export const courses: Course[] = [
         themeColor: "#009688",
         imagePath: "/MANIPULACION VERT.jpg",
         description: "Un Diplomado exclusivo para profesionales de la salud. A lo largo de **160 horas (8 meses)**, profundizarás en técnicas altamente especializadas y avanzadas para la manipulación y rectificación biomecánica de la columna vertebral y la articulación pélvica.\n\nEl programa aborda, de forma vanguardista, la biomecánica clínica a través de diagnósticos de *Síndrome de Subluxación*, inhibición fascial, y por supuesto, manipulación directa mediante la técnica *thrust*.\n\nIntegra al arsenal terapéutico de tu consultorio privado los procedimientos biomecánicos más buscados y consolida un estándar oro de tratamiento ortopédico.",
+        updatedAt: "2026-09-03",
         curriculum: [
             {
                 name: "Primer Cuatrimestre",
