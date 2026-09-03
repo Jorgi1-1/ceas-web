@@ -28,7 +28,7 @@ export default function UrgencyBanner() {
             {hasConfirmedDate ? (
               <p className="text-[14px] font-bold text-gray-900">{formatDate(nextStartDate)}</p>
             ) : (
-              <p className="text-[14px] font-bold text-gray-900">Fecha por confirmar &mdash; contáctanos</p>
+              <p className="text-[14px] font-bold text-gray-900">Fecha por confirmar. Escríbenos</p>
             )}
           </div>
         </div>

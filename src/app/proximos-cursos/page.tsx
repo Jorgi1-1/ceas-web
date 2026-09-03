@@ -142,7 +142,7 @@ export default async function ProximosCursosPage() {
                                                 ))
                                             ) : (
                                                 <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-[#64748b] text-[13px] font-medium">
-                                                    Fecha por confirmar &mdash; contáctanos
+                                                    Fecha por confirmar. Escríbenos
                                                 </span>
                                             )}
                                         </div>
