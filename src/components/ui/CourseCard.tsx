@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Clock, Calendar } from 'lucide-react';
+import { CheckBadgeIcon, AcademicCapIcon } from '@heroicons/react/20/solid';
 import { Course } from '@/data/courses';
 
 export interface CourseCardProps {
@@ -9,9 +10,22 @@ export interface CourseCardProps {
 }
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
+    // El badge distingue una validez oficial SEP (credencial verificable) de
+    // la etiqueta genérica "Diplomado": cada una se lee con su propio ícono
+    // en vez de compartir uno decorativo sin relación con el texto.
+    const BadgeIcon = course.badge?.toUpperCase().includes('SEP') ? CheckBadgeIcon : AcademicCapIcon;
+
     return (
-        <Link href={`/oferta-academica/${course.slug}`} className="group block h-full">
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full border border-black/[0.04] hover:border-[#0098D4]/15 flex flex-col group-hover:-translate-y-1">
+        // Nombre accesible corto y propio en vez de dejar que el lector de
+        // pantalla concatene título, RVOE, descripción, frecuencia y duración:
+        // esa lectura automática es válida pero agotadora en una grilla de
+        // varias tarjetas seguidas.
+        <Link
+            href={`/oferta-academica/${course.slug}`}
+            className="group block h-full"
+            aria-label={`${course.title}. ${course.shortDescription} Ver plan de estudios.`}
+        >
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.12)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] h-full border border-black/[0.04] hover:border-primary/15 flex flex-col group-hover:-translate-y-1">
                 {/* Image container with badge overlay */}
                 <div className="relative h-48 w-full overflow-hidden">
                     <Image
@@ -26,7 +40,8 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                     {/* Badge overlay — unified token */}
                     {course.badge && (
                         <div className="absolute top-4 left-4 z-10">
-                            <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-[#007CAD] text-[10px] tracking-[0.1em] font-semibold uppercase rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/90 backdrop-blur-sm text-primary-text text-[10px] tracking-[0.1em] font-semibold uppercase rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+                                <BadgeIcon className="w-3 h-3 shrink-0" aria-hidden="true" />
                                 {course.badge}
                             </span>
                         </div>
@@ -35,7 +50,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
 
                 {/* Card body */}
                 <div className="p-7 sm:p-8 flex-grow flex flex-col">
-                    <h3 className="text-xl font-bold text-[#0f172a] mb-2 group-hover:text-[#007CAD] transition-colors duration-300 leading-tight tracking-[-0.01em]">
+                    <h3 className="text-xl font-bold text-[#0f172a] mb-2 group-hover:text-primary-text transition-colors duration-300 leading-tight tracking-[-0.01em]">
                         {course.title}
                     </h3>
 
@@ -52,17 +67,17 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
                     {/* Meta info — clean bottom section */}
                     <div className="space-y-2.5 mb-6 pt-5 border-t border-[rgba(0,0,0,0.04)]">
                         <div className="flex items-center text-[#64748b] text-[13px]">
-                            <Calendar className="w-3.5 h-3.5 text-[#007CAD]/60 mr-2.5 shrink-0" />
+                            <Calendar className="w-3.5 h-3.5 text-primary-text/60 mr-2.5 shrink-0" />
                             {course.frequency}
                         </div>
                         <div className="flex items-center text-[#64748b] text-[13px]">
-                            <Clock className="w-3.5 h-3.5 text-[#007CAD]/60 mr-2.5 shrink-0" />
+                            <Clock className="w-3.5 h-3.5 text-primary-text/60 mr-2.5 shrink-0" />
                             Duración: {course.duration}
                         </div>
                     </div>
 
                     {/* CTA link */}
-                    <div className="inline-flex items-center text-[#007CAD] text-sm font-semibold">
+                    <div className="inline-flex items-center text-primary-text text-sm font-semibold">
                         Ver plan de estudios
                         <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />
                     </div>

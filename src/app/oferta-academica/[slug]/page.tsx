@@ -100,11 +100,30 @@ export default async function CoursePage({ params }: CoursePageProps) {
     ];
 
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen bg-white pb-20 lg:pb-0">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
             />
+
+            {/* Mobile-only sticky CTA. Below `lg` the sidebar isn't a sidebar —
+                it's just the last block in a single-column layout, after the
+                full curriculum and all 5 instructor cards. Without this, a
+                mobile visitor has no way to act until they've scrolled past
+                all of that; the sticky bar keeps a way to enroll on screen
+                the whole time. Uses .btn so WhatsAppButton's own overlap
+                check already steps aside for it, same as any other CTA. */}
+            <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-sm border-t border-black/10 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+                <a
+                    href={`https://wa.me/522211502725?text=${encodeURIComponent(`Hola, quiero información sobre el diplomado en ${course.title}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary w-full justify-center"
+                >
+                    Solicitar información
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+            </div>
 
             {/* ═══════════════════════════════════════════════════════════════
                 HERO – Full-bleed cinematic header
@@ -126,7 +145,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 {/* Hero content */}
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-14 md:pb-20 animate-fade-in-up">
                     {course.badge && (
-                        <div className="mb-5 inline-flex items-center px-4 py-1.5 bg-[#0098D4] text-white text-[11px] font-bold rounded-full uppercase tracking-[0.08em]">
+                        <div className="mb-5 inline-flex items-center px-4 py-1.5 bg-primary text-white text-[11px] font-bold rounded-full uppercase tracking-[0.08em]">
                             <Award className="w-3.5 h-3.5 mr-2" />
                             {course.badge}
                         </div>
@@ -198,14 +217,24 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         </section>
 
                         {/* ─────────────────────────────────────────
-                            SECTION: Aprenderás con Expertos
+                            SECTION: Cuerpo Docente
+                            La misma lista de 5 instructores se muestra en las
+                            páginas de los cuatro diplomados porque no tenemos
+                            una asignación real de quién imparte cada uno. El
+                            encabezado dice "cuerpo docente de CEAS" (la
+                            institución) en vez de "aprenderás con estos
+                            expertos" (este curso, estas personas) para no
+                            prometer algo que no podemos respaldar — algunas
+                            especialidades listadas (p. ej. habilitación
+                            física funcional) no aplican a todos los
+                            diplomados.
                         ───────────────────────────────────────── */}
                         <section className="scroll-animate">
                             <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-[#0f172a] tracking-[-0.02em] mb-3 leading-tight">
-                                Aprenderás con Expertos
+                                Cuerpo docente de CEAS
                             </h2>
                             <p className="text-base text-[#64748b] leading-relaxed mb-10">
-                                Instructores certificados con experiencia clínica real.
+                                Profesionales certificados que forman parte de la planta docente de la institución.
                             </p>
 
                             {/* Instructor cards */}
@@ -214,8 +243,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                     <div key={idx} className="relative bg-[#f8fafc] rounded-3xl overflow-hidden border border-[rgba(0,0,0,0.04)]">
                                         <div className="flex flex-col md:flex-row">
                                             {/* ESPACIO DE FOTOS (COMENTADO HASTA QUE SE TENGAN LAS FOTOS)
-                                            <div className="relative w-full md:w-[220px] h-[260px] md:h-auto shrink-0 bg-gradient-to-br from-[#0098D4]/10 to-[#0098D4]/5 flex items-center justify-center overflow-hidden">
-                                                <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-white/80 border-[3px] border-[#0098D4]/15 flex items-center justify-center">
+                                            <div className="relative w-full md:w-[220px] h-[260px] md:h-auto shrink-0 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center overflow-hidden">
+                                                <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-white/80 border-[3px] border-primary/15 flex items-center justify-center">
                                                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-40">
                                                         <circle cx="40" cy="26" r="14" fill="#0098D4" opacity="0.3" />
                                                         <circle cx="40" cy="26" r="11" stroke="#0098D4" strokeWidth="1.5" fill="none" opacity="0.5" />
@@ -231,17 +260,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                                 <h3 className="text-xl md:text-2xl font-extrabold text-[#0f172a] tracking-[-0.01em] mb-2">
                                                     {inst.name}
                                                 </h3>
-                                                <p className="text-[15px] font-semibold text-[#007CAD] mb-3 leading-snug">
+                                                <p className="text-[15px] font-semibold text-primary-text mb-3 leading-snug">
                                                     {inst.role}
                                                 </p>
                                                 <p className="text-[14px] text-[#64748b] leading-[1.6] mb-5 max-w-2xl">
                                                     {inst.experience}
                                                 </p>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#007CAD] bg-[#0098D4]/8 px-3 py-1 rounded-full">
+                                                    <span className="inline-flex items-center text-[12px] font-medium text-primary-text bg-primary/8 px-3 py-1 rounded-full">
                                                         <CheckCircle2 className="w-3 h-3 mr-1.5" /> Experto
                                                     </span>
-                                                    <span className="inline-flex items-center text-[12px] font-medium text-[#007CAD] bg-[#0098D4]/8 px-3 py-1 rounded-full">
+                                                    <span className="inline-flex items-center text-[12px] font-medium text-primary-text bg-primary/8 px-3 py-1 rounded-full">
                                                         <Award className="w-3 h-3 mr-1.5" /> Experiencia Docente
                                                     </span>
                                                 </div>
@@ -311,15 +340,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                     {/* Trust signals */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-x-8 gap-y-3 text-[13px] text-[#64748b] font-medium">
                         <span className="flex items-center">
-                            <Calendar className="w-4 h-4 text-[#007CAD] mr-2" />
+                            <Calendar className="w-4 h-4 text-primary-text mr-2" />
                             {isFutureDate(siteConfig.urgency.nextStartDate)
                                 ? `Próximo inicio: ${formatDate(siteConfig.urgency.nextStartDate)}`
                                 : "Próximo inicio: fecha por confirmar, contáctanos"}
                         </span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>
-                        <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#007CAD] mr-2" /> Espacios limitados</span>
+                        <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-primary-text mr-2" /> Espacios limitados</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#cbd5e1]"></span>
-                        <span className="flex items-center"><Award className="w-4 h-4 text-[#007CAD] mr-2" /> Avalado por SEP</span>
+                        <span className="flex items-center"><Award className="w-4 h-4 text-primary-text mr-2" /> Avalado por SEP</span>
                     </div>
                 </div>
             </section>

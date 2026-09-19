@@ -37,7 +37,7 @@ export const courses: Course[] = [
         rvoe: "RVOE Acuerdo 16FT184 07/06/2016",
         themeColor: "#84a5c0",
         imagePath: "/HABILITACION.JPG",
-        description: "Habilitación Física Funcional es un programa de capacitación profesional diseñado para enseñar a preparar, ejecutar y evaluar planes de terapia física y rehabilitación. Bajo un enfoque de calidez humana, el alumno aprende desde la toma de signos vitales e historia clínica, hasta la aplicación de masajes, agentes físicos, ejercicios terapéuticos y manipulaciones articulares. El curso está alineado a las Normas Técnicas de Competencia Laboral, lo que garantiza una formación oficial y de alta demanda. Su objetivo principal es devolver la independencia funcional a las personas mediante técnicas seguras y la adaptación de su entorno.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
+        description: "La capacitación de habilitación física funcional es un programa de capacitación profesional para poder aplicar modelos, métodos, técnicas de tratamiento y programas complementarios, prescritos médicamente, de acuerdo a las necesidades de las personas, y las medidas de seguridad e higiene, para proporcionar una recuperación funcional con calidad. Bajo un enfoque de calidez humana, el alumno aprende desde la toma de signos vitales e historia clínica, hasta la aplicación de masajes, agentes físicos, ejercicios terapéuticos y manipulaciones articulares. El curso está alineado a las Normas Técnicas de Competencia Laboral, lo que garantiza una formación oficial y de alta demanda. Su objetivo principal es devolver la independencia funcional a las personas mediante técnicas seguras y la adaptación de su entorno.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
         updatedAt: "2026-09-03",
         curriculum: [
             {
@@ -182,7 +182,7 @@ export const courses: Course[] = [
         rvoe: "RVOE Acuerdo 17FT403 29/08/2016",
         themeColor: "#9ea7d1",
         imagePath: "/MASAJE.png",
-        description: "Domina el arte del bienestar y relájate con técnicas de vanguardia en el mejor **diplomado de masajes en Puebla**. Te llevamos de la mano por el mágico mundo del SPA en un curso intensivo enfocado en la masoterapia, aplicación profesional de Aceites Esenciales y maniobras terapéuticas de masaje corporal profundo.\n\nAl graduarte tras **9 meses de instrucción especializada**, estarás altamente calificado(a) para fundar tu propio negocio, cabina de bienestar o integrarte a spas de clase mundial. Aprenderás protocolos rigurosos de higiene, y a aliviar la tensión física y emocional de tus futuros clientes.\n\n**Reconocimiento avalado por la SEP** al terminar tus estudios.",
+        description: "El **diplomado de masajes en Puebla** de CEAS es un programa de capacitación profesional en masoterapia y bienestar corporal. El alumno aprende masaje relajante, maniobras de masaje corporal profundo y aplicación profesional de aceites esenciales, junto con los protocolos de higiene que exige el trabajo en cabinas de spa. Está dirigido a quienes buscan especializarse en terapias manuales de bienestar, ya sea para emplearse en spas y centros de bienestar o para iniciar su propio negocio.\n\nTiene una duración de **9 meses**, con clases un día a la semana.\n\nAl concluir, se otorga **Diploma Oficial avalado por la Secretaría de Educación Pública (SEP)**.",
         updatedAt: "2026-09-03",
         curriculum: [
             {

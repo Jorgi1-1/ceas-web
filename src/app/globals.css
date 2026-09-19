@@ -1,13 +1,20 @@
 @import "tailwindcss/index.css";
 
 :root {
-  --theme-primary: #00AEEF;
+  /* #0098D4 is the blue that actually ships across the site (buttons, icons,
+     accents); #00AEEF was a token nothing referenced. #007CAD is not a second
+     brand color — it's the same hue darkened enough to clear 4.5:1 text
+     contrast on white, which #0098D4 itself cannot (~3.3:1). Both are named
+     tokens now instead of one token plus scattered arbitrary hex. */
+  --theme-primary: #0098D4;
+  --theme-primary-text: #007CAD;
   --background: #F8F7F4; /* Elegant Pearl/Alabaster to match cyan */
   --foreground: #2A2A2A;
 }
 
 @theme inline {
   --color-primary: var(--theme-primary);
+  --color-primary-text: var(--theme-primary-text);
   --color-secondary: #D4C374;
   --color-text-dark: #2A2A2A;
   --color-text-light: #5A5A5A;
@@ -136,6 +143,13 @@ html {
   opacity: 0.6;
   transform: translateY(16px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* will-change only while the element is waiting to reveal — ScrollObserver
+   adds .is-visible once, permanently, so the hint is dropped right after the
+   one transition it exists for instead of promoting every section's worth of
+   elements to their own layer for the rest of the page's life. */
+.scroll-animate:not(.is-visible) {
   will-change: opacity, transform;
 }
 
@@ -344,6 +358,16 @@ a.text-link:hover {
 .hero__bullet:nth-child(2) { animation-delay: 0.75s; }
 .hero__bullet:nth-child(3) { animation-delay: 0.9s; }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero__headline,
+  .hero__subheadline,
+  .hero__bullet {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes buttonPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(0, 152, 212, 0.7); }
   50% { box-shadow: 0 0 0 10px rgba(0, 152, 212, 0); }
@@ -351,6 +375,12 @@ a.text-link:hover {
 
 .btn-primary-pulse {
   animation: buttonPulse 2s infinite 1.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary-pulse {
+    animation: none;
+  }
 }
 
 .value-card {
@@ -431,6 +461,12 @@ a.text-link:hover {
 
 .urgency-banner-pulse {
   animation: borderPulse 3s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .urgency-banner-pulse {
+    animation: none;
+  }
 }
 
 @keyframes slideOutDown {

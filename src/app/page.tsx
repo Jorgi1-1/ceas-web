@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { OG_IMAGES } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowRight, Calendar, CheckCircle2, Stethoscope, Users, Award } from "lucide-react";
+import { HeartIcon, CheckBadgeIcon } from "@heroicons/react/20/solid";
 import { courses } from "@/data/courses";
 import { CourseCard } from "@/components/ui/CourseCard";
 import TrustMetrics from "@/components/ui/TrustMetrics";
@@ -86,13 +87,13 @@ export default function Home() {
 
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-4 mb-6 hero__headline">
-              <div className="inline-flex items-center gap-2 text-[#0098D4] text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0098D4] shrink-0"></span>
-                Excelencia Académica
+              <div className="inline-flex items-center gap-2 text-primary text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
+                <HeartIcon className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                Calidad humana en tu formación
               </div>
               <span className="hidden sm:block w-px h-3 bg-white/25"></span>
               <div className="inline-flex items-center gap-2 text-white/80 text-[11px] md:text-[12px] font-bold tracking-[0.5px] uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60 shrink-0"></span>
+                <CheckBadgeIcon className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                 Clave SEP: 21PBT0505Q DGCFT
               </div>
             </div>
@@ -104,21 +105,21 @@ export default function Home() {
 
             {/* Subheadline */}
             <p className="text-[#E0E0E0] text-[16px] md:text-[18px] leading-[1.5] mb-8 hero__subheadline font-light">
-              La escuela de masajes y quiroterapia líder en Puebla. Especialízate como profesional y estudia masoterapia de alto nivel.
+              La escuela de masajes y quiroterapia líder en Puebla. Fórmate como profesional en grupos pequeños, con práctica constante desde tu primera clase.
             </p>
 
             {/* Bullets */}
             <div className="flex flex-col gap-3 mb-10 md:mb-[48px]">
               <div className="flex items-center text-[#E0E0E0] text-[16px] md:text-[18px] hero__bullet">
-                <CheckCircle2 className="w-5 h-5 text-[#0098D4] mr-3 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-primary mr-3 shrink-0" />
                 <span>Hasta 22 meses de formación profesional</span>
               </div>
               <div className="flex items-center text-[#E0E0E0] text-[16px] md:text-[18px] hero__bullet">
-                <CheckCircle2 className="w-5 h-5 text-[#0098D4] mr-3 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-primary mr-3 shrink-0" />
                 <span>Clases presenciales 1 día a la semana</span>
               </div>
               <div className="flex items-center text-[#E0E0E0] text-[16px] md:text-[18px] hero__bullet">
-                <CheckCircle2 className="w-5 h-5 text-[#0098D4] mr-3 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-primary mr-3 shrink-0" />
                 <span>Capacitaciones desde principiantes hasta avanzados</span>
               </div>
             </div>
@@ -185,36 +186,36 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14 md:mb-16">
             {/* Card 1 */}
-            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate border border-transparent hover:border-[#0098D4]/10">
-              <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Stethoscope className="w-6 h-6 text-[#007CAD]" />
+            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate border border-transparent hover:border-primary/10">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
+                <Stethoscope className="w-6 h-6 text-primary-text" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Abundante práctica</h3>
-              <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
+              <div className="separator w-[60px] h-[3px] bg-primary mb-4"></div>
               <p className="text-[#555555] text-[14px] md:text-[15px] leading-[1.6]">
-                Gran cantidad de prácticas durante todo el curso para dominar las variedades de técnicas enseñadas.
+                Practicas cada técnica en sesión, no solo en teoría, hasta dominarla antes de egresar.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-100 border border-transparent hover:border-[#0098D4]/10">
-              <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Users className="w-6 h-6 text-[#007CAD]" />
+            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-100 border border-transparent hover:border-primary/10">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
+                <Users className="w-6 h-6 text-primary-text" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Atención personalizada</h3>
-              <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
+              <div className="separator w-[60px] h-[3px] bg-primary mb-4"></div>
               <p className="text-[#555555] text-[14px] md:text-[15px] leading-[1.6]">
                 Grupos pequeños para garantizar una atención personalizada y un aprendizaje profundo.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-200 border border-transparent hover:border-[#0098D4]/10">
-              <div className="w-12 h-12 bg-[#0098D4]/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
-                <Award className="w-6 h-6 text-[#007CAD]" />
+            <div className="value-card bg-white p-[30px] rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.06)] min-h-[220px] scroll-animate scroll-delay-200 border border-transparent hover:border-primary/10">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 icon transition-all duration-300">
+                <Award className="w-6 h-6 text-primary-text" />
               </div>
               <h3 className="card__title text-[18px] md:text-[20px] font-bold text-[#1a1a1a] mb-3">Diploma con validez oficial SEP</h3>
-              <div className="separator w-[60px] h-[3px] bg-[#0098D4] mb-4"></div>
+              <div className="separator w-[60px] h-[3px] bg-primary mb-4"></div>
               <p className="text-[#555555] text-[14px] md:text-[15px] leading-[1.6]">
                 RVOE propio incorporado a la SEP para respaldar tu formación.
               </p>
@@ -236,7 +237,7 @@ export default function Home() {
               ¿Qué diplomados puedes estudiar en CEAS?
             </h2>
             <p className="md:col-span-5 md:col-start-8 text-[16px] md:text-[18px] text-[#666666] leading-[1.6]">
-              Planes de estudio estratégicamente diseñados para tu éxito profesional.
+              Cuatro diplomados presenciales, de 8 a 22 meses, con clases un día a la semana.
             </p>
           </div>
 
@@ -282,7 +283,7 @@ export default function Home() {
             <div className="md:col-span-4 md:col-start-9 md:justify-self-end md:pb-1">
               <Link
                 href="/faq"
-                className="group inline-flex items-center text-[#007CAD] font-semibold text-[16px] border-b border-[#007CAD]/30 pb-1 transition-colors duration-300 hover:border-[#007CAD]"
+                className="group inline-flex items-center text-primary-text font-semibold text-[16px] border-b border-primary-text/30 pb-1 transition-colors duration-300 hover:border-primary-text"
               >
                 Ver preguntas frecuentes
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1" />

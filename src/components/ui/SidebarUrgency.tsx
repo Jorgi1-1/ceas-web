@@ -25,7 +25,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
         <div className="rounded-3xl border border-[rgba(0,0,0,0.06)] bg-white/70 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] overflow-hidden">
 
             {/* ── Header ── */}
-            <div className="bg-[#0098D4] px-7 py-6 relative overflow-hidden">
+            <div className="bg-primary px-7 py-6 relative overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
                 <h3 className="text-xl font-extrabold text-white tracking-[-0.01em] relative z-10">
                     Inscripciones Abiertas
@@ -42,7 +42,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 <div className="space-y-3">
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <Calendar className="w-5 h-5 text-[#007CAD]" />
+                            <Calendar className="w-5 h-5 text-primary-text" />
                         </div>
                         <div>
                             <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Frecuencia</p>
@@ -52,7 +52,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
 
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <Clock className="w-5 h-5 text-[#007CAD]" />
+                            <Clock className="w-5 h-5 text-primary-text" />
                         </div>
                         <div>
                             <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Duración Total</p>
@@ -62,7 +62,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
 
                     <div className="flex items-center gap-4 p-3.5 bg-[#f8fafc] rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-                            <User className="w-5 h-5 text-[#007CAD]" />
+                            <User className="w-5 h-5 text-primary-text" />
                         </div>
                         <div>
                             <p className="text-[11px] text-[#64748b] uppercase tracking-[0.08em] font-semibold">Modalidad</p>
@@ -73,7 +73,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
 
                 {/* SEP Badge */}
                 {course.badge && (
-                    <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0098D4]/6 border border-[#0098D4]/12 text-[#007CAD]">
+                    <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary/6 border border-primary/12 text-primary-text">
                         <Award className="w-4 h-4" />
                         <span className="text-[12px] font-bold uppercase tracking-[0.06em]">
                             Diploma {course.badge}
@@ -91,11 +91,11 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                 {/* ── Urgency Widget (from Homepage) ── */}
                 <div className="border border-[rgba(0,0,0,0.06)] rounded-xl p-4 space-y-3 bg-[#fefefe]">
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
-                        <Target className="w-4 h-4 text-[#007CAD] mr-2 shrink-0" />
+                        <Target className="w-4 h-4 text-primary-text mr-2 shrink-0" />
                         Solo <strong className="mx-1">{availableSpots} espacios</strong> disponibles
                     </div>
                     <div className="flex items-center text-[13px] text-[#334155] font-medium">
-                        <Star className="w-4 h-4 text-[#007CAD] mr-2 shrink-0 fill-[#007CAD]" />
+                        <Star className="w-4 h-4 text-primary-text mr-2 shrink-0 fill-primary-text" />
                         {discountPercentage}% de descuento hasta el cierre
                     </div>
 
@@ -103,7 +103,7 @@ export default function SidebarUrgency({ course }: SidebarUrgencyProps) {
                     <div className="w-full h-1.5 bg-[#e2e8f0] rounded-full overflow-hidden">
                         {mounted && (
                             <div
-                                className="h-full bg-gradient-to-r from-[#0098D4] to-[#00b4d8] rounded-full progress-fill"
+                                className="h-full bg-gradient-to-r from-primary to-[#00b4d8] rounded-full progress-fill"
                                 style={{ "--progress-width": `${progressPercentage}%` } as React.CSSProperties}
                             ></div>
                         )}

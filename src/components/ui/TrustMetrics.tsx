@@ -57,7 +57,7 @@ function AnimatedCounter({ end, duration, suffix = "", label, staggerIndex }: Co
       className="text-center scroll-animate"
       style={{ transitionDelay: `${staggerIndex * 100}ms` }}
     >
-      <div className="font-poppins text-6xl md:text-7xl font-black text-[#0098D4] mb-3 leading-none tracking-tight tabular-nums">
+      <div className="font-poppins text-6xl md:text-7xl font-black text-primary mb-3 leading-none tracking-tight tabular-nums">
         {count}
         {suffix}
       </div>
@@ -72,7 +72,7 @@ function LeadStatCounter() {
   const { count, ref } = useCountUp(80, 1400);
 
   return (
-    <div ref={ref} className="font-poppins text-[80px] md:text-[110px] font-black text-[#0098D4] leading-[0.9] tracking-tighter mb-2 tabular-nums">
+    <div ref={ref} className="font-poppins text-[80px] md:text-[110px] font-black text-primary leading-[0.9] tracking-tighter mb-2 tabular-nums">
       {count}<span className="text-[60px] md:text-[80px]">%</span>
     </div>
   );
@@ -122,16 +122,16 @@ export default function TrustMetrics() {
           </h3>
           <ul className="space-y-4 mb-8">
             <li className="flex items-start">
-              <div className="w-6 h-6 rounded-full bg-[#0098D4]/10 flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                <div className="w-2 h-2 bg-[#0098D4] rounded-full"></div>
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3 shrink-0 mt-0.5">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
               </div>
               <p className="text-[#555555] text-[15px] md:text-[17px] leading-relaxed">
                 Un quiroterapeuta puede ganar desde <strong className="text-[#1a1a1a]">$14,400.00 al mes</strong> trabajando únicamente 2 horas al día.
               </p>
             </li>
             <li className="flex items-start">
-              <div className="w-6 h-6 rounded-full bg-[#0098D4]/10 flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                <div className="w-2 h-2 bg-[#0098D4] rounded-full"></div>
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mr-3 shrink-0 mt-0.5">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
               </div>
               <p className="text-[#555555] text-[15px] md:text-[17px] leading-relaxed">
                 Egresados ganan hasta <strong className="text-[#1a1a1a]">$3,000.00</strong> en una sola jornada sabatina.
