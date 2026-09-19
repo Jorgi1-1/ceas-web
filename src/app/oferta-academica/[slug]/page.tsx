@@ -9,7 +9,7 @@ import SidebarUrgency from "@/components/ui/SidebarUrgency";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { getSiteConfig } from "@/lib/getSiteConfig";
-import { formatDate, formatLongDate } from "@/lib/formatDate";
+import { formatDate } from "@/lib/formatDate";
 import { SITE_URL } from "@/config/site";
 import { buildCourseJsonLd } from "@/lib/courseSchema";
 import { isFutureDate } from "@/lib/siteDates";
@@ -189,16 +189,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
                                     </p>
                                 ))}
                             </div>
-                            {/* Señal de vigencia: el temario y la credencial se revisan por ciclo,
-                                y sin fecha visible tanto el visitante como los buscadores asumen
-                                que la información puede estar caduca. */}
-                            <p className="mt-8 pt-6 border-t border-[#e2e8f0] text-[13px] text-[#64748b]">
-                                Información del programa actualizada al{" "}
-                                <time dateTime={course.updatedAt} className="font-medium text-[#475569]">
-                                    {formatLongDate(course.updatedAt)}
-                                </time>
-                                .
-                            </p>
                         </section>
 
                         {/* ─────────────────────────────────────────
